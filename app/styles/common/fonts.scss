@@ -1,0 +1,60 @@
+// Google Fonts
+// =============================================================================
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto:400,400i,500,500i,700,700i&display=swap&subset=cyrillic');
+//font-family: 'Montserrat', sans-serif;
+//font-family: 'Roboto', sans-serif;
+
+// Font Face
+// ====================================================
+@include font-face('MrsWhite', '../fonts/MrsWhite/MrsWhite', normal, normal, eot woff woff2 ttf svg);
+
+// Fonts style
+// ====================================================
+$font-norm: Roboto, Helvetica, Arial, sans-serif !default;
+$font-alt: Montserrat, Georgia, serif !default;
+$font-special: MrsWhite, Georgia, serif !default;
+
+// Main font
+// ====================================================
+@mixin font-normal {
+  font-family: $font-norm;
+}
+
+@mixin font-italic {
+  font-style: italic;
+}
+
+@mixin font-medium {
+  font-weight: 600;
+}
+
+@mixin font-medium-italic {
+  font-weight: 600;
+  font-style: italic;
+}
+
+@mixin font-bold {
+  font-weight: 700;
+}
+
+@mixin font-bold-italic {
+  font-weight: 700;
+  font-style: italic;
+}
+
+// Alternative font
+// ====================================================
+@mixin font-alt {
+  font-family: $font-alt;
+  font-weight: 400;
+}
+
+@mixin font-alt-semi-bold {
+  font-family: $font-alt;
+  font-weight: 600;
+}
+
+@mixin font-alt-bold {
+  font-family: $font-alt;
+  font-weight: 700;
+}

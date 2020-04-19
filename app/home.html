@@ -1,0 +1,44 @@
+@@include("blocks/head/head.html", {
+  "title": "Главная",
+  "pageClass": ""
+})
+@@include("blocks/header/header.html", { "currentItem": "Home" })
+
+<!--MAIN-->
+<main class="main">
+  <div class="page">
+    <div class="page__section">
+      <div class="layout-page">
+        <div class="layout-content">
+          <div class="base">
+            <div class="base__layout">
+              <div class="base__layout-aside">
+                @@include("blocks/control-panel/control-panel.html")
+              </div>
+              <div class="base__layout-content">
+                <div class="base__section">
+                  <h1>С рождения вместе!</h1>
+                </div>
+                <div class="base__section">
+                  {{base section 2}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="page__section">
+      <div class="layout-page">
+        <div class="layout-content">
+          {{bottom section}}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!--MAIN end-->
+
+@@include("blocks/footer/footer.html")
+@@include("blocks/foot/foot.html")

@@ -1,0 +1,49 @@
+.header-assets {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	flex-shrink: 0;
+
+	@include below($lg) {
+		display: block;
+		margin-bottom: 2rem;
+	}
+
+	&__logo {
+		width: 19.7rem;
+		margin-right: 6.4rem;
+		flex-shrink: 0;
+		background: url(../images/logo.png) no-repeat;
+		background-size: contain;
+
+		&::before {
+			content: "";
+			display: block;
+			pointer-events: none;
+
+			@include ratio(197, 85);
+		}
+
+		&-inner {
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			overflow: hidden;
+			text-indent: -9999px;
+			height: 100%;
+			width: 100%;
+			user-select: none;
+			-webkit-tap-highlight-color: transparent;
+		}
+	}
+
+	&__nav {
+		background: #fff;
+		box-shadow: 0 2px 4px rgba(#000, 0.268193);
+		border-radius: 3.9rem;
+		padding: 2.8rem 5.7rem;
+		flex-grow: 1;
+		flex-shrink: 0;
+	}
+}

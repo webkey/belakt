@@ -1,0 +1,34 @@
+@@include("blocks/head/head.html", {
+  "title": "Список страниц",
+  "pageClass": ""
+})
+@@include("blocks/header/header.html", { "currentItem": "Список страниц" })
+
+
+
+<!--MAIN-->
+<main class="main">
+  <div class="layout-page">
+    <div class="layout-content edit-content">
+      <ol class="list-of-pages">
+        <li><a href="home.html">Home - Главная</a></li>
+        <li><a href="404.html">404 - Страница не найдена</a></li>
+        <li><a href="typography.html">Typography - Элементы</a></li>
+      </ol>
+      <style>
+        .list-of-pages li a {
+          color: inherit;
+        }
+        .list-of-pages li a::after {
+          content: ' (' attr(href) ')';
+        }
+      </style>
+    </div>
+  </div>
+</main>
+<!--MAIN end-->
+
+
+
+@@include("blocks/footer/footer.html")
+@@include("blocks/foot/foot.html")

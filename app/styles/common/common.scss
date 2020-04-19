@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'mixins';
+
+html {
+  font-size: 62.5%;
+
+  // Блокировать скролла
+  &.css-scroll-fixed:not(.open-only-mob) {
+    @include scroll-blocked;
+  }
+
+  // Не блокировать скролл, если есть класс open-only-mob
+  &.css-scroll-fixed.open-only-mob {
+    @include below($lg) {
+      @include scroll-blocked;
+    }
+  }
+}
+
+body {
+  min-width: $layout-page-min-width;
+  @include font-normal;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $text-color;
+  background: $bg-color url(../images/empty.png) no-repeat left top fixed;
+
+  // ------ mob -----------------------------------------
+  @include below($sm) {
+    font-size: $font-size--mob;
+    line-height: $line-height--mob;
+  }
+}
+
+.layout-page {
+  max-width: $layout-page-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $layout-page-space;
+  padding-right: $layout-page-space;
+
+  @include below($xxl) {
+    padding-left: $layout-page-space_md;
+    padding-right: $layout-page-space_md;
+  }
+
+  @include below($md) {
+    padding-left: $layout-page-space_sm;
+    padding-right: $layout-page-space_sm;
+  }
+}
+
+.layout-max-wrap {
+  max-width: $layout-max-wrap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.layout-content {
+  max-width: $layout-content-max-width;
+}
+
+.layout-narrow {
+  max-width: $layout-narrow-max-width;
+}
+
+.layout-form {
+  max-width: $layout-form-max-width;
+}
+
+.layout-single-form {
+  max-width: $layout-single-form-max-width;
+}
+
+.layout-content,
+.layout-narrow,
+.layout-form,
+.layout-single-form {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &_align-left {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &_align-right {
+    margin-right: 0;
+  }
+}
+
+.main {
+  position: relative;
+}
+
+.content {
+  background-color: rgba(whitesmoke, 0.8);
+}

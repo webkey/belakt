@@ -1,0 +1,71 @@
+.base {
+  &__layout {
+    $space-h: 3rem;
+
+    display: flex;
+    align-items: flex-start;
+    margin: 0 -#{round-float($space-h / 2, 1)};
+
+    &-aside {
+      $width: 20rem;
+
+      flex: 1 0 $width;
+      max-width: $width;
+      padding: 0 #{round-float($space-h / 2, 1)};
+    }
+
+    &-content {
+      padding: 0 #{round-float($space-h / 2, 1)};
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+
+  &__section {
+    margin-bottom: 6rem;
+
+    @include below($md) {
+      margin-bottom: 4rem;
+    }
+
+    &_space-smallest {
+      margin-bottom: 2.8rem;
+
+      @include below($md) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    &_space-small {
+      margin-bottom: 3.5rem;
+
+      @include below($md) {
+        margin-bottom: 2.5rem;
+      }
+    }
+
+    &_space-large {
+      margin-bottom: 8rem;
+
+      @include below($md) {
+        margin-bottom: 5rem;
+      }
+    }
+
+    &_space-largest {
+      margin-bottom: 10rem;
+
+      @include below($md) {
+        margin-bottom: 6rem;
+      }
+    }
+
+    &_align-center {
+      text-align: center;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

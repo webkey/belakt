@@ -1,0 +1,94 @@
+<nav class="nav">
+  <ul class="nav__list">
+    @@if(context.currentItem == 'О компании'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">О компании</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'О компании'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="about.html">
+        <span class="nav__li-el-in">О компании</span>
+      </a>
+    </li>}
+
+    @@if(context.currentItem == 'Новости'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">Новости</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'Новости'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="news.html">
+        <span class="nav__li-el-in">Новости</span>
+      </a>
+    </li>}
+
+    @@if(context.currentItem == 'Каталог продукции'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">Каталог продукции</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'Каталог продукции'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="catalog.html">
+        <span class="nav__li-el-in">Каталог продукции</span>
+      </a>
+    </li>}
+
+    @@if(context.currentItem == 'Развлечения'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">Развлечения</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'Развлечения'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="news-one.html">
+        <span class="nav__li-el-in">Развлечения</span>
+      </a>
+    </li>}
+
+    @@if(context.currentItem == 'Полезные советы'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">Полезные советы</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'Полезные советы'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="news-one.html">
+        <span class="nav__li-el-in">Полезные советы</span>
+      </a>
+    </li>}
+
+    @@if(context.currentItem == 'Контакты'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">Контакты</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'Контакты'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="contacts.html">
+        <span class="nav__li-el-in">Контакты</span>
+      </a>
+    </li>}
+
+    @@if(context.currentItem == 'Где купить?'){
+    <li class="nav__li js-nav-li current">
+      <span class="nav__li-el">
+        <span class="nav__li-el-in">Где купить?</span>
+      </span>
+    </li>}
+    @@if(context.currentItem != 'Где купить?'){
+    <li class="nav__li js-nav-li">
+      <a class="nav__li-el" href="news-one.html">
+        <span class="nav__li-el-in">Где купить?</span>
+      </a>
+    </li>}
+  </ul>
+</nav>

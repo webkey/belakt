@@ -1,0 +1,87 @@
+.control-panel {
+  &__categories {
+    $slider: &;
+
+    position: relative;
+
+    html:not(.no-js) &:not(.is-loaded) {
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .swiper-container {
+      overflow: visible;
+    }
+
+    &-slide {
+      position: relative;
+
+      #{$slider}.has-one-slide & {
+        width: 100% !important;
+      }
+
+      #{$slider}.no-sliding &.swiper-slide-duplicate {
+        display: none;
+      }
+    }
+  }
+
+  &__prev,
+  &__next {
+    $size: 4.6rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $size;
+    width: $size;
+    margin: 0 auto;
+    color: black;
+    border-radius: $size;
+    background-color: white;
+    transition: background-color $animation-speed, color $animation-speed, transform 0.1s;
+    cursor: pointer;
+    box-shadow: 0 0.4rem 2rem rgba(black, 0.15);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 2rem;
+      height: 1.4rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    // :hover
+    &:not(.swiper-button-disabled):hover {
+      background-color: $highlight-color--hover;
+      color: white;
+      box-shadow: 0 4px 20px rgba($highlight-color--hover, 0.15);
+    }
+
+    // :focus
+    &:focus {
+      outline: none;
+    }
+
+    // :active
+    &:not(.swiper-button-disabled):active {
+      transform: scale(0.9);
+    }
+
+    // Disabled
+    &.swiper-button-disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &__prev {
+    margin-bottom: 2.1rem;
+  }
+
+  &__next {
+    margin-top: 1.6rem;
+  }
+}
