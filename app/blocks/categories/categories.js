@@ -1,11 +1,8 @@
-app.controlPanel = {
+app.categories = {
   initEl: '.js-control-panel',
   catEl: '.js-control-panel__category',
   prevBtnEl: '.js-control-panel__prev',
   nextBtnEl: '.js-control-panel__next',
-  targetsEl: '.js-control-panel__targets',
-  targetEl: '.js-control-panel__target',
-  hideEl: '.js-control-panel__hide',
   slidesPerView: 3,
   speed: 0,
   init() {
@@ -55,24 +52,11 @@ app.controlPanel = {
       e.preventDefault();
       const $curSl = $(this);
       const idx = $curSl.index();
+      $slide.removeClass('current').removeClass('active').removeClass('visible');
+      $curSl.addClass('current active visible');
 
-      if (!$curSl.hasClass('active')) {
-        $slide.removeClass('current').removeClass('active').removeClass('visible');
-        $curSl.addClass('current active visible');
+      app.showSlides(idx, $curSl);
 
-        app.showSlides(idx, $curSl);
-
-        $(app.targetEl).removeClass('active');
-        $($curSl.attr('href')).addClass('active').closest(app.targetsEl).addClass('active');
-        $(app.hideEl).css({
-          opacity: 0,
-          pointerEvents: 'none',
-          visibility: 'hidden'
-        })
-      } else {
-        $slide.add(app.targetEl).add(app.targetsEl).removeClass('active');
-        $(app.hideEl).attr('style', '')
-      }
     })
 
     $body.on('click', app.prevBtnEl, function (e) {

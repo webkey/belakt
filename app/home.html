@@ -16,8 +16,11 @@
                 @@include("blocks/control-panel/control-panel.html")
               </div>
               <div class="base__layout-content">
-                <div class="base__section">
-                  <h1>С рождения вместе!</h1>
+                <div class="base__categories js-control-panel__targets">
+                  @@include("blocks/categories/categories.html")
+                </div>
+                <div class="base__section js-control-panel__hide">
+                  @@include("blocks/promo/promo.html")
                 </div>
                 <div class="base__section">
                   {{base section 2}}
@@ -25,7 +28,6 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

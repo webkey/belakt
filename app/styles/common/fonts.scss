@@ -11,8 +11,8 @@
 // Fonts style
 // ====================================================
 $font-norm: Roboto, Helvetica, Arial, sans-serif !default;
-$font-alt: Montserrat, Georgia, serif !default;
-$font-special: MrsWhite, Georgia, serif !default;
+$font-alt: Montserrat, Helvetica, Arial, sans-serif !default;
+$font-special: MrsWhite, Helvetica, Arial, sans-serif !default;
 
 // Main font
 // ====================================================
@@ -25,11 +25,11 @@ $font-special: MrsWhite, Georgia, serif !default;
 }
 
 @mixin font-medium {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @mixin font-medium-italic {
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -57,4 +57,10 @@ $font-special: MrsWhite, Georgia, serif !default;
 @mixin font-alt-bold {
   font-family: $font-alt;
   font-weight: 700;
+}
+
+// Special font
+// ====================================================
+@mixin font-special {
+  font-family: $font-special;
 }
