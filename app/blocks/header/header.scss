@@ -66,7 +66,7 @@
     margin-right: auto;
     min-height: $header-height;
     padding-left: $layout-page-space;
-    padding-right: $layout-page-space + 10;
+    padding-right: $layout-page-space;
 
     @include below($xxl) {
       padding-left: $layout-page-space_md;
@@ -77,16 +77,24 @@
       display: block;
       padding: 0;
     }
+  }
 
-    &-assets,
-    &-options {
-      position: relative;
-      display: flex;
-      align-items: center;
-      flex-grow: 1;
-      flex-shrink: 0;
-      z-index: 5;
-    }
+  &__assets {
+    align-items: center;
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  &__slogan {
+    position: relative;
+    $width: 9rem;
+    margin: 4rem -2rem -4rem 3.2rem;
+
+    flex: 1 0 $width;
+    max-width: $width;
+    z-index: 5;
   }
 
 

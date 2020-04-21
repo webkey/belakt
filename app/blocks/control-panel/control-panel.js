@@ -7,6 +7,7 @@ app.controlPanel = {
   targetEl: '.js-control-panel__target',
   hideEl: '.js-control-panel__hide',
   slidesPerView: 3,
+  isActive: false,
   speed: 0,
   init() {
     this.run();
@@ -19,14 +20,14 @@ app.controlPanel = {
 
     if ($slider.length) {
       const slidesLength = $('.swiper-slide', $slider).length;
-      const initSlide = $slider.find('.current').index() || 0;
+      const initIdx = $slide.filter('.current').length && $slide.filter('.current').index() || 0;
 
       $slider
           .toggleClass('no-sliding', !(slidesLength > self.slidesPerView));
 
       app.controlPanelCat = new Swiper($slider, {
         init: false,
-        initialSlide: initSlide,
+        initialSlide: initIdx,
         speed: app.speed,
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -38,8 +39,17 @@ app.controlPanel = {
 
       app.controlPanelCat.on('init', function () {
         $slider.addClass('is-loaded');
-        $slide.eq(initSlide).addClass('current');
-        app.showSlides(initSlide, $slide.eq(initSlide));
+
+        const $curSlide = $slide.eq(initIdx);
+        $curSlide.addClass('current');
+        app.visibleSlides(initIdx, $curSlide);
+
+        const $activeSlide = $slide.filter('.active');
+        app.isActive = !!$activeSlide.length;
+
+        if (app.isActive) {
+          app.showTarget($activeSlide.attr('href'));
+        }
       });
 
       app.controlPanelCat.init();
@@ -60,18 +70,15 @@ app.controlPanel = {
         $slide.removeClass('current').removeClass('active').removeClass('visible');
         $curSl.addClass('current active visible');
 
-        app.showSlides(idx, $curSl);
+        app.visibleSlides(idx, $curSl);
+        app.isActive = true;
 
-        $(app.targetEl).removeClass('active');
-        $($curSl.attr('href')).addClass('active').closest(app.targetsEl).addClass('active');
-        $(app.hideEl).css({
-          opacity: 0,
-          pointerEvents: 'none',
-          visibility: 'hidden'
-        })
+        app.showTarget($curSl.attr('href'));
       } else {
-        $slide.add(app.targetEl).add(app.targetsEl).removeClass('active');
-        $(app.hideEl).attr('style', '')
+        $slide.removeClass('active');
+
+        app.hideTarget();
+        app.isActive = false;
       }
     })
 
@@ -84,6 +91,8 @@ app.controlPanel = {
         prevIdx = idx - 1;
 
         $slide.removeClass('active').removeClass('current').removeClass('visible');
+
+        if (app.isActive) app.hideTarget();
       }
 
       if (idx > 1) {
@@ -93,12 +102,22 @@ app.controlPanel = {
         $prevSl.prev().addClass('visible');
         $prevSl.next().addClass('visible');
         app.controlPanelCat.slideTo(prevIdx - 1, app.speed);
+
+        if (app.isActive) {
+          $prevSl.addClass('active');
+          app.showTarget($prevSl.attr('href'));
+        }
       } else if (idx > 0) {
         const $prevSl = $slide.eq(prevIdx);
 
         $prevSl.addClass('current visible');
         $prevSl.next().addClass('visible').next().addClass('visible');
         app.controlPanelCat.slideTo(prevIdx, app.speed);
+
+        if (app.isActive) {
+          $prevSl.addClass('active');
+          app.showTarget($prevSl.attr('href'));
+        }
       }
     })
 
@@ -111,6 +130,8 @@ app.controlPanel = {
         nextIdx = idx + 1;
 
         $slide.removeClass('active').removeClass('current').removeClass('visible');
+
+        if (app.isActive) app.hideTarget();
       }
 
       if (idx < slideLength - 2) {
@@ -120,16 +141,26 @@ app.controlPanel = {
         $nextSl.prev().addClass('visible');
         $nextSl.next().addClass('visible');
         app.controlPanelCat.slideTo(nextIdx - 1, app.speed);
+
+        if (app.isActive) {
+          $nextSl.addClass('active');
+          app.showTarget($nextSl.attr('href'));
+        }
       } else if (idx < slideLength - 1) {
         const $nextSl = $slide.eq(nextIdx);
 
         $nextSl.addClass('current visible');
         $nextSl.prev().addClass('visible').prev().addClass('visible');
         app.controlPanelCat.slideTo(nextIdx, app.speed);
+
+        if (app.isActive) {
+          $nextSl.addClass('active');
+          app.showTarget($nextSl.attr('href'));
+        }
       }
     })
   },
-  showSlides(idx, $curSl) {
+  visibleSlides(idx, $curSl) {
     const app = this;
     const slideLength = $('.swiper-slide', $(this.catEl)).length;
     $curSl.addClass('visible');
@@ -148,5 +179,18 @@ app.controlPanel = {
       $curSl.prev().addClass('visible').prev().addClass('visible');
       app.controlPanelCat.slideTo(idx, app.speed);
     }
+  },
+  showTarget(id) {
+    $(this.targetEl).removeClass('active');
+    $(id).addClass('active').closest(this.targetsEl).addClass('active');
+    $(this.hideEl).css({
+      opacity: 0,
+      pointerEvents: 'none',
+      visibility: 'hidden'
+    });
+  },
+  hideTarget() {
+    $(this.targetEl).add(this.targetsEl).removeClass('active');
+    $(this.hideEl).attr('style', '');
   }
 }

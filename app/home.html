@@ -12,19 +12,33 @@
         <div class="layout-content">
           <div class="base">
             <div class="base__layout">
-              <div class="base__layout-aside">
+              <div class="base__layout-controls">
                 @@include("blocks/control-panel/control-panel.html")
               </div>
               <div class="base__layout-content">
-                <div class="base__categories js-control-panel__targets">
-                  @@include("blocks/categories/categories.html")
+                <div class="base__products js-control-panel__targets">
+                  <div class="base__products-layout">
+                    @@include("blocks/products/products.html")
+                  </div>
                 </div>
                 <div class="base__section js-control-panel__hide">
-                  @@include("blocks/promo/promo.html")
+                  <div class="base__promo">
+                    @@include("blocks/promo/promo.html")
+                  </div>
                 </div>
                 <div class="base__section">
                   {{base section 2}}
                 </div>
+              </div>
+              <div class="base__layout-share">
+                @@include("blocks/share-aside/share-aside.html")
+              </div>
+
+              <div class="decor-cloud decor-cloud_right-top">
+                <img src="images/cloud-01.png" alt="cloud" />
+              </div>
+              <div class="decor-cloud decor-cloud_left-center">
+                <img src="images/cloud-02.png" alt="cloud" />
               </div>
             </div>
           </div>

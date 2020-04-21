@@ -37,8 +37,8 @@ var libsJsLink = [
   'node_modules/select2/dist/js/select2.full.min.js',
   'node_modules/select2/dist/js/i18n/ru.js',
   'node_modules/object-fit-images/dist/ofi.min.js',
-  'app/includes/libs/js/jquery.accordion-simple.js',
-  'app/includes/libs/js/jquery.switch-class.js',
+  'app/libs/js/jquery.accordion-simple.js',
+  'app/libs/js/jquery.switch-class.js',
   'node_modules/swiper/dist/js/swiper.min.js'
 ];
 
@@ -233,8 +233,8 @@ gulp.task('bs', function () {
 gulp.task('watch', ['bs', 'html:compilation', 'style:compilation', 'styles:lint', 'cssLibs:merge', 'jsLibs:merge', 'copyFavicons', 'copyResources', 'scripts', 'copyImages'], function () {
   global.watch = true;
 
-  watch(['app/includes/libs/css/*.js', 'gulpfile.js'], () => runSequence('cssLibs:merge', bs.reload));
-  watch(['app/includes/libs/js/*.js', 'gulpfile.js'], () => runSequence('jsLibs:merge', bs.reload));
+  watch(['app/libs/css/*.js', 'gulpfile.js'], () => runSequence('cssLibs:merge', bs.reload));
+  watch(['app/libs/js/*.js', 'gulpfile.js'], () => runSequence('jsLibs:merge', bs.reload));
   watch('app/{styles,blocks}/**/*.scss', () => {
     runSequence(['style:compilation', 'styles:lint'], () => bs.reload('css/app.min.css'));
   });

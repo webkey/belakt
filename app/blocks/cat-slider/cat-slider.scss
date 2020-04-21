@@ -1,0 +1,73 @@
+.cat-slider {
+  $slider: &;
+
+  position: relative;
+  padding: 0 10rem;
+
+  html:not(.no-js) &:not(.is-loaded) {
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  &__slide {
+    position: relative;
+  }
+
+  &__button {
+    $size-h: 6rem;
+    $size-h: 4rem;
+
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $size-h;
+    width: $size-h;
+    margin-top: -#{round-float($size-h / 2, 1)};
+    color: white;
+    background-color: transparent;
+    transition: color $animation-speed, transform 0.1s;
+    cursor: pointer;
+
+    svg {
+      $size: 6rem;
+
+      display: block;
+      height: $size;
+    }
+
+    path {
+      stroke: currentColor;
+    }
+
+    &_prev {
+      left: 0;
+    }
+
+    &_next {
+      right: 0;
+    }
+
+    // :hover
+    &:not(.swiper-button-disabled):hover {
+      color: $highlight-color;
+    }
+
+    // :focus
+    &:focus {
+      outline: none;
+    }
+
+    // :active
+    //&:not(.swiper-button-disabled):active {
+    //  transform: scale(0.9);
+    //}
+
+    // Disabled
+    &.swiper-button-disabled {
+      opacity: 0.3;
+    }
+  }
+}

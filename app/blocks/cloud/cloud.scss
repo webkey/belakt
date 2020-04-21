@@ -1,0 +1,14 @@
+.decor-cloud {
+  position: absolute;
+
+  &_right-top {
+    right: 0;
+    top: -2rem;
+    z-index: 10;
+  }
+
+  &_left-center {
+    left: 5rem;
+    top: 36rem;
+  }
+}

@@ -1,0 +1,56 @@
+.share-aside {
+  $space: 1rem;
+
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 3.9rem;
+  box-shadow: 0 0 2px rgba(#000, 0.268193);
+  padding: 2.1rem 0 4.2rem;
+
+  &__list {
+    margin: 0 0 -#{$space};
+  }
+
+  &__item {
+    $size: 3.8rem;
+
+    height: $size;
+    width: $size;
+    position: relative;
+    display: block;
+    margin: 0 auto #{$space};
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: left;
+    color: #afb5bb;
+    text-decoration: none;
+    transition: opacity $animation-speed;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    & > span {
+      @include hide-text;
+    }
+
+    svg,
+    img {
+      $size: 2.4rem;
+      $int: round-float($size / 2, 1);
+
+      display: inline-block;
+      vertical-align: top;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: $size;
+      width: $size;
+      margin: -#{$int} 0 0 -#{$int};
+    }
+
+    path {
+      fill: currentColor;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-app.categories = {
+app.products = {
   initEl: '.js-control-panel',
   catEl: '.js-control-panel__category',
   prevBtnEl: '.js-control-panel__prev',

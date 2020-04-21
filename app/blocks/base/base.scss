@@ -1,24 +1,36 @@
 .base {
-  &__layout {
-    $space-h: 3rem;
+  position: relative;
 
+  &__layout {
+    position: relative;
     display: flex;
     align-items: flex-start;
-    margin: 0 -#{round-float($space-h / 2, 1)};
 
-    &-aside {
-      $width: 20rem;
+    &-controls {
+      $width: 14.1rem;
 
       flex: 1 0 $width;
       max-width: $width;
-      padding: 0 #{round-float($space-h / 2, 1)};
+      position: relative;
+      margin-right: 2rem;
+      z-index: 15;
     }
 
     &-content {
       position: relative;
-      padding: 0 #{round-float($space-h / 2, 1)};
       flex-shrink: 0;
       flex-grow: 1;
+    }
+
+    &-share {
+      $width: 7.8rem;
+
+      flex: 1 0 $width;
+      max-width: $width;
+      position: relative;
+      margin-left: 5.5rem;
+      padding-top: 16rem;
+      z-index: 15;
     }
   }
 
@@ -70,15 +82,26 @@
     }
   }
 
-  &__categories {
+  &__products {
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
     display: none;
+    z-index: 14;
 
     &.active {
       display: block;
     }
+
+    &-layout {
+      width: 89.4rem;
+      margin: 0 auto;
+    }
+  }
+
+  &__promo {
+    position: relative;
+    z-index: 14;
   }
 }

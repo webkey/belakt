@@ -3,15 +3,15 @@
   <div class="header__holder">
     <div class="header__frame">
       <div class="header__container">
-        <div class="header__container-assets">
+        <div class="header__assets">
           @@include("blocks/header-assets/header-assets.html", {"currentItem": "@@currentItem"})
         </div>
-        <!--<div class="header__container-options"></div>-->
+        <div class="header__slogan">
+          @@include("blocks/slogan/slogan.html")
+        </div>
       </div>
     </div>
   </div>
   <a href="#" class="header__mob-menu-close js-mob-menu-close">Закрыть меню</a>
 </header>
-
-@@include("blocks/slogan/slogan.html")
 <!--HEADER end-->
