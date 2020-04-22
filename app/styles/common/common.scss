@@ -91,9 +91,5 @@ body {
 }
 
 .main {
-  position: relative;
-}
-
-.content {
-  background-color: rgba(whitesmoke, 0.8);
+  z-index: 2;
 }

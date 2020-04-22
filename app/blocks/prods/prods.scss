@@ -1,4 +1,4 @@
-.products {
+.prods {
   &__title {
     @include font-special;
 
@@ -7,10 +7,7 @@
     line-height: 1.2;
     color: #fff;
     margin-bottom: 2rem;
-  }
-
-  &__items {
-    position: relative;
+    padding-left: 4rem;
   }
 
   &__item {

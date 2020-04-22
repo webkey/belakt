@@ -1,0 +1,17 @@
+<div class="widget-rubric@@if(context.mods){@@for (var i = 0; i < mods.length; i++){ widget-rubric_`+mods[i]+`}}">
+  <img class="widget-rubric__figure" src="images/@@image" alt="@@title" />
+  <div class="widget-rubric__content">
+    <div class="widget-rubric__title">@@title</div>
+    @@if(context.btn){
+    <div class="widget-rubric__row">
+      @@include("blocks/btn-default/btn-default.html", {"href": "@@btn.href", "text": "@@btn.text", "mods": ["full-width"]})
+    </div>}
+    @@if(context.list){
+    <div class="widget-rubric__list">
+    @@for (var i = 0; i < list.length; i++){
+    <div class="widget-rubric__li">
+      <a href="`+list[i].href+`">`+list[i].text+`</a>
+    </div>}
+    </div>}
+  </div>
+</div>

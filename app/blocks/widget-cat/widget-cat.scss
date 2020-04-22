@@ -1,26 +1,12 @@
 .widget-cat {
   $widget: &;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
 
-  &__photo {
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 2rem;
-
-    &-img {
-      display: block;
-      margin: 0 auto;
-    }
-  }
-
-  &__content {
-    padding: 0 2rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-
-    &-layout {
-      text-align: left;
-    }
+  &__figure {
+    display: block;
+    margin: 0 auto 2rem;
   }
 
   &__title {

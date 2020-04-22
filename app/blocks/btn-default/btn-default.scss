@@ -1,0 +1,86 @@
+.btn-default {
+  $btn: &;
+
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  cursor: pointer;
+  min-width: 20rem;
+  margin: 0;
+  padding: 1.9rem 2rem;
+  @include font-alt-bold;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  background-color: $highlight-color;
+  box-shadow: 0 12px 46px rgba(254, 108, 83, 0.514041);
+  transition: all $animation-speed;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    background-color: $highlight-color_hover;
+    will-change: transform;
+    transform-origin: top left;
+    transition: transform .35s,opacity .35s;
+    opacity: 0;
+    transform: translateZ(0) scaleX(0);
+  }
+
+  @at-root {
+    #{$btn},
+    input#{$btn} {
+      border-radius: 2.8rem;
+    }
+  }
+
+  &_full-width {
+    display: block;
+    min-width: 0;
+    width: 100%;
+  }
+
+  // For small screen
+  &_sm {
+    @include below($sm) {
+      &-full-width {
+        display: block;
+        width: 100%;
+      }
+
+      &-no-min-width {
+        min-width: 0;
+      }
+    }
+  }
+
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    &::before {
+      transform: translateZ(0) scaleX(1);
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translate(0, 1px);
+    box-shadow: 0 5px 20px rgba(150, 150, 150, 0.5);
+  }
+}

@@ -4,57 +4,44 @@
 })
 @@include("blocks/header/header.html", { "currentItem": "Home" })
 
-<!--MAIN-->
 <main class="main">
-  <div class="page">
-    <div class="page__section">
-      <div class="layout-page">
-        <div class="layout-content">
-          <div class="base">
-            <div class="base__layout">
-              <div class="base__layout-controls">
-                @@include("blocks/control-panel/control-panel.html")
+  <div class="section section_base">
+    <div class="layout-page">
+      <div class="base">
+        <div class="base__layout">
+          <div class="base__aside">
+            @@include("blocks/ctrl/ctrl.html")
+          </div>
+          <div class="base__content">
+            <div class="base__prods js-ctrl__targets">
+              <div class="base__prods-layout">
+                @@include("blocks/prods/prods.html")
               </div>
-              <div class="base__layout-content">
-                <div class="base__products js-control-panel__targets">
-                  <div class="base__products-layout">
-                    @@include("blocks/products/products.html")
-                  </div>
-                </div>
-                <div class="base__section js-control-panel__hide">
-                  <div class="base__promo">
-                    @@include("blocks/promo/promo.html")
-                  </div>
-                </div>
-                <div class="base__section">
-                  {{base section 2}}
-                </div>
-              </div>
-              <div class="base__layout-share">
-                @@include("blocks/share-aside/share-aside.html")
-              </div>
-
-              <div class="decor-cloud decor-cloud_right-top">
-                <img src="images/cloud-01.png" alt="cloud" />
-              </div>
-              <div class="decor-cloud decor-cloud_left-center">
-                <img src="images/cloud-02.png" alt="cloud" />
+            </div>
+            <div class="base__section base__section_promo js-ctrl__hide">
+              @@include("blocks/promo/promo.html")
+            </div>
+            <div class="base__section">
+              <div class="layout-content">
+                @@include("blocks/rubrics/rubrics.html")
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="page__section">
-      <div class="layout-page">
-        <div class="layout-content">
-          {{bottom section}}
+          <div class="base__share">
+            @@include("blocks/share-aside/share-aside.html")
+          </div>
+
+          <div class="base__decor base__decor_right-top">
+            <img src="images/cloud-01.png" alt="cloud" />
+          </div>
+          <div class="base__decor base__decor_left-center">
+            <img src="images/cloud-02.png" alt="cloud" />
+          </div>
         </div>
       </div>
     </div>
   </div>
 </main>
-<!--MAIN end-->
 
 @@include("blocks/footer/footer.html")
 @@include("blocks/foot/foot.html")

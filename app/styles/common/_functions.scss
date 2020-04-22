@@ -29,6 +29,21 @@
 @function round-float($number, $n) {
   $float: pow(10, $n);
   $value: round($number * $float) / $float;
+
+  @return $value;
+}
+
+@function floor-float($number, $n) {
+  $float: pow(10, $n);
+  $value: floor($number * $float) / $float;
+
+  @return $value;
+}
+
+@function ceil-float($number, $n) {
+  $float: pow(10, $n);
+  $value: ceil($number * $float) / $float;
+
   @return $value;
 }
 

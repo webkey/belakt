@@ -171,7 +171,7 @@ $base-color: #ee6e73 !default;
 $base-color-alt: invert($base-color) !default;
 // ----------------------------------------------------
 $highlight-color: #fe6c53 !default
-$highlight-color--hover: #fe6c53 !default
+$highlight-color_hover: #ff452c !default
 // ----------------------------------------------------
 $bg-color: #b8dedc !default;
 $bg-color-alt: #fbfffe !default;
@@ -204,7 +204,7 @@ $layout-page-space_sm: 1.6rem !default; // below $md
 // Layout content
 // ====================================================
 // Maximal width of content
-$layout-content-max-width: 144rem - ($layout-page-space * 2) !default;
+$layout-content-max-width: 92rem !default;
 
 // Maximal width of narrow content
 $layout-narrow-max-width: 75.4rem !default;
@@ -221,24 +221,6 @@ $layout-text-max-width: 80rem !default;
 // Grid layout
 // ====================================================
 $grid-space: 3rem 3rem !default;
-
-
-// Buttons
-// ====================================================
-$btn-height: 5rem !default;
-$btn-bg-color: $highlight-color !default;
-$btn-bg-hover-color: $highlight-color--hover !default;
-$btn-text-color: white !default;
-$btn-disabled-color: #ced4da !default;
-
-@mixin btn-disabled() {
-  cursor: default !important;
-  color: white !important;
-  border-color: $btn-disabled-color !important;
-  background-color: $btn-disabled-color !important;
-  box-shadow: none !important;
-  pointer-events: none !important;
-}
 
 
 // ====================================================

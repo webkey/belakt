@@ -1,12 +1,13 @@
 <div class="cat-slider fade-in-left js-cat-slider">
   <div class="swiper-container">
     <div class="swiper-wrapper">
+      @@if(alt === "true") {
       <div class="swiper-slide cat-slider__slide">
         @@include("blocks/widget-cat/widget-cat.html", {
         "image": "img-cat-01.png",
         "title": "Детские<br> смеси"
         })
-      </div>
+      </div>}
       <div class="swiper-slide cat-slider__slide">
         @@include("blocks/widget-cat/widget-cat.html", {
         "image": "img-cat-02.png",
@@ -33,10 +34,10 @@
       </div>
     </div>
   </div>
-  <div class="cat-slider__button cat-slider__button_prev js-cat-slider__button-prev">
+  <div class="cat-slider__button cat-slider__button_prev js-cat-slider__button_prev">
     @@include("svg/icon-slider-arrow-left.svg")
   </div>
-  <div class="cat-slider__button cat-slider__button_next js-cat-slider__button-next">
+  <div class="cat-slider__button cat-slider__button_next js-cat-slider__button_next">
     @@include("svg/icon-slider-arrow-right.svg")
   </div>
 </div>

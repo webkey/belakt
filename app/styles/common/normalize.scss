@@ -34,6 +34,11 @@
  * 6. Breaks words to prevent overflow in all browsers (opinionated).
  */
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 html {
   cursor: default; /* 1 */
   line-height: 1.5; /* 2 */
@@ -606,6 +611,21 @@ q {
   &::before,
   &::after {
     content: none;
+  }
+}
+
+a {
+  color: $link-color;
+  text-decoration: underline;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+
+  &:link {
+    cursor: pointer;
+  }
+
+  &:hover {
+    text-decoration: none;
   }
 }
 

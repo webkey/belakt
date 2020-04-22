@@ -1,0 +1,33 @@
+.develop {
+  display: inline-flex;
+  align-items: flex-end;
+  color: inherit;
+  text-decoration: none;
+
+  &__label {
+    margin-right: 0.5em;
+  }
+
+  &__logo {
+    display: block;
+    width: 14rem;
+    flex: 1 0;
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    background: url(../images/logo-dev.png) no-repeat center;
+    background-size: contain;
+    filter: grayscale(0.7) brightness(1.2);
+    transition: all $animation-speed;
+
+    &::before {
+      content: "";
+      display: block;
+      @include ratio(247, 84);
+    }
+
+    &:hover {
+      filter: grayscale(0) brightness(1);
+    }
+  }
+}

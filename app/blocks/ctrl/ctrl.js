@@ -1,9 +1,13 @@
-app.products = {
-  initEl: '.js-control-panel',
-  catEl: '.js-control-panel__category',
-  prevBtnEl: '.js-control-panel__prev',
-  nextBtnEl: '.js-control-panel__next',
+app.ctrl = {
+  initEl: '.js-ctrl',
+  catEl: '.js-ctrl__category',
+  prevBtnEl: '.js-ctrl__prev',
+  nextBtnEl: '.js-ctrl__next',
+  targetsEl: '.js-ctrl__targets',
+  targetEl: '.js-ctrl__target',
+  hideEl: '.js-ctrl__hide',
   slidesPerView: 3,
+  isActive: false,
   speed: 0,
   init() {
     this.run();
@@ -16,14 +20,14 @@ app.products = {
 
     if ($slider.length) {
       const slidesLength = $('.swiper-slide', $slider).length;
-      const initSlide = $slider.find('.current').index() || 0;
+      const initIdx = $slide.filter('.current').length && $slide.filter('.current').index() || 0;
 
       $slider
           .toggleClass('no-sliding', !(slidesLength > self.slidesPerView));
 
       app.controlPanelCat = new Swiper($slider, {
         init: false,
-        initialSlide: initSlide,
+        initialSlide: initIdx,
         speed: app.speed,
         direction: 'vertical',
         slidesPerView: 'auto',
@@ -35,8 +39,17 @@ app.products = {
 
       app.controlPanelCat.on('init', function () {
         $slider.addClass('is-loaded');
-        $slide.eq(initSlide).addClass('current');
-        app.showSlides(initSlide, $slide.eq(initSlide));
+
+        const $curSlide = $slide.eq(initIdx);
+        $curSlide.addClass('current');
+        app.visibleSlides(initIdx, $curSlide);
+
+        const $activeSlide = $slide.filter('.active');
+        app.isActive = !!$activeSlide.length;
+
+        if (app.isActive) {
+          app.showTarget($activeSlide.attr('href'));
+        }
       });
 
       app.controlPanelCat.init();
@@ -52,11 +65,21 @@ app.products = {
       e.preventDefault();
       const $curSl = $(this);
       const idx = $curSl.index();
-      $slide.removeClass('current').removeClass('active').removeClass('visible');
-      $curSl.addClass('current active visible');
 
-      app.showSlides(idx, $curSl);
+      if (!$curSl.hasClass('active')) {
+        $slide.removeClass('current').removeClass('active').removeClass('visible');
+        $curSl.addClass('current active visible');
 
+        app.visibleSlides(idx, $curSl);
+        app.isActive = true;
+
+        app.showTarget($curSl.attr('href'));
+      } else {
+        $slide.removeClass('active');
+
+        app.hideTarget();
+        app.isActive = false;
+      }
     })
 
     $body.on('click', app.prevBtnEl, function (e) {
@@ -68,6 +91,8 @@ app.products = {
         prevIdx = idx - 1;
 
         $slide.removeClass('active').removeClass('current').removeClass('visible');
+
+        if (app.isActive) app.hideTarget();
       }
 
       if (idx > 1) {
@@ -77,12 +102,22 @@ app.products = {
         $prevSl.prev().addClass('visible');
         $prevSl.next().addClass('visible');
         app.controlPanelCat.slideTo(prevIdx - 1, app.speed);
+
+        if (app.isActive) {
+          $prevSl.addClass('active');
+          app.showTarget($prevSl.attr('href'));
+        }
       } else if (idx > 0) {
         const $prevSl = $slide.eq(prevIdx);
 
         $prevSl.addClass('current visible');
         $prevSl.next().addClass('visible').next().addClass('visible');
         app.controlPanelCat.slideTo(prevIdx, app.speed);
+
+        if (app.isActive) {
+          $prevSl.addClass('active');
+          app.showTarget($prevSl.attr('href'));
+        }
       }
     })
 
@@ -95,6 +130,8 @@ app.products = {
         nextIdx = idx + 1;
 
         $slide.removeClass('active').removeClass('current').removeClass('visible');
+
+        if (app.isActive) app.hideTarget();
       }
 
       if (idx < slideLength - 2) {
@@ -104,16 +141,26 @@ app.products = {
         $nextSl.prev().addClass('visible');
         $nextSl.next().addClass('visible');
         app.controlPanelCat.slideTo(nextIdx - 1, app.speed);
+
+        if (app.isActive) {
+          $nextSl.addClass('active');
+          app.showTarget($nextSl.attr('href'));
+        }
       } else if (idx < slideLength - 1) {
         const $nextSl = $slide.eq(nextIdx);
 
         $nextSl.addClass('current visible');
         $nextSl.prev().addClass('visible').prev().addClass('visible');
         app.controlPanelCat.slideTo(nextIdx, app.speed);
+
+        if (app.isActive) {
+          $nextSl.addClass('active');
+          app.showTarget($nextSl.attr('href'));
+        }
       }
     })
   },
-  showSlides(idx, $curSl) {
+  visibleSlides(idx, $curSl) {
     const app = this;
     const slideLength = $('.swiper-slide', $(this.catEl)).length;
     $curSl.addClass('visible');
@@ -132,5 +179,19 @@ app.products = {
       $curSl.prev().addClass('visible').prev().addClass('visible');
       app.controlPanelCat.slideTo(idx, app.speed);
     }
+  },
+  showTarget(el) {
+    $(this.targetEl).removeClass('active');
+    $(el).addClass('active').closest(this.targetsEl).addClass('active');
+    $(el).trigger('showTarget');
+    $(this.hideEl).css({
+      opacity: 0,
+      pointerEvents: 'none',
+      visibility: 'hidden'
+    });
+  },
+  hideTarget() {
+    $(this.targetEl).add(this.targetsEl).removeClass('active');
+    $(this.hideEl).attr('style', '');
   }
 }

@@ -1,0 +1,80 @@
+.search {
+  display: block;
+  position: relative;
+  $width: 36rem;
+  flex-basis: $width;
+  max-width: $width;
+  margin: 0;
+  padding: 0;
+
+  &__field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    margin: 0;
+    padding: 0 5.9rem 0 1.9rem;
+    border: 0;
+    font-family: inherit;
+    font-size: 1.6rem;
+    line-height: 4rem;
+    color: inherit;
+    background: #ECF6F5;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.145952);
+    border-radius: 2rem;
+    
+    &::placeholder {
+      color: #525252;
+      opacity: 0.3;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__btn {
+    $size: 2.8rem;
+
+    display: block;
+    position: absolute;
+    right: 0.6rem;
+    top: 0.6rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: $size;
+    width: $size;
+    border-radius: $size;
+    font-size: 0;
+    line-height: 0;
+    color: #b8dedc;
+    cursor: pointer;
+    background: #fbfffe;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.214489);
+    transition: color $animation-speed;
+
+    svg {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 1.8rem;
+      height: 1.8rem;
+      margin: -0.9rem;
+
+      path {
+        fill: currentColor;
+      }
+    }
+
+    &:hover {
+      color: $highlight-color;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+.section {
+	margin-bottom: 6rem;
+
+	@include below($md) {
+		margin-bottom: 4rem;
+	}
+
+	&_space-smallest {
+		margin-bottom: 2.8rem;
+
+		@include below($md) {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&_space-small {
+		margin-bottom: 3.5rem;
+
+		@include below($md) {
+			margin-bottom: 2.5rem;
+		}
+	}
+
+	&_space-large {
+		margin-bottom: 8rem;
+
+		@include below($md) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	&_space-largest {
+		margin-bottom: 10rem;
+
+		@include below($md) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	&_breadcrumbs {
+		position: relative;
+		z-index: 2;
+		padding-top: 1.7rem;
+		margin-bottom: 2.2rem;
+		line-height: 1;
+
+		@include below($md) {
+			padding-top: 1.5rem;
+			margin-bottom: 2rem;
+		}
+	}
+
+	&_heading {
+		position: relative;
+		z-index: 2;
+		margin-bottom: 2.7rem;
+
+		@include below($md) {
+			margin-bottom: 2rem;
+		}
+
+		&_space-large {
+			margin-bottom: 5.7rem;
+
+			@include below($md) {
+				margin-bottom: 4rem;
+			}
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

@@ -1,3 +1,3 @@
 app.common.init();
-app.controlPanel.init();
+app.ctrl.init();
 app.catSlider.init();

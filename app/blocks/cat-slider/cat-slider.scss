@@ -10,8 +10,21 @@
     overflow: hidden;
   }
 
+  .swiper-container {
+    //overflow: visible;
+  }
+
   &__slide {
     position: relative;
+    transition: opacity $animation-speed, visibility $animation-speed;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0 1.5rem;
+
+    &.swiper-slide-visible {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__button {
@@ -29,7 +42,9 @@
     color: white;
     background-color: transparent;
     transition: color $animation-speed, transform 0.1s;
+    user-select: none;
     cursor: pointer;
+    z-index: 5;
 
     svg {
       $size: 6rem;
@@ -60,10 +75,9 @@
       outline: none;
     }
 
-    // :active
-    //&:not(.swiper-button-disabled):active {
-    //  transform: scale(0.9);
-    //}
+    :active &:not(.swiper-button-disabled):active {
+      transform: translate(0, 2px);
+    }
 
     // Disabled
     &.swiper-button-disabled {

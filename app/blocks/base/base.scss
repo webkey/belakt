@@ -5,42 +5,51 @@
     position: relative;
     display: flex;
     align-items: flex-start;
+  }
 
-    &-controls {
-      $width: 14.1rem;
+  &__aside {
+    $width: 14.1rem;
 
-      flex: 1 0 $width;
-      max-width: $width;
-      position: relative;
-      margin-right: 2rem;
-      z-index: 15;
+    flex: 1 0 $width;
+    max-width: $width;
+    position: relative;
+    margin-right: 2rem;
+    z-index: 15;
+  }
+
+  &__content {
+    position: relative;
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+
+  &__share {
+    $width: 7.8rem;
+
+    flex: 1 0 $width;
+    max-width: $width;
+    position: relative;
+    margin: 16rem 0 0 5.5rem;
+    z-index: 15;
+  }
+
+  &__decor {
+    position: absolute;
+
+    &_right-top {
+      right: 0;
+      top: -2rem;
+      z-index: 10;
     }
 
-    &-content {
-      position: relative;
-      flex-shrink: 0;
-      flex-grow: 1;
-    }
-
-    &-share {
-      $width: 7.8rem;
-
-      flex: 1 0 $width;
-      max-width: $width;
-      position: relative;
-      margin-left: 5.5rem;
-      padding-top: 16rem;
-      z-index: 15;
+    &_left-center {
+      left: 5rem;
+      top: 36rem;
     }
   }
 
+
   &__section {
-    margin-bottom: 6rem;
-
-    @include below($md) {
-      margin-bottom: 4rem;
-    }
-
     &_space-smallest {
       margin-bottom: 2.8rem;
 
@@ -54,6 +63,14 @@
 
       @include below($md) {
         margin-bottom: 2.5rem;
+      }
+    }
+
+    &_space-normal {
+      margin-bottom: 6rem;
+
+      @include below($md) {
+        margin-bottom: 4rem;
       }
     }
 
@@ -73,8 +90,9 @@
       }
     }
 
-    &_align-center {
-      text-align: center;
+    &_promo {
+      position: relative;
+      z-index: 14;
     }
 
     &:last-child {
@@ -82,7 +100,7 @@
     }
   }
 
-  &__products {
+  &__prods {
     position: absolute;
     left: 0;
     top: 0;
@@ -98,10 +116,5 @@
       width: 89.4rem;
       margin: 0 auto;
     }
-  }
-
-  &__promo {
-    position: relative;
-    z-index: 14;
   }
 }

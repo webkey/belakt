@@ -1,58 +1,144 @@
 .footer {
   position: relative;
+  z-index: 1;
+  color: #96a49f;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 
-  //z-index: 5
-
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: rgba(lightgreen, 0.8);
-}
-
-.footer-bottom {
-  $space-h: round-float(nth($grid-space, 2) / 2, 1);
-  $space-v: round-float(nth($grid-space, 1) / 2, 1);
-  position: relative;
-
-  // обрезать вытянутый маржинами по горизонтале дочерний элемент
-  overflow: hidden;
-
-  &__holder {
-
+  &__container {
     position: relative;
+    z-index: 3;
+    padding: 36rem 0 4rem;
+    overflow: hidden;
+  }
+
+  &__boxes {
     display: flex;
-    flex-wrap: wrap;
-    margin: 0 -#{$space-h} -#{$space-v};
+    align-items: flex-start;
+    margin: 0 -1rem;
+  }
+
+  &__box {
+    $width: 50%;
+
+    flex: 1 0 $width;
+    max-width: $width;
+    padding: 0 1rem;
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &__row {
+    margin: 0 -4.5rem 3rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__col {
-    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 4.5rem;
 
-    padding-left: $space-h;
-    padding-right: $space-h;
-    margin-bottom: $space-v;
-
-    @include below($sm) {
-      min-width: 100%;
+    &_develop {
+      margin-top: -2.6rem;
     }
 
-    &:first-child {
-      @include above($sm) {
-        text-align: left;
+    &_search {
+      margin-top: -0.7rem;
+    }
+  }
+
+  &__bg {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background: no-repeat center / 100% 100%;
+    }
+
+    &_back {
+      height: 93rem;
+
+      &::before {
+        background-image: url(../images/bg-footer-back.png);
+        top: 0;
+        left: -8.3rem;
+        height: 69.7rem;
+        width: calc(100vw + 16.6rem);
+        transform: translate(0, 10rem);
       }
     }
 
-    &:last-child {
-      @include above($sm) {
-        text-align: right;
+    &_front {
+      height: 42.6rem;
+      z-index: 2;
+
+      &::before {
+        top: -10rem;
+        left: -2.6rem;
+        height: 85.3rem;
+        background-image: url(../images/bg-footer-front.png);
+        width: calc(100vw + 11.2rem);
+        transform: translate(0, 10rem);
+      }
+    }
+  }
+
+  &__toy {
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    background: no-repeat center / contain;
+    z-index: 1;
+
+    &::before {
+      content: "";
+      display: block;
+    }
+
+    &_1 {
+      bottom: 30rem;
+      margin: 0 -51rem;
+      width: 18.1rem;
+      background: url(../images/toy-01.svg) no-repeat;
+
+      &::before {
+        @include ratio(181, 166);
       }
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    &_2 {
+      bottom: 31rem;
+      margin: 0 -26rem;
+      width: 22.5rem;
+      background: url(../images/toy-02.svg) no-repeat;
 
-      .no-touchevents &:hover {
-        text-decoration: underline;
+      &::before {
+        @include ratio(225, 164);
+      }
+    }
+
+    &_3 {
+      bottom: 31rem;
+      margin: 0 2.3rem;
+      width: 29.9rem;
+      background: url(../images/toy-03.svg) no-repeat;
+
+      &::before {
+        @include ratio(299, 85);
       }
     }
   }

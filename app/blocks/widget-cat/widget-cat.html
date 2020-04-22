@@ -1,10 +1,4 @@
 <div class="widget-cat@@if(context.mods){@@for (var i = 0; i < mods.length; i++){ widget-cat_`+mods[i]+`}}">
-	<div class="widget-cat__photo">
-		@@if(context.image){<img class="widget-cat__photo-img" src="images/temp/@@image" alt="@@title" />}
-	</div>
-	<div class="widget-cat__content">
-		<div class="widget-cat__content-layout">
-			<div class="widget-cat__title">@@title</div>
-		</div>
-	</div>
+  <img class="widget-cat__figure" src="images/temp/@@image" alt="@@title" />
+  <div class="widget-cat__title">@@title</div>
 </div>
