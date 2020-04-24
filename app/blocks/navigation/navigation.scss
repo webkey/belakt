@@ -39,33 +39,29 @@
 		&-el {
 			$el: &;
 
+			display: inline-block;
+			vertical-align: top;
 			position: relative;
+			padding: 0.6rem 1.2rem;
 			color: currentColor;
+			text-decoration: none;
+			transition: color $animation-speed;
+			border-radius: 2rem;
 			user-select: none;
 
 			@at-root {
 				// if link
 				a#{$el} {
-					text-decoration: none;
-					transition: color $animation-speed;
-
-					// js hover - class .hover
-					#{$li}:hover & {
+					// :hover
+					&:hover {
 						color: $link-color;
 					}
 				}
-			}
 
-			&-in {
-				display: inline-block;
-				vertical-align: top;
-				box-shadow: inset 0 -2px 0 transparent;
-
-				@at-root {
-					// .current
-					#{$li}.current & {
-						box-shadow: inset 0 -2px 0 $link-color;
-					}
+				// .current
+				#{$li}.current & {
+					color: #fff;
+					background-color: $link-color;
 				}
 			}
 		}

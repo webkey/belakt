@@ -18,6 +18,7 @@ var gulp             = require('gulp'),
     sassLint         = require('gulp-sass-lint'),
     uglify           = require('gulp-uglifyjs'),
     del              = require('del'),
+    rename           = require("gulp-rename"),
     imagemin         = require('gulp-imagemin'),
     pngquant         = require('imagemin-pngquant'),
     cache            = require('gulp-cache'),
@@ -33,6 +34,7 @@ var gulp             = require('gulp'),
 var libsJsLink = [
   'node_modules/jquery/dist/jquery.min.js',
   'node_modules/svg4everybody/dist/svg4everybody.min.js',
+  'node_modules/vanilla-lazyload/dist/lazyload.min.js',
   'node_modules/jquery-validation/dist/jquery.validate.min.js',
   'node_modules/select2/dist/js/select2.full.min.js',
   'node_modules/select2/dist/js/i18n/ru.js',
@@ -208,7 +210,13 @@ gulp.task('copyResources', function () {
       .pipe(gulp.dest(path.dist));
 });
 
-gulp.task('copyImages', function () {
+gulp.task('copyImages:blocks', function () {
+  return gulp.src(['app/blocks/**/icons/**/*'])
+      .pipe(rename({dirname: ''}))
+      .pipe(gulp.dest(path.dist + '/images'));
+});
+
+gulp.task('copyImages', ['copyImages:blocks'], function () {
   return gulp.src('app/images/**/*')
       .pipe(cache(imagemin({
         interlaced: true,

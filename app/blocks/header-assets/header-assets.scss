@@ -10,6 +10,7 @@
 	}
 
 	&__logo {
+		position: relative;
 		width: 19.7rem;
 		margin-right: 6.4rem;
 		flex-shrink: 0;
@@ -42,7 +43,7 @@
 		background: #fff;
 		box-shadow: 0 2px 4px rgba(#000, 0.268193);
 		border-radius: 3.9rem;
-		padding: 2.8rem 5.7rem;
+		padding: 2rem 5.7rem;
 		flex-grow: 1;
 		flex-shrink: 0;
 	}

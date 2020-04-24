@@ -1,0 +1,231 @@
+@mixin arrow($li) {
+  &-arrow {
+    $size: 4.2rem;
+
+    position: absolute;
+    right: -0.2rem;
+    top: 0;
+    height: $size;
+    width: $size;
+    font-size: 0;
+    line-height: 0;
+    transition: transform $animation-speed;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    &::before {
+      $size: 2rem;
+
+      content: '';
+      display: block;
+      position: absolute;
+      right: 50%;
+      top: 50%;
+      height: $size;
+      width: $size;
+      border-radius: $size;
+      margin: -#{round-float($size / 2, 1)};
+      background: #ceebe9 url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDEyIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEuNjY2MTQgMUw2LjI1ODg2IDZMMTAuNjMxMiAxIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) no-repeat center / 1.2rem;
+      transition: background-color $animation-speed;
+    }
+
+    &:hover {
+      &::before {
+        background-color: $highlight-color;
+      }
+    }
+
+    @at-root {
+      #{$li}.is-open & {
+        transform: rotate(0.5turn);
+      }
+    }
+  }
+}
+
+@mixin el($li) {
+  &-el {
+    $el: &;
+
+    display: block;
+    position: relative;
+    padding: 1.1rem 2.5rem;
+    @include font-alt-medium;
+    color: inherit;
+    user-select: none;
+    text-decoration: none;
+    transition: color $animation-speed;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0.8rem;
+      top: 1.7rem;
+      height: 0.7rem;
+      width: 0.7rem;
+      border-radius: 3rem;
+      background-color: $highlight-color;
+    }
+
+    @at-root {
+      #{$li}.has-drop:not(.hide-arrow) & {
+        padding-right: 0;
+      }
+
+      #{$li}.current & {
+        display: block;
+      }
+
+      // if link
+      a#{$el} {
+        &:hover {
+          color: $highlight-color;
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  $space-v: 1.2rem;
+  $arrow-space: 3.6rem;
+
+  display: block;
+  position: relative;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+
+  &__list {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    $li: &;
+
+    position: relative;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    &.has-drop:not(.hide-arrow) {
+      padding-right: $arrow-space;
+    }
+
+    @include el($li: #{$li});
+
+    @include arrow($li: #{$li});
+
+    &-drop {
+      display: none;
+      background-color: #ceebe9;
+      border-radius: 1rem;
+
+      @at-root {
+        #{$li}.has-drop:not(.hide-arrow) & {
+          margin-right: -#{$arrow-space};
+        }
+      }
+
+      @at-root {
+        #{$li}.current & {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.sub-menu {
+  $space-v: 1.2rem;
+  $arrow-space: 2.4rem;
+
+  display: block;
+
+  &__list {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    $li: &;
+
+    position: relative;
+
+    &.has-drop:not(.hide-arrow) {
+      padding-right: $arrow-space;
+    }
+
+    @include el($li: #{$li});
+
+    @include arrow($li: #{$li});
+
+    &-drop {
+      display: none;
+      background-color: #c0e4e2;
+
+      @at-root {
+        #{$li}.has-drop:not(.hide-arrow) & {
+          margin-right: -#{$arrow-space};
+        }
+      }
+
+      @at-root {
+        #{$li}.current & {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.sub-sub-menu {
+  $space-v: 1.2rem;
+  $arrow-space: 2.4rem;
+
+  display: block;
+
+  &__list {
+    display: block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    $li: &;
+
+    position: relative;
+
+    &.has-drop:not(.hide-arrow) {
+      padding-right: $arrow-space;
+    }
+
+    @include el($li: #{$li});
+
+    @include arrow($li: #{$li});
+
+    &-drop {
+      display: none;
+
+      @at-root {
+        #{$li}.has-drop:not(.hide-arrow) & {
+          margin-right: -#{$arrow-space};
+        }
+      }
+
+      @at-root {
+        #{$li}.current & {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.filters-set {
+	$space-h: 3rem;
+	$space-v: 2rem;
+
+	&__list {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		margin: 0 -#{floor-float($space-h / 2, 1)} -#{$space-v};
+		font-size: 1.4rem;
+		line-height: 1.7rem;
+	}
+
+	&__li {
+		position: relative;
+		flex: 1 0 100%;
+		max-width: 100%;
+		margin-bottom: $space-v;
+		padding: 0 #{floor-float($space-h / 2, 1)};
+
+		@for $i from 1 through 12 {
+			&_#{$i} {
+				$width: floor-float(100% / 12 * $i, 2);
+
+				flex-basis: $width;
+				max-width: $width;
+			}
+		}
+	}
+
+	&__title {
+		display: inline-block;
+		vertical-align: top;
+		font-weight: 300;
+	}
+
+	&__descr {
+		display: inline-block;
+		vertical-align: top;
+
+		&_full-width {
+			display: block;
+			padding-top: 1rem;
+		}
+	}
+}

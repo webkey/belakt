@@ -1,7 +1,10 @@
 app.common = {
   name: 'common',
   description: 'application support functions',
-  init() {
-    console.info('common js has initialized');
+  initLazyLoad() {
+    new LazyLoad({
+      threshold: 50,
+      elements_selector: '.lazy-load'
+    });
   },
 };

@@ -1,14 +1,37 @@
-.decor-cloud {
+.cloud {
   position: absolute;
+
+  &::before {
+    content: '';
+    display: block;
+
+    @include ratio(370, 251);
+  }
 
   &_right-top {
     right: 0;
     top: -2rem;
     z-index: 10;
+    width: 28.3rem;
   }
 
   &_left-center {
     left: 5rem;
     top: 36rem;
+    width: 37rem;
+  }
+
+  &_left-bottom {
+    left: -4rem;
+    bottom: 32rem;
+    width: 28.3rem;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }

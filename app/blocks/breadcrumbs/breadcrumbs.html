@@ -1,8 +1,19 @@
-<nav class="breadcrumbs" aria-label="breadcrumbs">
-  <ul class="breadcrumbs__list">
-    @@for (var i = 0; i < items.length; i++) {
-    <li class="breadcrumbs__item"><a href="#" title="`+items[i]+`">`+items[i]+`</a></li>
-    }
-    <li class="breadcrumbs__item current" aria-current="page">@@if(context.last){@@last}@@if(!context.last){Название раздела}</li>
-  </ul>
-</nav>
+<div class="breadcrumbs">
+	<ul itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs__list">
+		@@for (var i = 0; i < items.length; i++) {
+		<li class="breadcrumbs__li" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			<a class="breadcrumbs__el" itemprop="item" href="`+items[i].href+`" title="Перейти на страницу `+items[i].text+`">
+				<span class="breadcrumbs__el-in" itemprop="name">`+items[i].text+`</span>
+				<meta itemprop="position" content="`+i+`" />
+			</a>
+		</li>
+		}
+		@@if(context.current){
+		<li class="breadcrumbs__li" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+			<span class="breadcrumbs__el-in">
+				<span itemprop="name">@@current</span>
+			</span>
+		</li>
+		}
+	</ul>
+</div>

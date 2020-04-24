@@ -171,16 +171,17 @@ $base-color: #ee6e73 !default;
 $base-color-alt: invert($base-color) !default;
 // ----------------------------------------------------
 $highlight-color: #fe6c53 !default
-$highlight-color_hover: #ff452c !default
+$highlight-color_hover: #ff4a2b !default
+$highlight-color_active: #fb9281 !default
 // ----------------------------------------------------
 $bg-color: #b8dedc !default;
 $bg-color-alt: #fbfffe !default;
 // ----------------------------------------------------
 $text-color: #525252 !default;
-$text-color-muted: #6c757d !default;
+$text-color-muted: #9d9d9d !default;
 $text-color-light: #ccc !default;
 // ----------------------------------------------------
-$title-color: #ee6e73 !default;
+$title-color: #525252 !default;
 // ----------------------------------------------------
 $border-color: #ccc !default;
 // ----------------------------------------------------
@@ -477,8 +478,7 @@ $validate-feedback-height: 2.2rem;
 
 // Animation
 // ====================================================
-$animation-speed: 0.2s !default;
-$animation-speed-mouseleave: 0.35s !default;
+$animation-speed: 0.35s !default;
 
 
 // Header

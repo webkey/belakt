@@ -1,0 +1,50 @@
+<!--For example-->
+<div class="filters-set">
+	<div class="filters-set__list">
+		<div class="filters-set__li">
+			<div class="filters-set__title">Размер:</div>
+			<div class="filters-set__descr filters-set__descr_full-width">
+				<div class="form-list">
+					<div class="form-list__list form-list__list_space-small">
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-checkbox/form-checkbox.html", {"label": "2-спл", "name": "filters-size", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-checkbox/form-checkbox.html", {"label": "1.5-спл", "name": "filters-size", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-checkbox/form-checkbox.html", {"label": "Евро", "name": "filters-size", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="filters-set__li">
+			<div class="filters-set__title">Цвет:</div>
+			<div class="filters-set__descr filters-set__descr_full-width">
+				<div class="form-list">
+					<div class="form-list__list form-list__list_space-small form-list__list_2-cols">
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-color-check/form-color-check.html", {"type": "checkbox", "label": "Белый", "color": "#fff", "name": "form-color", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-color-check/form-color-check.html", {"type": "checkbox", "label": "Чёрный", "color": "#000", "name": "form-color", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-color-check/form-color-check.html", {"type": "checkbox", "label": "Голубой", "color": "#7798ab", "name": "form-color", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-color-check/form-color-check.html", {"type": "checkbox", "label": "Серый", "color": "#c4c4c4", "name": "form-color", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-color-check/form-color-check.html", {"type": "checkbox", "label": "Розовый", "color": "#cab3b1", "name": "form-color", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+						<div class="form-list__li form-list__li_space-small">
+							@@include("blocks/form-color-check/form-color-check.html", {"type": "checkbox", "label": "Зеленый", "color": "#86bc94", "name": "form-color", "classes": ["js-filter"], "checked": false, "disabled": false})
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

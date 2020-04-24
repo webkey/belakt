@@ -1,0 +1,66 @@
+@@include("blocks/head/head.html", {
+  "title": "Каталог",
+  "pageClass": ""
+})
+@@include("blocks/header/header.html", { "currentItem": "Каталог продукции" })
+
+<main class="main">
+  <div class="section section_base">
+    <div class="layout-page">
+      <div class="base">
+        <div class="base__layout">
+          <div class="base__aside">
+            @@include("blocks/ctrl/ctrl.html")
+          </div>
+          <div class="base__content content-bg js-ctrl__hide">
+            <!--Products-->
+            <div class="base__prods js-ctrl__targets">
+              <div class="base__prods-layout">
+                @@include("blocks/prods/prods.html")
+              </div>
+            </div>
+            <!--Products end-->
+
+            <div class="layout-side">
+              <div class="menu-app-overlay js-menu-app-overlay"></div>
+              <aside class="layout-side__aside js-menu-app js-prevent-hide">
+                @@include("blocks/menu/menu.html")
+              </aside>
+              <div class="layout-side__content">
+                <div class="base__section base__section_space-normal base__section_hide base__section_show-lg reset-line-height">
+                  <a href="#" class="menu-app-switcher js-menu-app-switcher" title="Открыть меню каталога">
+                    <span>Открыть меню каталога</span>
+                  </a>
+                </div>
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/heading/heading.html", {"title": "Каши"})
+                </div>
+
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/breadcrumbs/breadcrumbs.html", { "items": [{"href": "catalog.html", "text": "Каши"}], "current": "Безмолочные" })
+                </div>
+
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/catalog/catalog.html")
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="base__share">
+            @@include("blocks/share-aside/share-aside.html")
+          </div>
+
+          <div class="cloud cloud_right-top">
+            <img src="images/cloud.png" alt="cloud" />
+          </div>
+          <div class="cloud cloud_left-bottom">
+            <img src="images/cloud.png" alt="cloud" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+@@include("blocks/footer/footer.html")
+@@include("blocks/foot/foot.html")
