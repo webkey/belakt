@@ -83,6 +83,10 @@
         padding-right: 0;
       }
 
+      #{$li}.is-open & {
+        font-weight: bold;
+      }
+
       #{$li}.current & {
         &::before {
           display: block;

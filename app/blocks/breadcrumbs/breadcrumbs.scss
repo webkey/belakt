@@ -1,52 +1,52 @@
 .breadcrumbs {
-	margin-bottom: $bottom-space;
+  margin-bottom: $bottom-space;
 
-	&:last-child {
-		margin-bottom: 0;
-	}
+  &:last-child {
+    margin-bottom: 0;
+  }
 
-	&__list {
-		padding: 0;
-		margin: 0;
-		list-style: none;
-		cursor: default;
-		@include font-alt-bold;
-		font-size: 1.2rem;
-		line-height: 1.8rem;
-	}
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    cursor: default;
+    @include font-alt-bold;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
 
-	&__li {
-		display: inline;
-		padding-right: 1rem;
-		margin: 0;
+  &__li {
+    display: inline;
+    padding-right: 1rem;
+    margin: 0;
 
-		&::after {
-			display: inline-block;
-			vertical-align: top;
-			content: '';
-			height: 0.1rem;
-			width: 0.9rem;
-			margin: 0.6em 0 0 1rem;
-			background-color: #d7d7d7;
-		}
+    &::after {
+      display: inline-block;
+      vertical-align: top;
+      content: '';
+      height: 0.1rem;
+      width: 0.9rem;
+      margin: 0.6em 0 0 1rem;
+      background-color: #d7d7d7;
+    }
 
-		&:last-child {
-			&::after {
-				content: none;
-			}
-		}
-	}
+    &:last-child {
+      &::after {
+        content: none;
+      }
+    }
+  }
 
-	&__el {
-		$el: &;
+  &__el {
+    $el: &;
 
-		@include font-alt-medium;
-		color: $text-color;
-		text-decoration: none;
-		transition: color $animation-speed;
+    @include font-alt-medium;
+    color: $text-color;
+    text-decoration: none;
+    transition: color $animation-speed;
 
-		&:hover {
-			color: $link-color;
-		}
-	}
+    &:hover {
+      color: $highlight-color;
+    }
+  }
 }
