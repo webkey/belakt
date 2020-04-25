@@ -63,6 +63,7 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
+    "jquery-match-height": "^0.7.2",
     "jquery-validation": "^1.19.1",
     "object-fit-images": "^3.2.3",
     "select2": "^4.0.11",

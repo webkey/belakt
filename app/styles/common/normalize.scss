@@ -253,14 +253,6 @@ svg:not(:root) {
 /* Tabular data
  * ========================================================================== */
 
-/**
- * Collapse border spacing in all browsers (opinionated).
- */
-
-table {
-  border-collapse: collapse;
-}
-
 /* Forms
  * ========================================================================== */
 
@@ -598,6 +590,7 @@ img {
   border: 0;
   vertical-align: top;
   max-width: 100%;
+  height: auto;
 
   table & {
     max-width: none;
@@ -629,13 +622,14 @@ a {
   }
 }
 
-// Remove most spacing between table cells.
+// Collapse border spacing in all browsers (opinionated).
 table {
   border-collapse: collapse;
   border-spacing: 0;
 
   // Reset text style in td
-  td {
+  td,
+  th {
     font: inherit;
     color: inherit;
   }

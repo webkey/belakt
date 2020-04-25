@@ -152,8 +152,8 @@ $line-height-h6: round-float($line-height * 0.95, 1) !default;
 $bottom-space: $line-height !default;
 $bottom-section: round-float($line-height * 1.5, 1) !default;
 // ------ mob -----------------------------------------
-$bottom-space--mob: $line-height--mob !default;
-$bottom-section--mob: round-float($line-height--mob * 1.5, 1) !default;
+$bottom-space_mob: $line-height--mob !default;
+$bottom-section_mob: round-float($line-height--mob * 1.5, 1) !default;
 
 
 // Colors

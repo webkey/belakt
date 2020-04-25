@@ -41,7 +41,8 @@ var libsJsLink = [
   'node_modules/object-fit-images/dist/ofi.min.js',
   'app/libs/js/jquery.accordion-simple.js',
   'app/libs/js/jquery.switch-class.js',
-  'node_modules/swiper/dist/js/swiper.min.js'
+  'node_modules/swiper/dist/js/swiper.min.js',
+  'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js'
 ];
 
 var libsCssLink = [

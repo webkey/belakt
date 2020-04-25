@@ -1,0 +1,121 @@
+.product-card {
+  $width-main: 41.5%;
+  $space-h: 3.7rem;
+  $space-h_lg: 2.5rem;
+
+  @include clear;
+
+  &__main {
+    float: left;
+    clear: left;
+    width: $width-main;
+    min-height: 1rem;
+    margin-bottom: 4rem;
+
+    @include below($md) {
+      float: none;
+      width: auto;
+    }
+  }
+
+  &__heading {
+    float: right;
+    clear: right;
+    width: 100% - $width-main;
+    padding-left: $space-h;
+    min-height: 1rem;
+    margin-bottom: 1.7rem;
+
+    @include below($lg) {
+      padding-left: $space-h_lg;
+    }
+
+    @include below($md) {
+      float: none;
+      width: auto;
+      padding-left: 0;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__title {
+    @include font-alt-semi-bold;
+
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    margin: 0;
+  }
+
+  &__aside {
+    float: right;
+    clear: right;
+    width: 100% - $width-main;
+    padding-left: $space-h;
+    min-height: 1rem;
+    margin-bottom: 2rem;
+
+    @include below($lg) {
+      padding-left: $space-h_lg;
+    }
+
+    @include below($md) {
+      float: none;
+      width: auto;
+      padding-left: 0;
+    }
+
+    &-section {
+      margin-bottom: 2rem;
+
+      &_space-large {
+        margin-bottom: 3.8rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-title {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      color: inherit;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    &-text {
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: inherit;
+
+      @include below($sm) {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+
+  &__detail {
+    clear: both;
+
+    &-title,
+    h2 {
+      @include font-alt-bold;
+      font-size: 2.4rem;
+      margin: 0 0 2rem;
+
+      @include below($sm) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      margin: 0 0 1rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
-<div class="widget-prod@@if(context.mods){@@for (var i = 0; i < mods.length; i++){ widget-prod_`+mods[i]+`}}">
-  <a href="@@href" class="widget-prod__figure">
-    <img class="widget-prod__figure-img lazy-load" src="images/no-img.png" data-src="images/temp/@@image" alt="@@title" />
+<div itemscope itemtype="http://schema.org/Product" class="widget-prod@@if(context.mods){@@for (var i = 0; i < mods.length; i++){ widget-prod_`+mods[i]+`}}">
+  <a itemprop="url" href="@@href" class="widget-prod__figure">
+    <img itemprop="image" class="widget-prod__figure-img lazy-load" src="images/no-img.png" data-src="images/temp/@@image" alt="@@title" />
   </a>
-  <div class="widget-prod__title">
-    <a href="@@href">@@title</a>
+  <div itemprop="name" class="widget-prod__title">
+    <a href="@@href" itemprop="url">@@title</a>
   </div>
-  <div class="widget-prod__text">@@text</div>
+  <div itemprop="description" class="widget-prod__text">@@text</div>
   <div class="widget-prod__row">
     @@include("blocks/btn-default/btn-default.html", {"href": "@@href", "text": "Смотреть", "mods": ["sm-full-width"]})
   </div>

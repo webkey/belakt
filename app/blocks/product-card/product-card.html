@@ -1,0 +1,70 @@
+<div itemscope itemtype="http://schema.org/Product" class="product-card">
+  <div class="product-card__heading">
+    <h1 itemprop="name" class="product-card__title">Каша сухая безмолочная быстрорастворимая для детского питания рисово - гречневая с черносливом, с инулином</h1>
+  </div>
+  <div class="product-card__main">
+    @@include("blocks/product-card-image/product-card-image.html")
+  </div>
+  <div class="product-card__aside">
+    <div class="product-card__aside-section">
+      <div class="product-card__descr">Рекомендуется в качестве прикорма детям с 5-ти месяцев.</div>
+    </div>
+    <div itemprop="additionalProperty" class="product-card__aside-section">
+      @@include("blocks/feature-list/feature-list.html", {
+      "items": [{
+      "title": "Масса",
+      "descr": "200 г."
+      },{
+      "title": "Срок годности",
+      "descr": "18 мес"
+      }]})
+    </div>
+    <div itemprop="additionalProperty" class="product-card__aside-section">
+      @@include("blocks/dl-list/dl-list.html", {
+      "items": [{
+      "title": "Количество в тарном месте",
+      "descr": "18 пачек"
+      },{
+      "title": "Упаковка",
+      "descr": "Пакет из пленочных комбенированных материалов в картонной коробке"
+      }]})
+    </div>
+  </div>
+  <div itemprop="description" class="product-card__detail">
+    <h2 class="product-card__detail-title">Описание продукта</h2>
+    <p>Пребиотик (инулин) для легкого пищеварения и здоровой микрофлоры.</p>
+    <p>Не содержит глютена.</p>
+    <p>Рисовая крупа-источник углеводов, калия, кальция и витаминов необходимых для всех видов обмена веществ.</p>
+    <p>Гречневая мука содержит много углеводов, витаминов В1, В2, В6, РР, минеральных веществ: железа, благодаря чему эффективно повышает уровень гемоглобина крови; магния, нормализующего обменные процессы в нервной системе ребенка; фосфора и кальция, необходимых для развития костной системы и нервной ткани.</p>
+    <p>Чернослив богат солями фосфора, калия, витамином В1, регулирует двигательную активность кишечника.</p>
+    <div class="table-info">
+      <table>
+        <thead>
+          <tr>
+            <th><div>Основные питательные вещества</div></th>
+            <th><div>На одну порцию густой каши (25 г сухого продукта на 180 мл воды)</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div>жир, г</div></td>
+            <td><div>0,25</div></td>
+          </tr>
+          <tr>
+            <td><div>жир, г</div></td>
+            <td><div>0,25</div></td>
+          </tr>
+          <tr>
+            <td><div>жир, г</div></td>
+            <td><div>0,25</div></td>
+          </tr>
+          <tr>
+            <td><div>жир, г</div></td>
+            <td><div>0,25</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><mark>*</mark> Индивидуальную схему кормления Вашего ребенка поможет определить педиатор</p>
+  </div>
+</div>

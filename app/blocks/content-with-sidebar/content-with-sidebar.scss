@@ -6,13 +6,25 @@
   margin: 0 -#{round-float($space-h / 2, 1)};
 
   &__content {
+    position: relative;
     flex-grow: 1;
     padding: 0 #{round-float($space-h / 2, 1)};
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-right: 1px solid #e7eae9;
+    }
   }
 
   &__sidebar {
     $width: 29.4rem;
 
+    position: relative;
     flex: 1 0 $width;
     max-width: $width;
     padding: 0 #{round-float($space-h / 2, 1)};
@@ -36,6 +48,16 @@
     &.filters-menu-is-open {
       transform: translate(0, 0);
       transform: translateX(0);
+    }
+    
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      right: -1px;
+      top: 0;
+      bottom: 0;
+      border-right: 1px solid #e7eae9;
     }
   }
 }
