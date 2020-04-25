@@ -30,17 +30,15 @@
       transition: background-color $animation-speed;
     }
 
-    &:focus {
-      outline: none;
-
-      &::before {
-        box-shadow: 0 0 0 3px rgba($focus-color, 0.3);
-      }
-    }
+    //&:focus {
+    //  outline: none;
+    //
+    //  &::before {
+    //    box-shadow: 0 0 0 3px rgba($focus-color, 0.3);
+    //  }
+    //}
 
     &:hover {
-      outline: none;
-
       &::before {
         background-color: $highlight-color;
         box-shadow: none;
@@ -70,7 +68,7 @@
 
     &::before {
       content: '';
-      display: block;
+      display: none;
       position: absolute;
       left: 0.8rem;
       top: 1.7rem;
@@ -86,7 +84,9 @@
       }
 
       #{$li}.current & {
-        display: block;
+        &::before {
+          display: block;
+        }
       }
 
       // if link
@@ -108,7 +108,7 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: rgba(#fff, 0.3);
 
   &__list {
     display: block;
@@ -182,6 +182,7 @@
 
     &-drop {
       display: none;
+      border-radius: 1rem;
       background-color: #c0e4e2;
 
       @at-root {

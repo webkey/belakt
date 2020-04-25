@@ -24,7 +24,7 @@
           </div>
           <!--Products popup end-->
 
-          <div class="base__content base__content_bg anim-toggle-out js-ctrl__hide">
+          <div class="base__content anim-toggle-out js-ctrl__hide">
             <!--Main heading-->
             <div class="base__section base__section_heading">
               @@include("blocks/heading/heading.html", {"title": "Продукция"})
@@ -32,15 +32,15 @@
             <!--Main heading end-->
 
             <!--Content-->
-            <div class="layout-side">
+            <div class="content-with-sidebar">
               <!--Left menu-->
               <div class="menu-app-overlay js-menu-app-overlay"></div>
-              <aside class="layout-side__aside js-menu-app js-prevent-hide">
+              <aside class="content-with-sidebar__sidebar js-menu-app js-prevent-hide">
                 @@include("blocks/menu/menu.html")
               </aside>
               <!--Left menu end-->
 
-              <div class="layout-side__content">
+              <div class="content-with-sidebar__content">
                 <div class="base__section base__section_space-normal base__section_hide base__section_show-lg reset-line-height">
                   <a href="#" class="menu-app-switcher js-menu-app-switcher" title="Открыть меню каталога">
                     <span>Открыть меню каталога</span>
@@ -78,6 +78,8 @@
           <img src="images/cloud.png" alt="cloud" />
         </div>
         <!--Decoration elements end-->
+        
+        <div class="base__canvas anim-toggle-out js-ctrl__hide"></div>
       </div>
     </div>
   </div>

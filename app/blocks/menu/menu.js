@@ -14,17 +14,20 @@ app.menu = {
     }
   },
   events() {
-    const self = this;
+    const app = this;
     const $menu = $(this.initEl);
-    $menu.accordionSimple({
+    var menuInst = $menu.accordionSimple({
       // Elements
-      block: self.menuItemEl,
-      panel: self.menuPanelEl,
-      switcher: self.menuSwitcherEl,
+      block: app.menuItemEl,
+      panel: app.menuPanelEl,
+      switcher: app.menuSwitcherEl,
       // Additional settings
       collapsed: true,
       duration: 200,
     });
+
+    // Open current item
+    menuInst.accordionSimple('open', $('.current', $menu).closest(app.menuPanelEl));
   },
   toggleMenuPanel(el) {
     const $switcherEl = $(el);

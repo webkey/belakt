@@ -1,4 +1,4 @@
-.layout-side {
+.content-with-sidebar {
   $space-h: 3rem;
 
   display: flex;
@@ -10,14 +10,12 @@
     padding: 0 #{round-float($space-h / 2, 1)};
   }
 
-  &__aside {
+  &__sidebar {
     $width: 29.4rem;
 
     flex: 1 0 $width;
     max-width: $width;
     padding: 0 #{round-float($space-h / 2, 1)};
-    position: relative;
-    z-index: 1;
 
     @include below($lg) {
       position: fixed;
