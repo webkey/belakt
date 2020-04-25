@@ -1,5 +1,5 @@
 <div class="widget-rubric@@if(context.mods){@@for (var i = 0; i < mods.length; i++){ widget-rubric_`+mods[i]+`}}">
-  <img class="widget-rubric__figure" src="images/@@image" alt="@@title" />
+  <img class="widget-rubric__figure lazy-load" src="images/empty.png" data-src="images/@@image" alt="image description" />
   <div class="widget-rubric__content">
     <div class="widget-rubric__title">@@title</div>
     @@if(context.btn){

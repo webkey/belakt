@@ -1,19 +1,28 @@
 .widget-cat {
   $widget: &;
+
   display: flex;
   flex-flow: column wrap;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
 
   &__figure {
     display: block;
     margin: 0 auto 2rem;
+    transition: transform $animation-speed;
+    transform-origin: top center;
+
+    #{$widget}:hover & {
+      transform: scale3d(1.05, 1.05, 1);
+    }
   }
 
   &__title {
     @include font-alt-bold;
 
-    color: $text-color;
     font-size: 2.4rem;
     line-height: 2.8rem;
+    color: $text-color;
   }
 }

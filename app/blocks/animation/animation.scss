@@ -1,0 +1,79 @@
+.anim-toggle-out {
+  animation: toggleOutShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+
+  &.active {
+    animation: toggleOutHide 1.2s cubic-bezier(0, 1, 0.2, 1) both;
+  }
+}
+
+@keyframes toggleOutShow {
+  from {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    //transform: translate3d(30%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    //transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes toggleOutHide {
+  from {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    //transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    //transform: translate3d(30%, 0, 0);
+  }
+}
+
+.anim-toggle-in {
+  animation: toggleInHide 1s cubic-bezier(0, 1, 0.2, 1) both;
+
+  &.active {
+    animation: toggleInShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+  }
+}
+
+@keyframes toggleInShow {
+  from {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translate3d(-20%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes toggleInHide {
+  from {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translate3d(-20%, 0, 0);
+  }
+}

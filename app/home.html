@@ -8,42 +8,48 @@
   <div class="section section_base">
     <div class="layout-page">
       <div class="base">
-        <div class="base__layout">
-          <div class="base__aside">
-            @@include("blocks/ctrl/ctrl.html")
-          </div>
-          <div class="base__content">
-            <!--Products-->
-            <div class="base__prods js-ctrl__targets">
-              <div class="base__prods-layout">
-                @@include("blocks/prods/prods.html")
-              </div>
-            </div>
-            <!--Products end-->
+        <!--Controls panel-->
+        <div class="base__aside">
+          @@include("blocks/ctrl/ctrl.html")
+        </div>
+        <!--Controls panel end-->
 
-            <!--Promo-->
-            <div class="base__section base__section_promo js-ctrl__hide">
-              @@include("blocks/promo/promo.html")
-            </div>
-            <!--Promo end-->
-
-            <div class="base__section">
-              <div class="layout-content">
-                @@include("blocks/rubrics/rubrics.html")
-              </div>
+        <div class="base__body">
+          <!--Products popup-->
+          <div class="base__prods anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
             </div>
           </div>
-          <div class="base__share">
-            @@include("blocks/share-aside/share-aside.html")
-          </div>
+          <!--Products popup end-->
 
-          <div class="cloud cloud_right-top">
-            <img src="images/cloud.png" alt="cloud" />
+          <!--Promo-->
+          <div class="base__section base__section_promo anim-toggle-out js-ctrl__hide">
+            @@include("blocks/promo/promo.html")
           </div>
-          <div class="cloud cloud_left-center">
-            <img src="images/cloud.png" alt="cloud" />
+          <!--Promo end-->
+
+          <div class="base__section">
+            <div class="layout-content">
+              @@include("blocks/rubrics/rubrics.html")
+            </div>
           </div>
         </div>
+
+        <!--Share-->
+        <div class="base__share">
+          @@include("blocks/share-aside/share-aside.html")
+        </div>
+        <!--Share end-->
+
+        <!--Decoration elements-->
+        <div class="cloud cloud_right-top">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <div class="cloud cloud_left-center">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <!--Decoration elements end-->
       </div>
     </div>
   </div>

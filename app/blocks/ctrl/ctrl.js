@@ -6,6 +6,7 @@ app.ctrl = {
   targetsEl: '.js-ctrl__targets',
   targetEl: '.js-ctrl__target',
   hideEl: '.js-ctrl__hide',
+  closeEl: '.js-ctrl__close',
   slidesPerView: 3,
   isActive: false,
   speed: 0,
@@ -91,8 +92,6 @@ app.ctrl = {
         prevIdx = idx - 1;
 
         $slide.removeClass('active').removeClass('current').removeClass('visible');
-
-        if (app.isActive) app.hideTarget();
       }
 
       if (idx > 1) {
@@ -130,8 +129,6 @@ app.ctrl = {
         nextIdx = idx + 1;
 
         $slide.removeClass('active').removeClass('current').removeClass('visible');
-
-        if (app.isActive) app.hideTarget();
       }
 
       if (idx < slideLength - 2) {
@@ -158,6 +155,13 @@ app.ctrl = {
           app.showTarget($nextSl.attr('href'));
         }
       }
+    });
+
+    $body.on('click', app.closeEl, function (e) {
+      e.preventDefault();
+
+      app.hideTarget();
+      $slide.removeClass('active');
     })
   },
   visibleSlides(idx, $curSl) {
@@ -184,14 +188,10 @@ app.ctrl = {
     $(this.targetEl).removeClass('active');
     $(el).addClass('active').closest(this.targetsEl).addClass('active');
     $(el).trigger('showTarget');
-    $(this.hideEl).css({
-      opacity: 0,
-      pointerEvents: 'none',
-      visibility: 'hidden'
-    });
+    $(this.hideEl).addClass('active');
   },
   hideTarget() {
-    $(this.targetEl).add(this.targetsEl).removeClass('active');
-    $(this.hideEl).attr('style', '');
+    $(this.targetsEl).removeClass('active');
+    $(this.hideEl).removeClass('active');
   }
 }

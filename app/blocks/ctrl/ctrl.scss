@@ -1,6 +1,7 @@
 .ctrl {
   &__btn-catalog {
     position: relative;
+    overflow: hidden;
     z-index: 2;
     display: block;
     padding: 5.8rem 2rem 2.2rem;
@@ -10,9 +11,59 @@
     text-align: center;
     text-decoration: none;
     color: #fff;
-    background: $highlight-color url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzNCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAzQzAgMS4zNDMxNSAxLjM0MzE1IDAgMyAwSDMxQzMyLjY1NjkgMCAzNCAxLjM0MzE1IDM0IDNDMzQgNC42NTY4NSAzMi42NTY5IDYgMzEgNkgzQzEuMzQzMTUgNiAwIDQuNjU2ODUgMCAzWiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMCAxNUMwIDEzLjM0MzEgMS4zNDMxNSAxMiAzIDEySDMxQzMyLjY1NjkgMTIgMzQgMTMuMzQzMSAzNCAxNUMzNCAxNi42NTY5IDMyLjY1NjkgMTggMzEgMThIM0MxLjM0MzE1IDE4IDAgMTYuNjU2OSAwIDE1WiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMCAyN0MwIDI1LjM0MzEgMS4zNDMxNSAyNCAzIDI0SDMxQzMyLjY1NjkgMjQgMzQgMjUuMzQzMSAzNCAyN0MzNCAyOC42NTY5IDMyLjY1NjkgMzAgMzEgMzBIM0MxLjM0MzE1IDMwIDAgMjguNjU2OSAwIDI3WiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=) no-repeat 50% 1.8rem;
+    background-color: $highlight-color;
     box-shadow: 0 1px 6px rgba(#000, 0.110386);
     border-radius: 1.1rem;
+    transition: all $animation-speed;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    &::before {
+      border-radius: inherit;
+      background-color: $highlight-color_hover;
+      will-change: transform;
+      transform-origin: top left;
+      transition: all $animation-speed;
+      opacity: 0;
+      transform: translateZ(0) scaleX(0);
+    }
+
+    span {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+    }
+
+    &::after {
+      background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzNCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAzQzAgMS4zNDMxNSAxLjM0MzE1IDAgMyAwSDMxQzMyLjY1NjkgMCAzNCAxLjM0MzE1IDM0IDNDMzQgNC42NTY4NSAzMi42NTY5IDYgMzEgNkgzQzEuMzQzMTUgNiAwIDQuNjU2ODUgMCAzWiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMCAxNUMwIDEzLjM0MzEgMS4zNDMxNSAxMiAzIDEySDMxQzMyLjY1NjkgMTIgMzQgMTMuMzQzMSAzNCAxNUMzNCAxNi42NTY5IDMyLjY1NjkgMTggMzEgMThIM0MxLjM0MzE1IDE4IDAgMTYuNjU2OSAwIDE1WiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMCAyN0MwIDI1LjM0MzEgMS4zNDMxNSAyNCAzIDI0SDMxQzMyLjY1NjkgMjQgMzQgMjUuMzQzMSAzNCAyN0MzNCAyOC42NTY5IDMyLjY1NjkgMzAgMzEgMzBIM0MxLjM0MzE1IDMwIDAgMjguNjU2OSAwIDI3WiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=) no-repeat 50% 1.8rem;
+    }
+
+    &:hover {
+      outline: none;
+
+      &::before {
+        transform: translateZ(0) scaleX(1);
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      background-color: $highlight-color_active;
+      transform: translate(0, 1px);
+
+      &::before {
+        background-color: $highlight-color_active;
+      }
+    }
   }
 
   &__menu {
@@ -92,6 +143,11 @@
         }
       }
 
+      &:focus,
+      &:hover {
+        outline: none;
+      }
+
       &-title {
         @include font-alt-bold;
 
@@ -137,7 +193,7 @@
     color: black;
     border-radius: $size;
     background-color: white;
-    transition: box-shadow $animation-speed, transform 0.1s;
+    transition: all $animation-speed;
     cursor: pointer;
     user-select: none;
     box-shadow: 0 4px 20px rgba(black, 0);
@@ -153,14 +209,12 @@
     }
 
     // :hover
-    &:not(.swiper-button-disabled):hover {
-      color: white;
-      box-shadow: 0 4px 20px rgba(#000, 0.15);
+    &:hover {
+      outline: none;
     }
 
-    // :focus
-    &:focus {
-      outline: none;
+    &:not(.swiper-button-disabled):hover {
+      background-color: $highlight-color;
     }
 
     // :active

@@ -16,13 +16,13 @@ app.menu = {
   events() {
     const self = this;
     const $menu = $(this.initEl);
-    const menuAccordion = $menu.accordionSimple({
+    $menu.accordionSimple({
       // Elements
       block: self.menuItemEl,
       panel: self.menuPanelEl,
       switcher: self.menuSwitcherEl,
       // Additional settings
-      collapsed: false,
+      collapsed: true,
       duration: 200,
     });
   },

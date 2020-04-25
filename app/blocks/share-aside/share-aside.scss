@@ -24,11 +24,7 @@
     text-align: left;
     color: #afb5bb;
     text-decoration: none;
-    transition: opacity $animation-speed;
-
-    &:hover {
-      opacity: 0.7;
-    }
+    transition: all $animation-speed;
 
     & > span {
       @include hide-text;
@@ -51,6 +47,10 @@
 
     path {
       fill: currentColor;
+    }
+
+    &:hover {
+      color: $highlight-color;
     }
   }
 }

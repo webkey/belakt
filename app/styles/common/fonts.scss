@@ -68,4 +68,5 @@ $font-special: MrsWhite, Helvetica, Arial, sans-serif !default;
 // ====================================================
 @mixin font-special {
   font-family: $font-special;
+  font-weight: normal;
 }

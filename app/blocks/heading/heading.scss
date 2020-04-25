@@ -1,12 +1,12 @@
 .heading {
-	&__title {
-		font-weight: bold;
-		font-size: 4.2rem;
-		line-height: 5rem;
+  @include font-special;
+  font-size: 8rem;
+  line-height: 1.5;
+  color: #a7d5d2;
+  margin: 0;
 
-		@include below($md) {
-			font-size: 2.8rem;
-			line-height: 3.6rem;
-		}
-	}
+  @include below($md) {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+  }
 }

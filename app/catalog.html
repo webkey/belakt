@@ -8,32 +8,47 @@
   <div class="section section_base">
     <div class="layout-page">
       <div class="base">
-        <div class="base__layout">
-          <div class="base__aside">
-            @@include("blocks/ctrl/ctrl.html")
-          </div>
-          <div class="base__content content-bg js-ctrl__hide">
-            <!--Products-->
-            <div class="base__prods js-ctrl__targets">
-              <div class="base__prods-layout">
-                @@include("blocks/prods/prods.html")
-              </div>
-            </div>
-            <!--Products end-->
+        <!--Controls panel-->
+        <div class="base__aside">
+          @@include("blocks/ctrl/ctrl.html")
+        </div>
+        <!--Controls panel end-->
 
+        <div class="base__body">
+          <!--Products popup-->
+          <div class="base__prods anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
+              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
+            </div>
+          </div>
+          <!--Products popup end-->
+
+          <div class="base__content base__content_bg anim-toggle-out js-ctrl__hide">
+            <!--Main heading-->
+            <div class="base__section base__section_heading">
+              @@include("blocks/heading/heading.html", {"title": "Продукция"})
+            </div>
+            <!--Main heading end-->
+
+            <!--Content-->
             <div class="layout-side">
+              <!--Left menu-->
               <div class="menu-app-overlay js-menu-app-overlay"></div>
               <aside class="layout-side__aside js-menu-app js-prevent-hide">
                 @@include("blocks/menu/menu.html")
               </aside>
+              <!--Left menu end-->
+
               <div class="layout-side__content">
                 <div class="base__section base__section_space-normal base__section_hide base__section_show-lg reset-line-height">
                   <a href="#" class="menu-app-switcher js-menu-app-switcher" title="Открыть меню каталога">
                     <span>Открыть меню каталога</span>
                   </a>
                 </div>
+
                 <div class="base__section base__section_space-normal">
-                  @@include("blocks/heading/heading.html", {"title": "Каши"})
+                  @@include("blocks/sub-heading/sub-heading.html", {"title": "Каши"})
                 </div>
 
                 <div class="base__section base__section_space-normal">
@@ -45,18 +60,24 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="base__share">
-            @@include("blocks/share-aside/share-aside.html")
-          </div>
-
-          <div class="cloud cloud_right-top">
-            <img src="images/cloud.png" alt="cloud" />
-          </div>
-          <div class="cloud cloud_left-bottom">
-            <img src="images/cloud.png" alt="cloud" />
+            <!--Content end-->
           </div>
         </div>
+
+        <!--Share-->
+        <div class="base__share">
+          @@include("blocks/share-aside/share-aside.html")
+        </div>
+        <!--Share end-->
+
+        <!--Decoration elements-->
+        <div class="cloud cloud_right-top">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <div class="cloud cloud_left-bottom">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <!--Decoration elements end-->
       </div>
     </div>
   </div>

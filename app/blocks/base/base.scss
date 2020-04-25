@@ -1,11 +1,7 @@
 .base {
   position: relative;
-
-  &__layout {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-  }
+  display: flex;
+  align-items: flex-start;
 
   &__aside {
     $width: 14.1rem;
@@ -13,16 +9,20 @@
     flex: 1 0 $width;
     max-width: $width;
     position: relative;
-    margin-right: 2rem;
+    margin-right: 4rem;
     z-index: 15;
+  }
+
+  &__body {
+    position: relative;
+    flex-grow: 1;
   }
 
   &__content {
     position: relative;
-    flex-shrink: 0;
-    flex-grow: 1;
+    transition: opacity $animation-speed, visibility $animation-speed, transform $animation-speed;
 
-    &.content-bg {
+    &_bg {
       position: relative;
 
       &::before {
@@ -95,6 +95,10 @@
       z-index: 14;
     }
 
+    &_heading {
+      margin-bottom: 1rem;
+    }
+
     &_hide {
       display: none;
 
@@ -149,16 +153,49 @@
     left: 0;
     top: 0;
     width: 100%;
-    display: none;
     z-index: 14;
-
-    &.active {
-      display: block;
-    }
 
     &-layout {
       width: 89.4rem;
       margin: 0 auto;
+    }
+
+    &-close {
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      margin: 2rem 0 0 5rem;
+      padding-left: 3rem;
+      @include font-alt-bold;
+
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      color: #fff;
+      text-decoration: none;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0.6rem;
+        z-index: -1;
+        height: 1.6rem;
+        width: 1.6rem;
+        background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMyAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuNSAxNy41TDIuNSA5LjkxMzA3TDEwLjUgMi41IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) no-repeat center / contain;
+        transition: transform $animation-speed, opacity $animation-speed;
+        opacity: 0;
+        transform: translate3d(1.5rem, 0, 0);
+      }
+
+      &:hover {
+        outline: none;
+
+        &::before {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
+      }
     }
   }
 }

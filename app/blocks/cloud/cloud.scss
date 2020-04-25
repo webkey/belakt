@@ -25,6 +25,10 @@
     left: -4rem;
     bottom: 32rem;
     width: 28.3rem;
+
+    .layout-side & {
+      left: -22rem;
+    }
   }
 
   img {
