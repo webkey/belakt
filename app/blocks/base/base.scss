@@ -18,13 +18,14 @@
 
   &__body {
     position: relative;
-    padding-bottom: 10rem;
+    padding: 5rem 0 10rem;
     flex-grow: 1;
+    z-index: 20;
   }
 
   &__content {
     position: relative;
-    transition: opacity $animation-speed, visibility $animation-speed, transform $animation-speed;
+    padding: 0 0 0;
   }
 
   &__share {
@@ -141,7 +142,6 @@
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 14;
 
     &-layout {
       width: 89.4rem;
@@ -207,5 +207,14 @@
         right: 11rem;
       }
     }
+  }
+
+  &__btn-more {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 0;
+    top: 7rem;
   }
 }

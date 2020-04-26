@@ -3,7 +3,7 @@
   $space-v_lg: 4rem;
 
   &__item {
-    padding: 0 0 #{$space-v};
+    margin: 0 0 #{$space-v};
 
     @include below($lg) {
       padding: 0 0 #{$space-v_lg};

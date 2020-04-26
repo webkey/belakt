@@ -1,0 +1,81 @@
+.btn-to-top {
+  position: fixed;
+  right: -1.2rem;
+  bottom: 12.5rem;
+  z-index: 998;
+  width: 9.5rem;
+  padding: 1.6rem 1.3rem;
+  font-family: "circe-regular", Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  border-radius: 1.4rem;
+  background-color: rgba(46, 46, 46, 0.8);
+  transition: background-color 0.35s 0s, transform 0.35s 0.3s;
+  -ms-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+  transform: translate3d(100%, 0, 0);
+  box-shadow: 0 0.2rem 3.3rem rgba(0, 0, 0, 0.5);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+
+  @include below($md) {
+    width: 8.4rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    border-radius: 0.8rem;
+    padding: 1.2rem 1rem;
+    bottom: 2.5rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    right: 2.5rem;
+    height: 2.2rem;
+    width: 2.2rem;
+    margin: -0.8rem 0;
+    border-radius: 2.2rem;
+    background-color: #1e917c;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 1rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDExIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTkuNDE5OTIgNS4zOTg0NEw1LjIwOTk2IDFMMSA1LjM5ODQ0IiBzdHJva2U9IiMxMjEyMTIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+);
+    transition: transform 0.5s 0.3s, opacity 0.35s 0.3s;
+    opacity: 0;
+    transform: translateZ(0) rotate(-180deg);
+  }
+
+  span {
+    display: block;
+  }
+
+  &.btn-to-top--show {
+    transition: background-color 0.35s, transform 0.35s 0s;
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
+
+    &::after {
+      transition: transform 0.5s 0.2s, opacity 0.35s 0.2s;
+      opacity: 1;
+      transform: translateZ(0) rotate(0);
+    }
+  }
+
+  &:hover {
+    background-color: rgba(78, 78, 78, 0.8);
+  }
+
+  &:active span {
+    -ms-transform: scale(0.85);
+    transform: scale(0.85);
+  }
+}

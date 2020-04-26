@@ -1,0 +1,41 @@
+.news-previews {
+  $space-h: 1.8rem;
+
+  margin: 0 -#{round-float($space-h / 2, 1)};
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  @include below($sm) {
+    display: block;
+  }
+
+  &__item {
+    $width: 33.33%;
+
+    flex: 1 0 $width;
+    max-width: $width;
+    padding: 0 #{round-float($space-h / 2, 1)};
+
+    &:not(:nth-last-child(-n+3)) {
+      padding-bottom: 6rem;
+    }
+
+    @include below($lg) {
+      &:not(:nth-last-child(-n+2)) {
+        padding-bottom: 4rem;
+      }
+    }
+
+    @include below($md) {
+      $width: 50%;
+
+      flex: 1 0 $width;
+      max-width: $width;
+    }
+
+    @include below($sm) {
+      max-width: none;
+    }
+  }
+}

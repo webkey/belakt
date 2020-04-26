@@ -1,0 +1,77 @@
+@@include("blocks/head/head.html", {
+  "title": "Беллакт - Новость",
+  "pageClass": ""
+})
+@@include("blocks/header/header.html", { "currentItem": "Новости" })
+
+<main class="main">
+  <div class="section section_base">
+    <div class="layout-page">
+      <div class="base">
+        <!--Controls panel-->
+        <div class="base__aside">
+          @@include("blocks/ctrl/ctrl.html")
+        </div>
+        <!--Controls panel end-->
+
+        <div class="base__body">
+          <!--Products popup-->
+          <div class="base__prods anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
+              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
+            </div>
+          </div>
+          <!--Products popup end-->
+
+          <div class="base__content anim-toggle-out js-ctrl__hide">
+            <!--Main heading-->
+            <div class="base__section base__section_heading">
+              @@include("blocks/heading/heading.html", {"title": "Новости", "href": "news.html"})
+            </div>
+            <!--Main heading end-->
+
+            <!--Content-->
+            <div class="content">
+              <div class="content__body">
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/breadcrumbs/breadcrumbs.html", { "items": [{"href": "catalog.html", "text": "Главная"}, {"href": "news.html", "text": "Новости"}] })
+                </div>
+
+                <div class="base__section news-one">
+                  <time class="date" datetime="2019-12-19">20.12.19</time>
+                  <img src="images/temp/img-news-01-lg.jpg" alt="image description" />
+                  <h2>Новинка в каталоге для самых маленьких самое натуральное</h2>
+                  <p>Рисовая крупа-источник углеводов, калия, кальция и витаминов необходимых для всех видов обмена веществ. Гречневая мука содержит много углеводов, витаминов В1, В2, В6, РР, минеральных веществ: железа, благодаря чему эффективно повышает уровень гемоглобина крови; магния, нормализующего обменные процессы в нервной системе ребенка; фосфора и кальция, необходимых для развития костной системы и нервной ткани. Чернослив богат солями фосфора, калия, витамином В1, регулирует двигательную активность кишечника.</p>
+                  <p>Рисовая крупа-источник углеводов, калия, кальция и витаминов необходимых для всех видов обмена веществ. Гречневая мука содержит много углеводов, витаминов В1, В2, В6, РР, минеральных веществ: железа, благодаря чему эффективно повышает уровень гемоглобина крови; магния, нормализующего обменные процессы в нервной системе ребенка; фосфора и кальция, необходимых для развития костной системы и нервной ткани. Чернослив богат солями фосфора, калия, витамином В1, регулирует двигательную активность кишечника.Рисовая крупа-источник углеводов, калия, кальция и витаминов необходимых для всех видов обмена веществ. Гречневая мука содержит много углеводов, витаминов В1, В2, В6, РР, минеральных веществ: железа, благодаря чему эффективно повышает уровень гемоглобина крови; магния, нормализующего обменные процессы в нервной системе ребенка; фосфора и кальция, необходимых для развития костной системы и нервной ткани. Чернослив богат солями фосфора, калия, витамином В1, регулирует двигательную активность кишечника.</p>
+                </div>
+              </div>
+            </div>
+            <!--Content end-->
+          </div>
+        </div>
+
+        <!--Share-->
+        <div class="base__share">
+          @@include("blocks/share-aside/share-aside.html")
+        </div>
+        <!--Share end-->
+
+        <!--Decoration elements-->
+        <div class="cloud cloud_right-top">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <div class="cloud cloud_left-bottom">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <!--Decoration elements end-->
+        
+        <div class="base__canvas anim-toggle-out js-ctrl__hide"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+@@include("blocks/btn-to-top/btn-to-top.html")
+@@include("blocks/footer/footer.html")
+@@include("blocks/foot/foot.html")

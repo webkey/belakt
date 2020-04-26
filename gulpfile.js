@@ -42,12 +42,14 @@ var libsJsLink = [
   'app/libs/js/jquery.accordion-simple.js',
   'app/libs/js/jquery.switch-class.js',
   'node_modules/swiper/dist/js/swiper.min.js',
-  'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js'
+  'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js',
+  'node_modules/tooltipster/dist/js/tooltipster.bundle.min.js'
 ];
 
 var libsCssLink = [
   'node_modules/select2/dist/css/select2.min.css',
-  'node_modules/swiper/dist/css/swiper.min.css'
+  'node_modules/swiper/dist/css/swiper.min.css',
+  'node_modules/tooltipster/dist/css/tooltipster.bundle.min.css'
 ];
 
 var path = {

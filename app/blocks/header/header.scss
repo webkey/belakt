@@ -3,7 +3,7 @@
   color: #000;
   width: 100%;
   min-width: $layout-page-min-width;
-  z-index: 20;
+  z-index: 50;
 
   // mobile menu
   @include below($lg) {

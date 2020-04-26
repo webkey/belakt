@@ -1,0 +1,25 @@
+.news-one {
+  img {
+    display: block;
+    margin-bottom: 2.5rem;
+  }
+
+  &-title,
+  h2 {
+    @include font-alt-bold;
+    font-size: 2.4rem;
+    margin: 0 0 2rem;
+
+    @include below($sm) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    margin: 0 0 1rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

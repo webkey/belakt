@@ -1,12 +1,9 @@
 @@include("blocks/head/head.html", {
-  "title": "Список страниц",
+  "title": "Беллакт - Новости",
   "pageClass": ""
 })
-@@include("blocks/header/header.html", { "currentItem": "Список страниц" })
+@@include("blocks/header/header.html", { "currentItem": "Новости" })
 
-
-
-<!--MAIN-->
 <main class="main">
   <div class="section section_base">
     <div class="layout-page">
@@ -30,25 +27,26 @@
           <div class="base__content anim-toggle-out js-ctrl__hide">
             <!--Main heading-->
             <div class="base__section base__section_heading">
-              @@include("blocks/heading/heading.html", {"title": "Список страниц"})
+              @@include("blocks/heading/heading.html", {"title": "Новости"})
             </div>
             <!--Main heading end-->
 
             <!--Content-->
-            <ol class="list-of-pages">
-              <li><a href="catalog.html">catalog.html - Каталог</a></li>
-              <li><a href="home.html">home.html - Главная</a></li>
-              <li><a href="news.html">news.html - Новости</a></li>
-              <li><a href="product-card.html">product-card.html - Карточка товара</a></li>
-            </ol>
-            <style>
-              .list-of-pages li a {
-                color: inherit;
-              }
-              .list-of-pages li a::after {
-                content: ' (' attr(href) ')';
-              }
-            </style>
+            <div class="content">
+              <div class="content__body">
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/breadcrumbs/breadcrumbs.html", { "items": [{"href": "catalog.html", "text": "Главная"}], "current": "Новости" })
+                </div>
+
+                <div class="base__section">
+                  @@include("blocks/news-previews/news-previews.html")
+                </div>
+
+                <div class="base__btn-more">
+                  @@include("blocks/btn-more/btn-more.html")
+                </div>
+              </div>
+            </div>
             <!--Content end-->
           </div>
         </div>
@@ -67,16 +65,13 @@
           <img src="images/cloud.png" alt="cloud" />
         </div>
         <!--Decoration elements end-->
-
+        
         <div class="base__canvas anim-toggle-out js-ctrl__hide"></div>
       </div>
     </div>
   </div>
 </main>
 
-<!--MAIN end-->
-
-
-
+@@include("blocks/btn-to-top/btn-to-top.html")
 @@include("blocks/footer/footer.html")
 @@include("blocks/foot/foot.html")

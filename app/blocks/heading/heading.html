@@ -1,1 +1,2 @@
-<h1 class="heading"><a href="catalog.html">@@title</a></h1>
+@@if(!context.href){<h1 class="heading">@@title</h1>}
+@@if(context.href){<h1 class="heading"><a href="@@href">@@title</a></h1>}

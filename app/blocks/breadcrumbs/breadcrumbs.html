@@ -2,7 +2,7 @@
   <ul itemscope itemtype="http://schema.org/BreadcrumbList" class="breadcrumbs__list">
     @@for (var i = 0; i < items.length; i++) {
     <li class="breadcrumbs__li" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-      <a class="breadcrumbs__el" itemprop="item" href="`+items[i].href+`" title="Перейти на страницу `+items[i].text+`">
+      <a class="breadcrumbs__el" itemprop="item" href="`+items[i].href+`">
         <span class="breadcrumbs__el-in" itemprop="name">`+items[i].text+`</span>
         <meta itemprop="position" content="`+i+`" />
       </a>

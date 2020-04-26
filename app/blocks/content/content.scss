@@ -1,23 +1,29 @@
-.content-with-sidebar {
+.content {
+  $block-name: &;
   $space-h: 3rem;
 
   display: flex;
   align-items: flex-start;
   margin: 0 -#{round-float($space-h / 2, 1)};
 
-  &__content {
+  &__body {
     position: relative;
     flex-grow: 1;
+    max-width: 100%;
     padding: 0 #{round-float($space-h / 2, 1)};
 
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      border-right: 1px solid #e7eae9;
+    @at-root {
+      #{$block-name}__sidebar ~ & {
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          border-right: 1px solid #e7eae9;
+        }
+      }
     }
   }
 

@@ -90,7 +90,27 @@ body {
   }
 }
 
-.main {
-  background: url(../images/bg-stars.png) no-repeat 40% 10rem;
-  z-index: 2;
+.note {
+  padding: 2.6rem 1.6rem;
+  font-style: italic;
+  background-color: rgba(#ceebe9, 0.3);
+  border-radius: 1rem;
+
+  mark {
+    background: none;
+    color: #f00;
+  }
+}
+
+.date {
+  display: inline-block;
+  vertical-align: top;
+  @include font-alt-medium;
+
+  font-size: 1.2rem;
+  line-height: 1;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.4rem;
+  background: #dbefee;
 }
