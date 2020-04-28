@@ -11,10 +11,15 @@
   &__figure {
     display: block;
     margin: -3.9rem auto 5rem;
+    max-width: 84%;
   }
 
   &__content {
     padding: 0 2rem;
+
+    @include below($lg) {
+      padding: 0;
+    }
 
     &-layout {
       text-align: left;

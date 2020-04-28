@@ -30,14 +30,6 @@
       transition: background-color $animation-speed;
     }
 
-    //&:focus {
-    //  outline: none;
-    //
-    //  &::before {
-    //    box-shadow: 0 0 0 3px rgba($focus-color, 0.3);
-    //  }
-    //}
-
     &:hover {
       &::before {
         background-color: $highlight-color;
@@ -113,6 +105,11 @@
   line-height: 1.8rem;
   border-radius: 1rem;
   background-color: rgba(#fff, 0.3);
+
+  @include below($lg) {
+    padding: 1rem 0;
+    background: #e7f3f2;
+  }
 
   &__list {
     display: block;

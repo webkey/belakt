@@ -7,11 +7,11 @@
   position: fixed;
   right: 2.5rem;
   bottom: 42%;
-  z-index: 998;
+  z-index: 45;
   height: $size;
   width: $size;
-  color: #b0d8d5;
   border-radius: $size;
+  color: #b0d8d5;
   background-color: #fff;
   transition: background-color $animation-speed, color $animation-speed, transform $animation-speed;
   transform: translate3d(20rem, 0, 0) rotate(0.5turn);
@@ -20,10 +20,31 @@
   -webkit-tap-highlight-color: transparent;
   outline: none;
 
+  @include below($lg) {
+    $size: 5rem;
+
+    height: $size;
+    width: $size;
+    border-radius: $size;
+    right: $layout-page-space_md;
+    bottom: 21rem;
+    box-shadow: 0 2px 4px rgba(#000, 0.27);
+  }
+
+  @include below($sm) {
+    right: $layout-page-space_sm;
+    bottom: 7.5rem;
+  }
+
   svg {
     display: block;
     height: 2.8rem;
     width: 2.8rem;
+
+    @include below($lg) {
+      height: 1.8rem;
+      width: 1.8rem;
+    }
 
     path {
       stroke: currentColor;

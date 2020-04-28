@@ -6,7 +6,6 @@
 
   @include below($lg) {
     display: block;
-    margin-bottom: 2rem;
   }
 
   &__logo {
@@ -23,6 +22,11 @@
 
     @include below($xxl) {
       width: 15rem;
+    }
+
+    @include below($lg) {
+      margin: 0;
+      width: 10.2rem;
     }
 
     &::before {
@@ -56,6 +60,83 @@
 
     @include below($xxl) {
       padding: 2rem;
+    }
+
+    // mobile menu
+    @include below($lg) {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      padding: 0;
+      width: 28.3rem;
+      max-width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      background-color: rgba(white, 0.95);
+      border-radius: 0;
+      z-index: 75;
+      will-change: transform, opacity;
+      transition: all $animation-speed;
+      opacity: 0.8;
+      $translate: -100%, 0;
+
+      transform: translate($translate);
+      transform: translate3d($translate, 0);
+    }
+
+    @include below($sm) {
+      width: 100%;
+    }
+
+    &.mob-menu-is-open {
+      // mobile menu
+      @include below($lg) {
+        opacity: 1;
+        box-shadow: 0 0 2rem rgba(black, 0.35);
+        $translate: 0, 0;
+        transform: translate($translate);
+        transform: translate3d($translate, 0);
+      }
+    }
+
+    &-holder {
+      // mobile menu
+      @include below($lg) {
+        overflow: hidden;
+        padding: 3rem #{$layout-page-space_md};
+      }
+
+      @include below($md) {
+        padding: 2rem #{$layout-page-space_sm};
+      }
+    }
+  }
+
+  &__menu-overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($bg-color, 0.8);
+    z-index: 70;
+    will-change: opacity;
+    transition: opacity $animation-speed, visibility $animation-speed;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+
+    @include below($lg) {
+      display: block;
+    }
+
+    &.mob-menu-is-open {
+      @include below($lg) {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }

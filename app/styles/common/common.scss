@@ -53,7 +53,7 @@ body {
     padding-right: $layout-page-space_md;
   }
 
-  @include below($md) {
+  @include below($sm) {
     padding-left: $layout-page-space_sm;
     padding-right: $layout-page-space_sm;
   }

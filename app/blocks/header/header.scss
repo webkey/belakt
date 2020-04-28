@@ -5,55 +5,8 @@
   min-width: $layout-page-min-width;
   z-index: 50;
 
-  // mobile menu
-  @include below($lg) {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 28.3rem;
-    max-width: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    background-color: rgba(white, 0.95);
-    box-shadow: 0 0 2rem transparent;
-    z-index: 22;
-    will-change: transform, opacity;
-    transition: all $animation-speed;
-    opacity: 0.8;
-    $translate: -100%, 0;
-
-    transform: translate($translate);
-    transform: translate3d($translate, 0);
-  }
-
-  &.mob-menu-is-open {
-    // mobile menu
-    @include below($lg) {
-      opacity: 1;
-      box-shadow: 0 0 2rem rgba(black, 0.35);
-      $translate: 0, 0;
-      transform: translate($translate);
-      transform: translate3d($translate, 0);
-    }
-  }
-
   &__holder {
     position: relative;
-  }
-
-  &__frame {
-    // mobile menu
-    @include below($lg) {
-      overflow: hidden;
-      padding: #{$header-height_sm} #{$layout-page-space_md} 2rem;
-    }
-
-    @include below($md) {
-      overflow: hidden;
-      padding: #{$header-height_sm} #{$layout-page-space_sm} 2rem;
-    }
   }
 
   &__container {
@@ -72,8 +25,7 @@
     }
 
     @include below($lg) {
-      display: block;
-      padding: 0;
+      min-height: $header-height_sm;
     }
   }
 
@@ -93,42 +45,72 @@
     flex: 1 0 $width;
     max-width: $width;
     z-index: 5;
+
+    @include below($lg) {
+      display: none;
+    }
   }
 
+  &__mob-menu-control {
+    $size: 5rem;
 
-  &__mob-menu-close {
-    height: $header-height_sm;
-    width: 7rem;
-    position: absolute;
-    left: 0;
-    top: 0;
+    height: $size;
+    width: $size;
+    border-radius: $size;
+    position: fixed;
+    z-index: 75;
+    top: 1.5rem;
+    right: $layout-page-space_md;
     font-size: 0;
     line-height: 0;
     cursor: pointer;
-    z-index: 20;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(#000, 0.27);
     display: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 
     @include below($lg) {
       display: block;
     }
 
-    @include below($md) {
-      width: 5.4rem;
+    @include below($sm) {
+      right: $layout-page-space_sm;
     }
 
-    &::before {
+    &::before,
+    &::after {
       content: "";
       display: block;
       position: absolute;
       left: 50%;
       top: 50%;
-      height: 2.4rem;
-      width: 2.4rem;
+      height: 1.8rem;
+      width: 1.8rem;
       transform: translate(-50%, -50%);
-      background-repeat: no-repeat;
-      background-position: 50%;
-      background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB4PSI0LjQxNDE4IiB5PSIzIiB3aWR0aD0iMjQiIGhlaWdodD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoNDUgNC40MTQxOCAzKSIgZmlsbD0iYmxhY2siLz48cmVjdCB4PSIzIiB5PSIyMCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjIiIHRyYW5zZm9ybT0icm90YXRlKC00NSAzIDIwKSIgZmlsbD0iYmxhY2siLz48L3N2Zz4=);
-      background-size: contain;
+      background: no-repeat center / contain;
+      transition: all $animation-speed;
+    }
+
+    &::before {
+      //background-image: url(data:image/svg;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNyAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE3IiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIGZpbGw9IiNCOERFREMiLz4KPHJlY3QgeT0iNSIgd2lkdGg9IjE3IiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIGZpbGw9IiNCOERFREMiLz4KPHJlY3QgeT0iMTAiIHdpZHRoPSIxNyIgaGVpZ2h0PSIzIiByeD0iMS41IiBmaWxsPSIjQjhERURDIi8+Cjwvc3ZnPgo=);
+      background-image: url(../images/icon-mob-menu.svg);
+    }
+
+    &::after {
+      //background-image: url(data:image/svg;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAxNSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeD0iMi41NTAyOSIgeT0iMC40Mjg5MjUiIHdpZHRoPSIxNyIgaGVpZ2h0PSIzIiByeD0iMS41IiB0cmFuc2Zvcm09InJvdGF0ZSg0NSAyLjU1MDI5IDAuNDI4OTI1KSIgZmlsbD0iI0I4REVEQyIvPgo8cmVjdCB4PSIwLjQyODk1NSIgeT0iMTIuNDQ5NyIgd2lkdGg9IjE3IiBoZWlnaHQ9IjMiIHJ4PSIxLjUiIHRyYW5zZm9ybT0icm90YXRlKC00NSAwLjQyODk1NSAxMi40NDk3KSIgZmlsbD0iI0I4REVEQyIvPgo8L3N2Zz4K);
+      background-image: url(../images/icon-mob-close.svg);
+      opacity: 0;
+    }
+
+    &.mob-menu-is-open {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
     }
   }
 }

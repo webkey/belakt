@@ -7,6 +7,11 @@
   padding: 3.7rem 0 0;
   z-index: 5;
 
+  @include below($lg) {
+    display: block;
+    padding: 2rem 0 3rem;
+  }
+
   &__aside {
     $width: 14.1rem;
 
@@ -15,6 +20,10 @@
     position: relative;
     margin-right: 3.1rem;
     z-index: 15;
+
+    @include below($lg) {
+      display: none;
+    }
   }
 
   &__body {
@@ -22,11 +31,19 @@
     padding: 2.2rem 0 12rem;
     flex-grow: 1;
     z-index: 20;
+
+    @include below($lg) {
+      padding: 0;
+    }
   }
 
   &__content {
     position: relative;
     padding: 0 2rem;
+
+    @include below($lg) {
+      padding: 0;
+    }
   }
 
   &__share {
@@ -39,6 +56,15 @@
     margin: 4.5rem 0 0 7rem;
     padding-top: 4rem;
     z-index: 15;
+
+    @include below($lg) {
+      max-width: none;
+      margin: 0;
+      padding: 4rem 0 0;
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__section {
@@ -89,6 +115,16 @@
 
     &_heading {
       margin: 0 0 2.6rem 0.9rem;
+
+      @include below($lg) {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+      }
+
+      @include below($md) {
+        margin-bottom: 1rem;
+      }
     }
 
     &_hide {
@@ -151,6 +187,10 @@
       padding: 0 0 0 8rem;
     }
 
+    @include below($lg) {
+      display: none;
+    }
+
     &-layout {
       width: 89.4rem;
       max-width: 100%;
@@ -203,23 +243,73 @@
 
   &__canvas {
     position: absolute;
-    left: -2rem;
+    left: 0;
     top: -0.9rem;
-    right: -2rem;
+    right: 0;
     bottom: -2rem;
     z-index: -2;
     background: url(../images/bg-content.png) no-repeat center / 100% 100%;
+
+    @include below($lg) {
+      top: 0;
+      bottom: 0;
+      background: #fff;
+      border-radius: 3rem;
+    }
 
     @at-root {
       // If aside has added
       #{$base}__aside ~ & {
         left: 16.1rem;
+
+        @include below($lg) {
+          left: -2rem;
+        }
+
+        @include below($md) {
+          left: -1.5rem;
+        }
       }
 
       // If share has added
       #{$base}__aside ~ & {
         right: 13.6rem;
+
+        @include below($lg) {
+          right: -2rem;
+        }
+
+        @include below($md) {
+          right: -1.5rem;
+        }
       }
+    }
+
+    &::before,
+    &::after {
+      $size: 20rem;
+
+      content: '';
+      position: absolute;
+      display: none;
+      height: $size;
+      width: $size;
+      border-radius: $size;
+      background: #fff;
+
+      @include below($lg) {
+        display: block;
+      }
+    }
+
+    &::before {
+      left: -0.2rem;
+      top: -1.5rem;
+    }
+
+    &::after {
+      right: -0.2rem;
+      bottom: -1.5rem;
     }
   }
 
@@ -230,5 +320,11 @@
     justify-content: center;
     height: 0;
     top: 9.6rem;
+
+    @include below($lg) {
+      height: auto;
+      top: auto;
+      margin: 2rem 0 -2rem;
+    }
   }
 }

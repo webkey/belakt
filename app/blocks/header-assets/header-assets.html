@@ -1,9 +1,12 @@
 <div class="header-assets">
-	<div class="header-assets__logo">
-			@@if(context.currentItem == "Home"){<span class="header-assets__logo-inner">Беллакт</span>}
-			@@if(context.currentItem != "Home"){<a href="home.html" class="header-assets__logo-inner">Беллакт</a>}
-	</div>
-	<div class="header-assets__nav">
-		@@include("blocks/nav/nav.html", {"currentItem": "@@currentItem"})
-	</div>
+  <div class="header-assets__logo">
+    @@if(context.currentItem == "Home"){<span class="header-assets__logo-inner">Беллакт</span>}
+    @@if(context.currentItem != "Home"){<a href="home.html" class="header-assets__logo-inner">Беллакт</a>}
+  </div>
+  <div class="header-assets__nav js-mob-menu js-mob-menu-prevent-hide">
+    <div class="header-assets__nav-holder">
+      @@include("blocks/nav/nav.html", {"currentItem": "@@currentItem"})
+    </div>
+  </div>
+  <div class="header-assets__menu-overlay js-mob-menu-overlay"></div>
 </div>

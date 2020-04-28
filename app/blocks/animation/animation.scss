@@ -1,8 +1,10 @@
 .anim-toggle-out {
-  animation: toggleOutShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+  @include above($lg) {
+    animation: toggleOutShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
 
-  &.active {
-    animation: toggleOutHide 1.2s cubic-bezier(0, 1, 0.2, 1) both;
+    &.active {
+      animation: toggleOutHide 1.2s cubic-bezier(0, 1, 0.2, 1) both;
+    }
   }
 }
 
@@ -43,10 +45,12 @@
 }
 
 .anim-toggle-in {
-  animation: toggleInHide 1s cubic-bezier(0, 1, 0.2, 1) both;
+  @include above($lg) {
+    animation: toggleInHide 1s cubic-bezier(0, 1, 0.2, 1) both;
 
-  &.active {
-    animation: toggleInShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+    &.active {
+      animation: toggleInShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+    }
   }
 }
 

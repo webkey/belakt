@@ -13,6 +13,15 @@
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 
+  @include below($lg) {
+    $size: 5rem;
+
+    height: $size;
+    width: $size;
+    border-radius: $size;
+    box-shadow: 0 0 2px rgba(#000, 0.5);
+  }
+
   svg {
     display: block;
     position: absolute;
@@ -21,6 +30,12 @@
     height: 4.7rem;
     width: 4rem;
     margin: -2.3rem -2rem;
+
+    @include below($lg) {
+      height: 2.8rem;
+      width: 2.4rem;
+      margin: -1.4rem -1.2rem;
+    }
 
     path {
       fill: currentColor;

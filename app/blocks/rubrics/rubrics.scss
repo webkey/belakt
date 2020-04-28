@@ -3,18 +3,29 @@
   $space-h_lg: 1.8rem;
   $space-v: 3rem;
 
+  @include below($md) {
+    margin: 0 -#{$layout-page-space_md};
+  }
+
+  @include below($sm) {
+    margin: 0 -#{$layout-page-space_sm};
+  }
+
   &__list {
     margin: 0 -#{round-float($space-h / 2, 1)} -#{$space-v};
     display: flex;
     align-items: flex-start;
     flex-wrap: wrap;
 
-    @include below($lg) {
-      margin: 0 -#{round-float($space-h_lg / 2, 1)};
+    @include below($md) {
+      overflow-y: auto;
+      flex-wrap: nowrap;
+      margin: 0;
+      padding: 4rem #{$layout-page-space_md} 2rem;
     }
 
     @include below($sm) {
-      display: block;
+      padding: 4rem #{$layout-page-space_sm} 2rem;
     }
   }
 
@@ -26,22 +37,16 @@
     padding: 0 #{round-float($space-h / 2, 1)};
 
     @include below($md) {
-      $width: 50%;
-
-      flex: 1 0 $width;
-      max-width: $width;
-      padding: 0 #{round-float($space-h_lg / 2, 1)};
-    }
-
-    @include below($sm) {
-      max-width: none;
+      flex-basis: 26rem;
+      max-width: 26rem;
+      padding: 0 2rem 0 0;
     }
 
     &:not(:last-child) {
       margin-bottom: 4rem;
 
-      @include below($lg) {
-        margin-bottom: 3rem;
+      @include below($md) {
+        margin: 0;
       }
     }
   }

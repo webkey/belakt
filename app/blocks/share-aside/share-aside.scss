@@ -1,11 +1,16 @@
 .share-aside {
-  $space: 0.7rem;
-
   overflow: hidden;
   background-color: #fff;
   border-radius: 3.9rem;
   box-shadow: 0 0 2px rgba(#000, 0.268193);
   padding: 2.1rem 0 4.2rem;
+
+  @include below($lg) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.4rem 1.8rem 0.7rem;
+  }
 
   &__item {
     $size: 3.8rem;
@@ -23,7 +28,11 @@
     transition: all $animation-speed;
 
     &:not(:last-child) {
-      margin-bottom: $space;
+      margin: 0 auto 0.7rem;
+
+      @include below($lg) {
+        margin: 0 0.2rem 0.7rem;
+      }
     }
 
     & > span {
@@ -43,6 +52,15 @@
       height: $size;
       width: $size;
       margin: -#{$int} 0 0 -#{$int};
+
+      @include below($lg) {
+        $size: 2.4rem;
+        $int: round-float($size / 2, 1);
+
+        height: $size;
+        width: $size;
+        margin: -#{$int} 0 0 -#{$int};
+      }
     }
 
     path {

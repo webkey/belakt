@@ -4,11 +4,33 @@
   font-size: 1.8rem;
   line-height: 2.2rem;
 
-  &__container {
+  @include below($lg) {
+    overflow: hidden;
+  }
+
+  @include below($sm) {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &__holder {
     position: relative;
     z-index: 3;
-    padding: 28.5rem 0 5.3rem;
+    padding: 28.5rem 0 0;
     overflow: hidden;
+
+    @include below($lg) {
+      padding: 19.5rem 0 0;
+    }
+  }
+
+  &__container {
+    padding-bottom: 5.3rem;
+    background-color: #fff;
+
+    @include below($lg) {
+      padding-bottom: 4rem;
+    }
   }
 
   &__boxes {
@@ -20,6 +42,15 @@
     @include below($xxxl) {
       padding: 0 4rem 0 8rem;
     }
+
+    @include below($lg) {
+      padding: 0;
+    }
+
+    @include below($sm) {
+      display: block;
+      margin: 0;
+    }
   }
 
   &__box {
@@ -29,8 +60,19 @@
     max-width: $width;
     padding: 0 1rem;
 
+    @include below($sm) {
+      padding: 0;
+      max-width: none;
+      margin-bottom: 1rem;
+    }
+
     &:last-child {
       text-align: right;
+
+      @include below($sm) {
+        text-align: left;
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -40,6 +82,14 @@
     @include below($xxl) {
       margin-left: -2rem;
       margin-right: -2rem;
+    }
+
+    @include below($lg) {
+      margin: 0 0 4rem;
+    }
+
+    @include below($sm) {
+      margin: 0 0 3rem;
     }
 
     &:last-child {
@@ -57,13 +107,28 @@
       padding-right: 2rem;
     }
 
-    &_develop {
-      margin-top: -2.6rem;
+    @include below($lg) {
+      display: block;
+      padding: 0;
+    }
+
+    &:not(:last-child) {
+      @include below($lg) {
+        margin-bottom: 2.5rem;
+      }
     }
 
     &_search {
       width: 36.3rem;
-      margin-bottom: -1.7rem;
+      margin: -0.9rem 0;
+
+      @include below($lg) {
+        width: auto;
+      }
+
+      @include below($sm) {
+        margin: 0;
+      }
     }
   }
 
@@ -71,7 +136,6 @@
     overflow: hidden;
     position: absolute;
     left: 0;
-    bottom: 0;
     width: 100%;
 
     &::before {
@@ -86,6 +150,7 @@
 
     &_back {
       height: 80rem;
+      bottom: 0;
 
       &::before {
         background-image: url(../images/bg-footer-back.png);
@@ -94,11 +159,20 @@
         height: 69.7rem;
         width: calc(100vw + 16.6rem);
       }
+
+      @include below($lg) {
+        display: none;
+      }
     }
 
     &_front {
       height: 36.6rem;
       z-index: 2;
+      top: 7rem;
+
+      @include below($lg) {
+        top: -3.5rem;
+      }
 
       &::before {
         top: 0;
@@ -106,6 +180,19 @@
         height: 77.8rem;
         background-image: url(../images/bg-footer-front.png);
         width: calc(100vw + 11.2rem);
+
+        @include below($lg) {
+          $width: 155.2rem;
+
+          width: $width;
+          height: 77.8rem;
+          left: 50%;
+          top: 12rem;
+          margin-left: -#{floor-float($width / 2, 1)};
+          background-size: 100% 100%;
+          transform: scale(0.64);
+          transform-origin: top center;
+        }
       }
     }
   }
@@ -130,9 +217,24 @@
     }
 
     &_1 {
-      bottom: 24.7rem;
+      //bottom: 24.7rem;
+      top: 2.5rem;
       margin: 0 -50.7rem;
       width: 18.1rem;
+
+      @include below($lg) {
+        width: 10.6rem;
+        margin: 0 -35rem;
+        top: 5.5rem;
+      }
+
+      @include below($md) {
+        margin: 0 -25rem;
+      }
+
+      @include below($sm) {
+        margin: 0 -14rem;
+      }
 
       &::before {
         @include ratio(181, 166);
@@ -144,9 +246,24 @@
     }
 
     &_2 {
-      bottom: 27.6rem;
+      //bottom: 27.6rem;
+      top: -0.2rem;
       margin: 0 -28.3rem;
       width: 22.5rem;
+
+      @include below($lg) {
+        top: 4.8rem;
+        margin: 0 -19.3rem;
+        width: 13.1rem;
+      }
+
+      @include below($md) {
+        margin: 0 -9rem;
+      }
+
+      @include below($sm) {
+        margin: 0 1rem;
+      }
 
       &::before {
         @include ratio(225, 164);
@@ -158,9 +275,25 @@
     }
 
     &_3 {
-      bottom: 26rem;
+      //bottom: 26rem;
+      top: 9.3rem;
       margin: 0 5.6rem;
       width: 29.9rem;
+
+      @include below($lg) {
+        top: 9.9rem;
+        margin: 0 0.8rem;
+        width: 17.5rem;
+      }
+
+      @include below($md) {
+        top: 10.2rem;
+        margin: 0 2.8rem;
+      }
+
+      @include below($sm) {
+        display: none;
+      }
 
       &::before {
         @include ratio(299, 85);

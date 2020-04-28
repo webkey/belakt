@@ -6,11 +6,20 @@
   align-items: flex-start;
   margin: 0 -#{round-float($space-h / 2, 1)};
 
+  @include below($lg) {
+    display: block;
+    margin: 0;
+  }
+
   &__body {
     position: relative;
     flex-grow: 1;
     max-width: 100%;
     padding: 1.1rem #{round-float($space-h / 2, 1)};
+
+    @include below($lg) {
+      padding: 2rem 0 0;
+    }
 
     @at-root {
       #{$block-name}__sidebar ~ & {
@@ -22,6 +31,10 @@
           top: 14rem;
           bottom: 2rem;
           border-right: 1px solid #e7eae9;
+
+          @include below($lg) {
+            display: none;
+          }
         }
       }
     }
@@ -36,24 +49,10 @@
     padding: 0 #{round-float($space-h / 2, 1)};
 
     @include below($lg) {
-      position: fixed;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 32rem;
-      padding: 0;
+      width: auto;
       max-width: none;
-      border: 0;
-      z-index: 9995;
-      transform: translate(-100%, 0);
-      transform: translate3d(-100%, 0, 0);
-      will-change: transform;
-      transition: transform 0.25s;
-    }
-
-    &.filters-menu-is-open {
-      transform: translate(0, 0);
-      transform: translateX(0);
+      padding: 0;
+      display: none;
     }
     
     &::after {
@@ -64,6 +63,10 @@
       top: 14rem;
       bottom: 2rem;
       border-right: 1px solid #e7eae9;
+
+      @include below($lg) {
+        display: none;
+      }
     }
   }
 }

@@ -21,7 +21,7 @@
       padding-bottom: 6rem;
     }
 
-    @include below($lg) {
+    @include below($md) {
       &:not(:nth-last-child(-n+2)) {
         padding-bottom: 4rem;
       }
