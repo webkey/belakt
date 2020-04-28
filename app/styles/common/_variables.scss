@@ -6,9 +6,9 @@ $xs: 0;
 $sm: 576px;
 $md: 768px;
 $lg: 992px;
-$xl: 1200px;
+$xl: 1280px;
 $xxl: 1366px;
-$xxxl: 1600px;
+$xxxl: 1440px;
 $hd: 1920px;
 
 
@@ -197,15 +197,16 @@ $layout-page-max-width: 144rem !default;
 // Maximal wrapper width
 $layout-max-wrap: 192rem !default;
 // Site spaces
-$layout-page-space: 3rem !default;
+$layout-page-space-l: 5.5rem !default;
+$layout-page-space-r: 2.5rem !default;
 $layout-page-space_md: 2.5rem !default; // below $xxs
-$layout-page-space_sm: 1.6rem !default; // below $md
+$layout-page-space_sm: 2rem !default; // below $md
 
 
 // Layout content
 // ====================================================
 // Maximal width of content
-$layout-content-max-width: 92rem !default;
+$layout-content-max-width: 93.2rem !default;
 
 // Maximal width of narrow content
 $layout-narrow-max-width: 75.4rem !default;
@@ -304,7 +305,7 @@ $animation-speed: 0.35s !default;
 
 // Header
 // ====================================================
-$header-height: 14rem !default;
+$header-height: 15.4rem !default;
 $header-height_sm: 14rem !default;
 
 

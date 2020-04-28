@@ -1,16 +1,11 @@
 .catalog {
-  $space-v: 8rem;
-  $space-v_lg: 4rem;
-
   &__item {
-    margin: 0 0 #{$space-v};
+    &:not(:last-child) {
+      margin-bottom: 6.9rem;
 
-    @include below($lg) {
-      padding: 0 0 #{$space-v_lg};
-    }
-
-    &:last-child {
-      margin-bottom: 0;
+      @include below($lg) {
+        margin-bottom: 4rem;
+      }
     }
   }
 }

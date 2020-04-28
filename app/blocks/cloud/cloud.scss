@@ -4,29 +4,33 @@
   user-select: none;
   z-index: -1;
 
+  @include below($xl) {
+    display: none;
+  }
+
   &::before {
     content: '';
     display: block;
 
-    @include ratio(370, 251);
+    @include ratio(502, 383);
   }
 
   &_right-top {
-    right: 0;
-    top: -2rem;
-    width: 28.3rem;
+    right: -5.7rem;
+    top: -2.1rem;
+    width: 38.4rem;
   }
 
   &_left-center {
-    left: 5rem;
-    top: 36rem;
-    width: 37rem;
+    left: 4.9rem;
+    top: 39rem;
+    width: 50.3rem;
   }
 
   &_left-bottom {
-    left: -4rem;
-    bottom: 32rem;
-    width: 28.3rem;
+    left: -9rem;
+    bottom: -3rem;
+    width: 38.4rem;
 
     .layout-side & {
       left: -22rem;

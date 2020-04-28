@@ -4,6 +4,14 @@
 html {
   font-size: 62.5%;
 
+  @include below($xl) {
+    font-size: 48%;
+  }
+
+  @include below($lg) {
+    font-size: 62.5%;
+  }
+
   // Блокировать скролла
   &.css-scroll-fixed:not(.open-only-mob) {
     @include scroll-blocked;
@@ -23,7 +31,8 @@ body {
   font-size: $font-size;
   line-height: $line-height;
   color: $text-color;
-  background: $bg-color url(../images/empty.png) no-repeat left top fixed;
+  background: $bg-color url(../images/bg-stars.png) no-repeat 43.9% 14rem;
+  overflow-x: hidden;
 
   // ------ mob -----------------------------------------
   @include below($sm) {
@@ -36,10 +45,10 @@ body {
   max-width: $layout-page-max-width;
   margin-left: auto;
   margin-right: auto;
-  padding-left: $layout-page-space;
-  padding-right: $layout-page-space;
+  padding-left: $layout-page-space-l;
+  padding-right: $layout-page-space-r;
 
-  @include below($xxl) {
+  @include below($xxxl) {
     padding-left: $layout-page-space_md;
     padding-right: $layout-page-space_md;
   }

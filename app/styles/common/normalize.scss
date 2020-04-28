@@ -34,11 +34,6 @@
  * 6. Breaks words to prevent overflow in all browsers (opinionated).
  */
 
-html,
-body {
-  overflow-x: hidden;
-}
-
 html {
   cursor: default; /* 1 */
   line-height: 1.5; /* 2 */

@@ -12,10 +12,18 @@
   &__logo {
     position: relative;
     width: 19.7rem;
-    margin-right: 6.4rem;
+    margin: 0.6rem 6.4rem 0 0.1rem;
     flex-shrink: 0;
     background: url(../images/logo.png) no-repeat;
     background-size: contain;
+
+    @include below($xxxl) {
+      margin-right: 3rem;
+    }
+
+    @include below($xxl) {
+      width: 15rem;
+    }
 
     &::before {
       content: "";
@@ -43,7 +51,11 @@
     background: #fff;
     box-shadow: 0 2px 4px rgba(#000, 0.268193);
     border-radius: 3.9rem;
-    padding: 2rem 5.7rem;
+    padding: 2.1rem 4.5rem 2.5rem;
     flex-grow: 1;
+
+    @include below($xxl) {
+      padding: 2rem;
+    }
   }
 }

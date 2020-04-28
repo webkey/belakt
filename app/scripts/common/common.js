@@ -7,4 +7,7 @@ app.common = {
       elements_selector: '.lazy-load'
     });
   },
+  sticky() {
+    $('.base__share').stickybits();
+  }
 };

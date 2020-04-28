@@ -1,6 +1,6 @@
 app.scrollToTop = {
   el: '.js-btn-to-top',
-  minScrollTop: 500,
+  minScrollTop: 250,
   init() {
     if ($(this.el).length) {
       this.run();
@@ -12,8 +12,8 @@ app.scrollToTop = {
     const $btn = $(app.el);
 
     $(window).on('load scroll resize', function () {
-      let currentScrollTop = $(window).scrollTop();
-      $btn.toggleClass('btn-to-top--show', (currentScrollTop >= app.minScrollTop));
+      let scrollTop = $(window).scrollTop();
+      $btn.toggleClass('active', (scrollTop >= app.minScrollTop));
     });
 
     $btn.on('click', function (e) {

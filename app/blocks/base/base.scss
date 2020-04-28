@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   align-items: flex-start;
+  padding: 3.7rem 0 0;
   z-index: 5;
 
   &__aside {
@@ -12,20 +13,20 @@
     flex: 1 0 $width;
     max-width: $width;
     position: relative;
-    margin-right: 4rem;
+    margin-right: 3.1rem;
     z-index: 15;
   }
 
   &__body {
     position: relative;
-    padding: 5rem 0 10rem;
+    padding: 2.2rem 0 12rem;
     flex-grow: 1;
     z-index: 20;
   }
 
   &__content {
     position: relative;
-    padding: 0 0 0;
+    padding: 0 2rem;
   }
 
   &__share {
@@ -33,13 +34,23 @@
 
     flex: 1 0 $width;
     max-width: $width;
-    position: relative;
-    margin: 16rem 0 0 5.5rem;
+    position: sticky;
+    top: 0;
+    margin: 4.5rem 0 0 7rem;
+    padding-top: 4rem;
     z-index: 15;
   }
 
   &__section {
     &_space-smallest {
+      margin-bottom: 2rem;
+
+      @include below($md) {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    &_space-small {
       margin-bottom: 2.5rem;
 
       @include below($md) {
@@ -47,16 +58,8 @@
       }
     }
 
-    &_space-small {
-      margin-bottom: 3rem;
-
-      @include below($md) {
-        margin-bottom: 2.5rem;
-      }
-    }
-
     &_space-normal {
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
 
       @include below($md) {
         margin-bottom: 3rem;
@@ -64,28 +67,28 @@
     }
 
     &_space-large {
-      margin-bottom: 5rem;
+      margin-bottom: 4rem;
+
+      @include below($md) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &_space-largest {
+      margin-bottom: 6rem;
 
       @include below($md) {
         margin-bottom: 4rem;
       }
     }
 
-    &_space-largest {
-      margin-bottom: 8rem;
-
-      @include below($md) {
-        margin-bottom: 6rem;
-      }
-    }
-
     &_promo {
       position: relative;
-      z-index: 14;
+      margin: 0 0 2.4rem;
     }
 
     &_heading {
-      margin-bottom: 2rem;
+      margin: 0 0 2.6rem 0.9rem;
     }
 
     &_hide {
@@ -142,9 +145,15 @@
     left: 0;
     top: 0;
     width: 100%;
+    padding: 2.9rem 0 0 0;
+
+    @include below($xxl) {
+      padding: 0 0 0 8rem;
+    }
 
     &-layout {
       width: 89.4rem;
+      max-width: 100%;
       margin: 0 auto;
     }
 
@@ -152,14 +161,16 @@
       display: inline-block;
       vertical-align: top;
       position: relative;
-      margin: 2rem 0 0 5rem;
+      margin: 2rem 0 0 8rem;
       padding-left: 3rem;
       @include font-alt-bold;
 
       font-size: 2.4rem;
       line-height: 2.8rem;
+      //color: #fff;
       color: #fff;
       text-decoration: none;
+      filter: drop-shadow(1px 1px 1px rgba(#000, 0.15));
 
       &::before {
         content: '';
@@ -172,16 +183,19 @@
         width: 1.6rem;
         background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTMiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMyAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuNSAxNy41TDIuNSA5LjkxMzA3TDEwLjUgMi41IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==) no-repeat center / contain;
         transition: transform $animation-speed, opacity $animation-speed;
-        opacity: 0;
-        transform: translate3d(1.5rem, 0, 0);
+
+        .no-touchevents & {
+          opacity: 0;
+          transform: translate3d(1.5rem, 0, 0);
+        }
       }
 
       &:hover {
-        outline: none;
-
         &::before {
-          transform: translate3d(0, 0, 0);
-          opacity: 1;
+          .no-touchevents & {
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
+          }
         }
       }
     }
@@ -190,7 +204,7 @@
   &__canvas {
     position: absolute;
     left: -2rem;
-    top: -2rem;
+    top: -0.9rem;
     right: -2rem;
     bottom: -2rem;
     z-index: -2;
@@ -199,12 +213,12 @@
     @at-root {
       // If aside has added
       #{$base}__aside ~ & {
-        left: 16rem;
+        left: 16.1rem;
       }
 
       // If share has added
       #{$base}__aside ~ & {
-        right: 11rem;
+        right: 13.6rem;
       }
     }
   }
@@ -215,6 +229,6 @@
     align-items: flex-start;
     justify-content: center;
     height: 0;
-    top: 7rem;
+    top: 9.6rem;
   }
 }

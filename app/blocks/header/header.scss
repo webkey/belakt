@@ -64,10 +64,9 @@
     margin-left: auto;
     margin-right: auto;
     min-height: $header-height;
-    padding-left: $layout-page-space;
-    padding-right: $layout-page-space;
+    padding: 0 #{$layout-page-space-r} 0 #{$layout-page-space-l};
 
-    @include below($xxl) {
+    @include below($xxxl) {
       padding-left: $layout-page-space_md;
       padding-right: $layout-page-space_md;
     }
@@ -89,7 +88,7 @@
   &__slogan {
     position: relative;
     $width: 9rem;
-    margin: 4rem -2rem -4rem 3.2rem;
+    margin: 3.7rem -0.6rem -4rem 2.2rem;
 
     flex: 1 0 $width;
     max-width: $width;

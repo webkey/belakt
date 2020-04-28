@@ -31,6 +31,11 @@
   <link rel="stylesheet" href="css/app.min.css?rev=@@hash">
   <script>
     document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    if (!("ontouchstart" in document.documentElement)) {
+      document.documentElement.className += " no-touchevents";
+    } else {
+      document.documentElement.className += " touchevents";
+    }
   </script>
 </head>
 <body

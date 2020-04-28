@@ -28,16 +28,16 @@
   }
 
   &__button {
-    $size-h: 6rem;
-    $size-h: 4rem;
+    $size-h: 6.7rem;
+    $size-w: 3.5rem;
 
     position: absolute;
-    top: 50%;
+    top: 28.6%;
     display: flex;
     align-items: center;
     justify-content: center;
     height: $size-h;
-    width: $size-h;
+    width: $size-w;
     margin-top: -#{round-float($size-h / 2, 1)};
     color: white;
     background-color: transparent;
@@ -47,10 +47,9 @@
     z-index: 5;
 
     svg {
-      $size: 6rem;
-
       display: block;
-      height: $size;
+      height: 100%;
+      width: 100%;
     }
 
     path {

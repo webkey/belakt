@@ -34,15 +34,22 @@
     @include font-alt-bold;
 
     font-size: 1.8rem;
-    line-height: 2.8rem;
+    line-height: 2.2rem;
+    letter-spacing: -0.01em;
+    padding: 0.7rem 0 0;
+
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
 
     a {
       text-decoration: none;
       color: inherit;
-    }
+      transition: color $animation-speed;
 
-    &:not(:last-child) {
-      margin-bottom: 1.7rem;
+      &:hover {
+        color: $highlight-color;
+      }
     }
   }
 
@@ -53,7 +60,7 @@
     line-height: 1.9rem;
 
     &:not(:last-child) {
-      margin-bottom: 2.5rem;
+      margin-bottom: 3.4rem;
     }
   }
 

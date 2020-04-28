@@ -43,7 +43,8 @@ var libsJsLink = [
   'app/libs/js/jquery.switch-class.js',
   'node_modules/swiper/dist/js/swiper.min.js',
   'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js',
-  'node_modules/tooltipster/dist/js/tooltipster.bundle.min.js'
+  'node_modules/tooltipster/dist/js/tooltipster.bundle.min.js',
+  'node_modules/stickybits/dist/jquery.stickybits.min.js'
 ];
 
 var libsCssLink = [

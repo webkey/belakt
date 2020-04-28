@@ -4,7 +4,7 @@
     overflow: hidden;
     z-index: 2;
     display: block;
-    padding: 5.8rem 2rem 2.2rem;
+    padding: 5.8rem 2rem 2rem;
     @include font-medium;
     font-size: 1.6rem;
     line-height: 2rem;
@@ -69,7 +69,7 @@
   &__menu {
     position: relative;
     padding: 6rem 12rem 6rem 6rem;
-    margin: -5rem -12rem -4.4rem -6rem;
+    margin: -3.1rem -12rem -4.4rem -6rem;
     overflow: hidden;
   }
 
@@ -79,9 +79,9 @@
     position: relative;
     overflow: visible;
     height: 35.6rem;
-    box-shadow: 0 1.7rem 4rem rgba(#000, 0.0968914);
+    box-shadow: 0 1.7rem 4rem rgba(#000, 0.08);
     border-radius: 0.8rem;
-    background-color: #e4eeeb;
+    background-color: rgba(#e4eeeb, 0.8);
 
     html:not(.no-js) &:not(.is-loaded) {
       opacity: 0;
@@ -155,6 +155,7 @@
         line-height: 2.6rem;
         color: $text-color;
         word-break: normal;
+        margin-bottom: -0.4rem;
 
         #{$item}.active & {
           font-size: 3.2rem;
@@ -196,7 +197,7 @@
     transition: all $animation-speed;
     cursor: pointer;
     user-select: none;
-    box-shadow: 0 4px 20px rgba(black, 0);
+    box-shadow: 0 0 2px rgba(#000, 0.268193);
 
     &::before {
       content: "";

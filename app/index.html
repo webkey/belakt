@@ -18,15 +18,6 @@
         <!--Controls panel end-->
 
         <div class="base__body">
-          <!--Products popup-->
-          <div class="base__prods anim-toggle-in js-ctrl__targets">
-            <div class="base__prods-layout">
-              @@include("blocks/prods/prods.html")
-              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
-            </div>
-          </div>
-          <!--Products popup end-->
-
           <div class="base__content anim-toggle-out js-ctrl__hide">
             <!--Main heading-->
             <div class="base__section base__section_heading">
@@ -53,6 +44,15 @@
             </style>
             <!--Content end-->
           </div>
+
+          <!--Products popup-->
+          <div class="base__prods anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
+              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
+            </div>
+          </div>
+          <!--Products popup end-->
         </div>
 
         <!--Share-->
@@ -63,10 +63,10 @@
 
         <!--Decoration elements-->
         <div class="cloud cloud_right-top">
-          <img src="images/cloud.png" alt="cloud" />
+          <img class="anim-cloud lazy-load" data-src="images/cloud.png" src="images/empty.png" alt="cloud" />
         </div>
         <div class="cloud cloud_left-bottom">
-          <img src="images/cloud.png" alt="cloud" />
+          <img class="anim-cloud lazy-load" data-src="images/cloud.png" src="images/empty.png" alt="cloud" />
         </div>
         <!--Decoration elements end-->
 

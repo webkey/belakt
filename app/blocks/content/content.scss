@@ -10,7 +10,7 @@
     position: relative;
     flex-grow: 1;
     max-width: 100%;
-    padding: 0 #{round-float($space-h / 2, 1)};
+    padding: 1.1rem #{round-float($space-h / 2, 1)};
 
     @at-root {
       #{$block-name}__sidebar ~ & {
@@ -19,8 +19,8 @@
           display: block;
           position: absolute;
           left: 0;
-          top: 0;
-          bottom: 0;
+          top: 14rem;
+          bottom: 2rem;
           border-right: 1px solid #e7eae9;
         }
       }
@@ -28,7 +28,7 @@
   }
 
   &__sidebar {
-    $width: 29.4rem;
+    $width: 28.3rem;
 
     position: relative;
     flex: 1 0 $width;
@@ -61,8 +61,8 @@
       display: block;
       position: absolute;
       right: -1px;
-      top: 0;
-      bottom: 0;
+      top: 14rem;
+      bottom: 2rem;
       border-right: 1px solid #e7eae9;
     }
   }

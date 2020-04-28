@@ -1,15 +1,11 @@
 .share-aside {
-  $space: 1rem;
+  $space: 0.7rem;
 
   overflow: hidden;
   background-color: #fff;
   border-radius: 3.9rem;
   box-shadow: 0 0 2px rgba(#000, 0.268193);
   padding: 2.1rem 0 4.2rem;
-
-  &__list {
-    margin: 0 0 -#{$space};
-  }
 
   &__item {
     $size: 3.8rem;
@@ -18,7 +14,7 @@
     width: $size;
     position: relative;
     display: block;
-    margin: 0 auto #{$space};
+    margin: 0 auto;
     font-size: 1.4rem;
     line-height: 1.8rem;
     text-align: left;
@@ -26,13 +22,17 @@
     text-decoration: none;
     transition: all $animation-speed;
 
+    &:not(:last-child) {
+      margin-bottom: $space;
+    }
+
     & > span {
       @include hide-text;
     }
 
     svg,
     img {
-      $size: 2.4rem;
+      $size: 2rem;
       $int: round-float($size / 2, 1);
 
       display: inline-block;
