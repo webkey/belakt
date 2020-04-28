@@ -17,9 +17,7 @@ app.catSlider = {
         const $prevEl = $curSlider.find('.js-cat-slider__button_prev');
         const slidesLength = $('.swiper-slide', $curSlider).length;
 
-        $curSlider
-            .toggleClass('no-sliding', !(slidesLength > self.slidesPerView))
-            .toggleClass('has-one-slide', slidesLength === 1);
+        $curSlider.toggleClass('no-sliding', !(slidesLength > self.slidesPerView)).toggleClass('has-one-slide', slidesLength === 1);
 
         const sliderInstance = new Swiper($curSlider.find('.swiper-container'), {
           init: false,
@@ -61,7 +59,7 @@ app.catSlider = {
 
         $curSlider.closest('.js-ctrl__target').on('showTarget', function () {
           sliderInstance.update();
-        })
+        });
       });
     }
   }

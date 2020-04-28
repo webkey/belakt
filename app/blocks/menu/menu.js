@@ -17,7 +17,7 @@ app.menu = {
   events() {
     const app = this;
     const $menu = $(this.initEl);
-    var menuInst = $menu.accordionSimple({
+    const menuInst = $menu.accordionSimple({
       // Elements
       block: app.menuItemEl,
       panel: app.menuPanelEl,
@@ -30,7 +30,7 @@ app.menu = {
     // Open current item
     menuInst.accordionSimple('open', $('.current', $menu).closest(app.menuPanelEl));
   },
-  toggleMenuPanel(el) {
+  toggleMenuPanel() {
     const app = this;
 
     $('body').on('click', app.switcherMenuEl, function (e) {
@@ -45,24 +45,6 @@ app.menu = {
         $curBtn.addClass('menu-app-is-open');
         $menu.stop().slideDown();
       }
-    })
-    // const $switcherEl = $(el);
-    // const $html = $('html');
-    // $switcherEl.switchClass({
-    //   removeExisting: false,
-    //   switchClassTo: $('.js-menu-app'),
-    //   removeEl: $('.js-menu-app-close'),
-    //   cssScrollFixed: false,
-    //   preventRemoveClass: 'js-prevent-hide',
-    //   modifiers: {
-    //     activeClass: 'menu-app-is-open'
-    //   },
-    //   afterAdd() {
-    //     $html.addClass('open-only-mob');
-    //   },
-    //   afterRemove() {
-    //     $html.removeClass('open-only-mob');
-    //   }
-    // });
+    });
   },
 };

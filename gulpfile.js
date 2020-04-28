@@ -35,22 +35,14 @@ var libsJsLink = [
   'node_modules/jquery/dist/jquery.min.js',
   'node_modules/svg4everybody/dist/svg4everybody.min.js',
   'node_modules/vanilla-lazyload/dist/lazyload.min.js',
-  'node_modules/jquery-validation/dist/jquery.validate.min.js',
-  'node_modules/select2/dist/js/select2.full.min.js',
-  'node_modules/select2/dist/js/i18n/ru.js',
-  'node_modules/object-fit-images/dist/ofi.min.js',
   'app/libs/js/jquery.accordion-simple.js',
   'app/libs/js/jquery.switch-class.js',
   'node_modules/swiper/dist/js/swiper.min.js',
-  'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js',
-  'node_modules/tooltipster/dist/js/tooltipster.bundle.min.js',
-  'node_modules/stickybits/dist/jquery.stickybits.min.js'
+  'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js'
 ];
 
 var libsCssLink = [
-  'node_modules/select2/dist/css/select2.min.css',
-  'node_modules/swiper/dist/css/swiper.min.css',
-  'node_modules/tooltipster/dist/css/tooltipster.bundle.min.css'
+  'node_modules/swiper/dist/css/swiper.min.css'
 ];
 
 var path = {
@@ -154,7 +146,7 @@ gulp.task('cssLibs:production', function () {
   if(libsCssLink.length) {
     return gulp.src(libsCssLink)
         .pipe(concatCss('libs.min.css'))
-        .pipe(postcss(plugins))
+        // .pipe(postcss(plugins))
         .pipe(gulp.dest(path.dist + '/libs/css'));
   }
 });

@@ -23,8 +23,7 @@ app.ctrl = {
       const slidesLength = $('.swiper-slide', $slider).length;
       const initIdx = $slide.filter('.current').length && $slide.filter('.current').index() || 0;
 
-      $slider
-          .toggleClass('no-sliding', !(slidesLength > self.slidesPerView));
+      $slider.toggleClass('no-sliding', !(slidesLength > self.slidesPerView));
 
       app.controlPanelCat = new Swiper($slider, {
         init: false,
@@ -32,7 +31,7 @@ app.ctrl = {
         speed: app.speed,
         direction: 'vertical',
         slidesPerView: 'auto',
-        parallax:true,
+        parallax: true,
         simulateTouch: false,
         allowTouchMove: false,
         followFinger: false,
@@ -56,7 +55,7 @@ app.ctrl = {
       app.controlPanelCat.init();
     }
   },
-  event () {
+  event() {
     const app = this;
     const $body = $('body');
     const $slide = $('.swiper-slide', $(app.catEl));
@@ -81,7 +80,7 @@ app.ctrl = {
         app.hideTarget();
         app.isActive = false;
       }
-    })
+    });
 
     $body.on('click', app.prevBtnEl, function (e) {
       e.preventDefault();
@@ -118,7 +117,7 @@ app.ctrl = {
           app.showTarget($prevSl.attr('href'));
         }
       }
-    })
+    });
 
     $body.on('click', app.nextBtnEl, function (e) {
       e.preventDefault();
@@ -162,7 +161,7 @@ app.ctrl = {
 
       app.hideTarget();
       $slide.removeClass('active');
-    })
+    });
   },
   visibleSlides(idx, $curSl) {
     const app = this;
@@ -194,4 +193,4 @@ app.ctrl = {
     $(this.targetsEl).removeClass('active');
     $(this.hideEl).removeClass('active');
   }
-}
+};

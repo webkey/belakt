@@ -5,4 +5,4 @@ app.tableInfo = {
       $(this.initEl).find('th, td').children().matchHeight();
     }
   }
-}
+};

@@ -12,7 +12,7 @@ app.scrollToTop = {
     const $btn = $(app.el);
 
     $(window).on('load scroll resize', function () {
-      let scrollTop = $(window).scrollTop();
+      const scrollTop = $(window).scrollTop();
       $btn.toggleClass('active', (scrollTop >= app.minScrollTop));
     });
 
@@ -23,6 +23,6 @@ app.scrollToTop = {
           scrollTop: 0
         }, 300);
       }
-    })
+    });
   }
 };

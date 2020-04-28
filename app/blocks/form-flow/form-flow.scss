@@ -51,7 +51,6 @@
     // Hover
     // ----------------------------------------------------
     &:hover {
-      background-color: $form-def-bg-color_hover;
       box-shadow: $form-def-box-shadow_hover;
     }
 
@@ -71,13 +70,14 @@
   &__label {
     position: absolute;
     top: 2.4rem;
-    left: 0;
-    width: 100%;
+    left: 0.3rem;
+    width: calc(100% - 0.6rem);
     padding: 0 1.8rem;
     @include font-alt;
     font-size: $form-def-font-size;
     line-height: $form-def-line-height;
     color: $form-def-placeholder-color;
+    background-color: $form-def-bg-color;
     transform-origin: left top;
     pointer-events: none;
     z-index: 5;
