@@ -1,0 +1,25 @@
+.widget-contacts {
+  @include font-alt;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+
+  &__title {
+    @include font-alt-bold;
+
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    margin: 0 0 2.4rem;
+  }
+
+  &__text:not(:last-child) {
+    margin: 0 0 2.4rem;
+
+    a {
+      padding-top: 0.5rem;
+    }
+  }
+
+  &__tel {
+    @include font-alt-semi-bold;
+  }
+}

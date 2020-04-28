@@ -1,0 +1,82 @@
+.form-unit {
+  &__label {
+    margin-bottom: 0.4rem;
+    line-height: 1;
+  }
+
+  &__input {
+    $input: &;
+
+    position: relative;
+
+    &-icon {
+      $size: 4rem;
+
+      position: absolute;
+      right: 0;
+      top: 50%;
+      height: $size;
+      width: $size;
+      margin-top: -#{round-float($size / 2, 1)};
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+
+      // Toggle password button
+      &_show-pass {
+        &::before,
+        &::after {
+          $size: 1.6rem;
+
+          height: $size;
+          width: $size;
+          margin: -#{round-float($size / 2, 1)};
+          content: "";
+          display: block;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          transition: opacity $animation-speed;
+        }
+
+        &::before {
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMC43ODczMjMgOEMxLjQxMzk5IDQuNTg2NjcgNC40MDUzMiAyIDcuOTk5OTkgMkMxMS41OTQ3IDIgMTQuNTg1MyA0LjU4NjY3IDE1LjIxMjcgOEMxNC41ODYgMTEuNDEzMyAxMS41OTQ3IDE0IDcuOTk5OTkgMTRDNC40MDUzMiAxNCAxLjQxNDY2IDExLjQxMzMgMC43ODczMjMgOFpNNy45OTk5OSAxMS4zMzMzQzguODg0MDQgMTEuMzMzMyA5LjczMTg5IDEwLjk4MjEgMTAuMzU3IDEwLjM1N0MxMC45ODIxIDkuNzMxOSAxMS4zMzMzIDguODg0MDYgMTEuMzMzMyA4QzExLjMzMzMgNy4xMTU5NSAxMC45ODIxIDYuMjY4MSAxMC4zNTcgNS42NDI5OEM5LjczMTg5IDUuMDE3ODYgOC44ODQwNCA0LjY2NjY3IDcuOTk5OTkgNC42NjY2N0M3LjExNTkzIDQuNjY2NjcgNi4yNjgwOSA1LjAxNzg2IDUuNjQyOTcgNS42NDI5OEM1LjAxNzg1IDYuMjY4MSA0LjY2NjY2IDcuMTE1OTUgNC42NjY2NiA4QzQuNjY2NjYgOC44ODQwNiA1LjAxNzg1IDkuNzMxOSA1LjY0Mjk3IDEwLjM1N0M2LjI2ODA5IDEwLjk4MjEgNy4xMTU5MyAxMS4zMzMzIDcuOTk5OTkgMTEuMzMzM1pNNy45OTk5OSAxMEM3LjQ2OTU2IDEwIDYuOTYwODUgOS43ODkyOSA2LjU4NTc4IDkuNDE0MjFDNi4yMTA3IDkuMDM5MTQgNS45OTk5OSA4LjUzMDQzIDUuOTk5OTkgOEM1Ljk5OTk5IDcuNDY5NTcgNi4yMTA3IDYuOTYwODYgNi41ODU3OCA2LjU4NTc5QzYuOTYwODUgNi4yMTA3MSA3LjQ2OTU2IDYgNy45OTk5OSA2QzguNTMwNDIgNiA5LjAzOTEzIDYuMjEwNzEgOS40MTQyIDYuNTg1NzlDOS43ODkyOCA2Ljk2MDg2IDkuOTk5OTkgNy40Njk1NyA5Ljk5OTk5IDhDOS45OTk5OSA4LjUzMDQzIDkuNzg5MjggOS4wMzkxNCA5LjQxNDIgOS40MTQyMUM5LjAzOTEzIDkuNzg5MjkgOC41MzA0MiAxMCA3Ljk5OTk5IDEwWiIgZmlsbD0iIzllYTJhMiIvPjwvc3ZnPg==);
+        }
+
+        &::after {
+          opacity: 0;
+          background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMC43ODczMjMgOEMxLjQxMzk5IDQuNTg2NjcgNC40MDUzMiAyIDcuOTk5OTkgMkMxMS41OTQ3IDIgMTQuNTg1MyA0LjU4NjY3IDE1LjIxMjcgOEMxNC41ODYgMTEuNDEzMyAxMS41OTQ3IDE0IDcuOTk5OTkgMTRDNC40MDUzMiAxNCAxLjQxNDY2IDExLjQxMzMgMC43ODczMjMgOFpNNy45OTk5OSAxMS4zMzMzQzguODg0MDQgMTEuMzMzMyA5LjczMTg5IDEwLjk4MjEgMTAuMzU3IDEwLjM1N0MxMC45ODIxIDkuNzMxOSAxMS4zMzMzIDguODg0MDYgMTEuMzMzMyA4QzExLjMzMzMgNy4xMTU5NSAxMC45ODIxIDYuMjY4MSAxMC4zNTcgNS42NDI5OEM5LjczMTg5IDUuMDE3ODYgOC44ODQwNCA0LjY2NjY3IDcuOTk5OTkgNC42NjY2N0M3LjExNTkzIDQuNjY2NjcgNi4yNjgwOSA1LjAxNzg2IDUuNjQyOTcgNS42NDI5OEM1LjAxNzg1IDYuMjY4MSA0LjY2NjY2IDcuMTE1OTUgNC42NjY2NiA4QzQuNjY2NjYgOC44ODQwNiA1LjAxNzg1IDkuNzMxOSA1LjY0Mjk3IDEwLjM1N0M2LjI2ODA5IDEwLjk4MjEgNy4xMTU5MyAxMS4zMzMzIDcuOTk5OTkgMTEuMzMzM1pNNy45OTk5OSAxMEM3LjQ2OTU2IDEwIDYuOTYwODUgOS43ODkyOSA2LjU4NTc4IDkuNDE0MjFDNi4yMTA3IDkuMDM5MTQgNS45OTk5OSA4LjUzMDQzIDUuOTk5OTkgOEM1Ljk5OTk5IDcuNDY5NTcgNi4yMTA3IDYuOTYwODYgNi41ODU3OCA2LjU4NTc5QzYuOTYwODUgNi4yMTA3MSA3LjQ2OTU2IDYgNy45OTk5OSA2QzguNTMwNDIgNiA5LjAzOTEzIDYuMjEwNzEgOS40MTQyIDYuNTg1NzlDOS43ODkyOCA2Ljk2MDg2IDkuOTk5OTkgNy40Njk1NyA5Ljk5OTk5IDhDOS45OTk5OSA4LjUzMDQzIDkuNzg5MjggOS4wMzkxNCA5LjQxNDIgOS40MTQyMUM5LjAzOTEzIDkuNzg5MjkgOC41MzA0MiAxMCA3Ljk5OTk5IDEwWiIvPjwvc3ZnPg==);
+        }
+
+        &:hover,
+        &.is-show {
+          &::before {
+            opacity: 0;
+          }
+
+          &::after {
+            opacity: 1;
+          }
+        }
+      }
+
+      &_right {
+        left: auto;
+        right: 0;
+      }
+
+      &_left {
+        left: 0;
+        right: auto;
+      }
+
+      &_no-events {
+        pointer-events: none;
+      }
+    }
+  }
+}

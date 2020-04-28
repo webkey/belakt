@@ -1,0 +1,96 @@
+.form-flow {
+  $el: &;
+
+  position: relative;
+
+  &__field {
+    $form-def: &;
+
+    display: block;
+    position: relative;
+    height: $form-def-height;
+    width: 100%;
+    padding: 3rem 1.8rem 1.8rem;
+    margin: 0;
+    background-color: $form-def-bg-color;
+    box-shadow: $form-def-box-shadow;
+    border: 0;
+    @include font-alt;
+    font-size: $form-def-font-size;
+    line-height: $form-def-line-height;
+    color: $form-def-text-color;
+    transition: all $animation-speed;
+
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+    }
+
+    // В optimize.scss на input-елементах обнулены закругления через составной селектор
+    @at-root {
+      #{$form-def},
+      input#{$form-def} {
+        border-radius: 1rem;
+      }
+    }
+
+    // Дополнительные стили для <textarea>
+    @at-root {
+      textarea#{$form-def} {
+        $lh: 2rem;
+        $space-vertical: 2.4rem;
+        $lines: 4;
+        $height: calc(#{$lh * $lines + $space-vertical} + 2px);
+
+        min-height: $height;
+        height: $height;
+        resize: vertical;
+      }
+    }
+
+    // Hover
+    // ----------------------------------------------------
+    &:hover {
+      background-color: $form-def-bg-color_hover;
+      box-shadow: $form-def-box-shadow_hover;
+    }
+
+    // Focus
+    &:focus {
+      outline: none;
+    }
+
+    // Disabled
+    // ----------------------------------------------------
+    &[disabled] {
+      color: $form-def-text-color_disabled;
+      background-color: $form-def-bg-color_disabled;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 2.4rem;
+    left: 0;
+    width: 100%;
+    padding: 0 1.8rem;
+    @include font-alt;
+    font-size: $form-def-font-size;
+    line-height: $form-def-line-height;
+    color: $form-def-placeholder-color;
+    transform-origin: left top;
+    pointer-events: none;
+    z-index: 5;
+    transition: all $animation-speed;
+    @include antialiased;
+
+    @at-root {
+      // Focus or Has value
+      // ----------------------------------------------------
+      #{$el}__field:focus ~ &,
+      #{$el}__field.filled ~ & {
+        transform: translate3d(0.3rem, -1.3rem, 0) scale(0.83);
+      }
+    }
+  }
+}

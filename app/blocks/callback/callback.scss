@@ -1,0 +1,5 @@
+.callback {
+  &__row:not(:last-child) {
+    margin-bottom: 3.2rem;
+  }
+}

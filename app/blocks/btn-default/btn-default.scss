@@ -72,9 +72,11 @@
     z-index: 1;
   }
 
-  &:hover {
+  &:focus {
     outline: none;
+  }
 
+  &:hover {
     &::before {
       transform: translateZ(0) scaleX(1);
       opacity: 1;

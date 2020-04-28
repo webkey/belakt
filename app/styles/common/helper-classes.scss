@@ -85,6 +85,14 @@
   color: inherit;
 }
 
+.decor-none {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 .ff-spec {
   font-family: $font-special;
 }
@@ -112,10 +120,12 @@
   }
 }
 
-.decor-none {
+.link-reset {
   text-decoration: none;
+  color: inherit;
+  transition: color $animation-speed;
 
   &:hover {
-    text-decoration: underline;
+    color: $highlight-color;
   }
 }

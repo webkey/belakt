@@ -1,0 +1,150 @@
+@@include("blocks/head/head.html", {
+  "title": "Беллакт - Контакты",
+  "pageClass": ""
+})
+@@include("blocks/header/header.html", { "currentItem": "Контакты" })
+
+<main class="main">
+  <div class="section section_base">
+    <div class="layout-page">
+      <div class="base">
+        <!--Controls panel-->
+        <div class="base__aside">
+          @@include("blocks/ctrl/ctrl.html")
+        </div>
+        <!--Controls panel end-->
+
+        <div class="base__body">
+          <!--Products popup-->
+          <div class="base__prods anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
+              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
+            </div>
+          </div>
+          <!--Products popup end-->
+
+          <div class="base__content anim-toggle-out js-ctrl__hide">
+            <!--Main heading-->
+            <div class="base__section base__section_heading">
+              @@include("blocks/heading/heading.html", {"title": "Контакты"})
+            </div>
+            <!--Main heading end-->
+
+            <div class="base__section base__section_space-normal">
+              @@include("blocks/breadcrumbs/breadcrumbs.html", { "items": [{"href": "home.html", "text": "Главная"}], "current": "Контакты" })
+            </div>
+
+            <!--Content-->
+            <div class="content">
+              <!--Left menu-->
+              <div class="menu-app-overlay js-menu-app-overlay"></div>
+              <aside class="content__sidebar js-menu-app js-prevent-hide">
+                  @@include("blocks/widget-contacts/widget-contacts.html")
+              </aside>
+              <!--Left menu end-->
+
+              <div class="content__body">
+                <div class="base__section base__section_space-normal base__section_hide base__section_show-lg reset-line-height">
+                  <a href="#" class="menu-app-switcher js-menu-app-switcher" title="Открыть меню каталога">
+                    <span>Открыть меню каталога</span>
+                  </a>
+                </div>
+
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/sub-heading/sub-heading.html", {"title": "Обратная связь"})
+                </div>
+
+                <div class="base__section base__section_space-normal">
+                  <form action="#" method="post" class="callback">
+                    <div class="callback__row">
+                      <div class="form-grid">
+                        <div class="form-grid__col form-grid__col_6">
+                          <div class="form-flow">
+                            @@include("blocks/form-flow/form-flow-input.html", {
+                            "id": "callback-name",
+                            "placeholder": false,
+                            "required": true
+                            })
+                            @@include("blocks/form-flow/form-flow-label.html", {
+                            "label": "Имя фамилия",
+                            "id": "callback-name"
+                            })
+                          </div>
+                        </div>
+                        <div class="form-grid__col form-grid__col_6">
+                          <div class="form-flow">
+                            @@include("blocks/form-flow/form-flow-input.html", {
+                            "id": "callback-email",
+                            "placeholder": false,
+                            "type": "email",
+                            "required": true
+                            })
+                            @@include("blocks/form-flow/form-flow-label.html", {
+                            "label": "E-mail",
+                            "id": "callback-email"
+                            })
+                          </div>
+                        </div>
+                        <div class="form-grid__col">
+                          <div class="form-flow">
+                            @@include("blocks/form-flow/form-flow-input.html", {
+                            "id": "callback-tel",
+                            "placeholder": false,
+                            "required": true
+                            })
+                            @@include("blocks/form-flow/form-flow-label.html", {
+                            "label": "Тел <b>+375 ( )</b>",
+                            "id": "callback-tel"
+                            })
+                          </div>
+                        </div>
+                        <div class="form-grid__col">
+                          <div class="form-flow">
+                            @@include("blocks/form-flow/form-flow-textarea.html", {
+                            "id": "callback-text",
+                            "placeholder": false,
+                            "required": true
+                            })
+                            @@include("blocks/form-flow/form-flow-label.html", {
+                            "label": "Текст сообщения",
+                            "id": "callback-text"
+                            })
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="callback__row">
+                      @@include("blocks/btn-default/btn-default_button-submit.html", {"href": "@@href", "text": "Отправить", "mods": ["sm-full-width"]})
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <!--Content end-->
+          </div>
+        </div>
+
+        <!--Share-->
+        <div class="base__share">
+          @@include("blocks/share-aside/share-aside.html")
+        </div>
+        <!--Share end-->
+
+        <!--Decoration elements-->
+        <div class="cloud cloud_right-top">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <div class="cloud cloud_left-bottom">
+          <img src="images/cloud.png" alt="cloud" />
+        </div>
+        <!--Decoration elements end-->
+        
+        <div class="base__canvas anim-toggle-out js-ctrl__hide"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+@@include("blocks/footer/footer.html")
+@@include("blocks/foot/foot.html")

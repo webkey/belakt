@@ -1,0 +1,68 @@
+.form-grid {
+  $space-h: 1.2rem;
+  //$space-h_lg: 3rem;
+  //$space-grid-h: 1.2rem;
+  //$space-grid-h_lg: 1.8rem;
+  $space-v: 2rem;
+
+  //overflow: hidden; // Cut horizontal negative intends
+
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 -#{round-float($space-h / 2, 1)} #{$space-v};
+
+  //@include below($lg) {
+  //  margin: 0 -#{round-float($space-h_lg / 2, 1)} #{$space-v};
+  //}
+
+  &_last,
+  &:last-child {
+    margin-bottom: -#{$space-v}; // Compensate last bottom space
+  }
+
+  &__col {
+    flex: 1 0 100%;
+    max-width: 100%;
+    padding: 0 #{round-float($space-h / 2, 1)} #{$space-v};
+
+    //@include below($lg) {
+    //  padding: 0 #{round-float(($space-h_lg - $space-grid-h_lg) / 2, 1)};
+    //}
+
+    @for $i from 1 through 12 {
+      &_#{$i} {
+        $width: floor-float(100% / 12 * $i, 2);
+
+        flex-basis: $width;
+        max-width: $width;
+      }
+    }
+
+    &_md {
+      @include below($md) {
+        @for $i from 1 through 12 {
+          &-#{$i} {
+            $width: floor-float(100% / 12 * $i, 2);
+
+            flex-basis: $width;
+            max-width: $width;
+          }
+        }
+      }
+    }
+
+    &_sm {
+      @include below($sm) {
+        @for $i from 1 through 12 {
+          &-#{$i} {
+            $width: floor-float(100% / 12 * $i, 2);
+
+            flex-basis: $width;
+            max-width: $width;
+          }
+        }
+      }
+    }
+  }
+}
