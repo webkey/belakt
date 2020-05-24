@@ -19,11 +19,7 @@
     padding: 2rem 1.6rem;
 
     @include below($lg) {
-      padding: 2rem #{$layout-page-space_md};
-    }
-
-    @include below($md) {
-      padding: 2rem #{$layout-page-space_sm};
+      padding: 2rem;
     }
   }
 
@@ -34,7 +30,7 @@
     top: 0;
     width: 100%;
     height: $header-height_sm;
-    padding: 0.5rem #{$layout-page-space_md} 0.5rem #{$header-height_sm};
+    padding: 0.5rem #{$layout-page-space_xl} 0.5rem #{$header-height_sm};
     font-size: 2rem;
     line-height: 2.4rem;
     font-weight: bold;
@@ -43,6 +39,7 @@
 
     @include below($lg) {
       display: flex;
+      padding-right: #{$layout-page-space_lg};
     }
 
     @include below($md) {

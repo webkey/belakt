@@ -105,15 +105,15 @@
       // mobile menu
       @include below($lg) {
         overflow: hidden;
-        padding: 3rem #{$layout-page-space_md};
+        padding: 3rem 2rem;
       }
 
       @include below($md) {
-        padding: 2rem #{$layout-page-space_sm};
+        padding: 2rem 2rem;
       }
 
       @include below($sm) {
-        padding: 6rem #{$layout-page-space_sm} 2rem;
+        padding: 6rem 2rem 2rem;
       }
     }
   }

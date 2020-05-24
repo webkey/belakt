@@ -5,6 +5,7 @@
   display: flex;
   align-items: flex-start;
   padding: 3.7rem 0 0;
+  max-width: 100%;
   z-index: 5;
 
   @include below($lg) {
@@ -39,7 +40,7 @@
 
   &__content {
     position: relative;
-    padding: 0 2rem;
+    padding: 0 4rem;
 
     @include below($lg) {
       padding: 0;
@@ -263,11 +264,11 @@
         left: 16.1rem;
 
         @include below($lg) {
-          left: -2rem;
+          left: -#{$layout-page-space_lg - 0.5};
         }
 
         @include below($md) {
-          left: -1.5rem;
+          left: -#{$layout-page-space_sm - 0.5};
         }
       }
 
@@ -276,11 +277,11 @@
         right: 13.6rem;
 
         @include below($lg) {
-          right: -2rem;
+          right: -#{$layout-page-space_lg - 0.5};
         }
 
         @include below($md) {
-          right: -1.5rem;
+          right: -#{$layout-page-space_sm - 0.5};
         }
       }
     }

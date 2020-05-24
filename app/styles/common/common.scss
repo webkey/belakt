@@ -50,11 +50,16 @@ body {
   padding-right: $layout-page-space-r;
 
   @include below($xxxl) {
-    padding-left: $layout-page-space_md;
-    padding-right: $layout-page-space_md;
+    padding-left: $layout-page-space_xl;
+    padding-right: $layout-page-space_xl;
   }
 
-  @include below($sm) {
+  @include below($lg) {
+    padding-left: $layout-page-space_lg;
+    padding-right: $layout-page-space_lg;
+  }
+
+  @include below($md) {
     padding-left: $layout-page-space_sm;
     padding-right: $layout-page-space_sm;
   }

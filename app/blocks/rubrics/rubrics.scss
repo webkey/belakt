@@ -3,7 +3,7 @@
   $space-v: 3rem;
 
   @include below($lg) {
-    margin: 0 -#{$layout-page-space_md};
+    margin: 0 -#{$layout-page-space_lg};
   }
 
   @include below($sm) {
@@ -21,7 +21,11 @@
   //    overflow-y: auto;
   //    flex-wrap: nowrap;
   //    margin: 0;
-  //    padding: 4rem #{$layout-page-space_md} 2rem;
+  //    padding: 4rem #{$layout-page-space_xl} 2rem;
+  //  }
+  //
+  //  @include below($lg) {
+  //    padding: 4rem #{$layout-page-space_lg} 2rem;
   //  }
   //
   //  @include below($sm) {

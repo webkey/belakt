@@ -20,12 +20,14 @@
     padding: 0 #{$layout-page-space-r} 0 #{$layout-page-space-l};
 
     @include below($xxxl) {
-      padding-left: $layout-page-space_md;
-      padding-right: $layout-page-space_md;
+      padding-left: $layout-page-space_xl;
+      padding-right: $layout-page-space_xl;
     }
 
     @include below($lg) {
       min-height: $header-height_sm;
+      padding-left: $layout-page-space_lg;
+      padding-right: $layout-page-space_lg;
     }
   }
 
@@ -60,7 +62,7 @@
     position: fixed;
     z-index: 75;
     top: 1.5rem;
-    right: $layout-page-space_md;
+    right: $layout-page-space_xl;
     font-size: 0;
     line-height: 0;
     cursor: pointer;
@@ -73,6 +75,7 @@
 
     @include below($lg) {
       display: block;
+      right: $layout-page-space_lg;
     }
 
     @include below($md) {
