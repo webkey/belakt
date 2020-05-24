@@ -40,7 +40,7 @@
   &__slogan {
     position: relative;
     $width: 9rem;
-    margin: 3.7rem -0.6rem -4rem 2.2rem;
+    margin: 1.8rem -0.6rem -4rem 2.2rem;
 
     flex: 1 0 $width;
     max-width: $width;
@@ -69,13 +69,22 @@
     display: none;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+    transition: all $animation-speed;
 
     @include below($lg) {
       display: block;
     }
 
-    @include below($sm) {
+    @include below($md) {
       right: $layout-page-space_sm;
+    }
+
+    @include below($sm) {
+      $size: 4rem;
+
+      height: $size;
+      width: $size;
+      border-radius: $size;
     }
 
     &::before,

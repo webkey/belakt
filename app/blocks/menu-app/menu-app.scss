@@ -89,7 +89,7 @@
   &-switcher {
     $size: 4.2rem;
 
-    display: block;
+    display: none;
     position: relative;
     height: $size;
     width: $size;
@@ -101,6 +101,10 @@
     cursor: pointer;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
+
+    @include below($lg) {
+      display: block;
+    }
 
     &.menu-app-is-open {
       transform: rotate(0.5turn);

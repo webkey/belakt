@@ -53,7 +53,7 @@
 
   &__nav {
     background: #fff;
-    box-shadow: 0 2px 4px rgba(#000, 0.268193);
+    box-shadow: 0 2px 4px rgba(#000, 0.27);
     border-radius: 3.9rem;
     padding: 2.1rem 4.5rem 2.5rem;
     flex-grow: 1;
@@ -80,7 +80,7 @@
       will-change: transform, opacity;
       transition: all $animation-speed;
       opacity: 0.8;
-      $translate: -100%, 0;
+      $translate: -110%, 0;
 
       transform: translate($translate);
       transform: translate3d($translate, 0);
@@ -110,6 +110,10 @@
 
       @include below($md) {
         padding: 2rem #{$layout-page-space_sm};
+      }
+
+      @include below($sm) {
+        padding: 6rem #{$layout-page-space_sm} 2rem;
       }
     }
   }

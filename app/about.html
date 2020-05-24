@@ -1,0 +1,97 @@
+@@include("blocks/head/head.html", {
+  "title": "Беллакт - О компании",
+  "pageClass": ""
+})
+@@include("blocks/header/header.html", { "currentItem": "О компании" })
+
+<main class="main">
+  <div class="section section_base">
+    <div class="layout-page">
+      <div class="base">
+        <!--Controls panel-->
+        <div class="base__aside">
+          @@include("blocks/ctrl/ctrl.html")
+        </div>
+        <!--Controls panel end-->
+
+        <div class="base__body">
+          <div class="base__content anim-toggle-out js-ctrl__hide">
+            <!--Main heading-->
+            <div class="base__section base__section_heading">
+              @@include("blocks/heading/heading.html", {"title": "О компании"})
+              <a href="#" class="menu-app-switcher js-menu-app-switcher" title="Каталог">
+                <span>Каталог</span>
+              </a>
+            </div>
+            <!--Main heading end-->
+
+            <!--Content-->
+            <div class="content">
+              <!--Left menu-->
+              <aside class="content__sidebar js-menu-app js-prevent-hide">
+                @@include("blocks/menu/menu.html")
+              </aside>
+              <!--Left menu end-->
+
+              <div class="content__body">
+                <div class="base__section base__section_space-normal">
+                  @@include("blocks/sub-heading/sub-heading.html", {"title": "Миссия, видение, ценности"})
+                </div>
+
+                <div class="base__section base__section_space-large">
+                  @@include("blocks/breadcrumbs/breadcrumbs.html", { "items": [{"href": "about.html", "text": "О компании"}], "current": "Миссия, видение, ценности" })
+                </div>
+
+                <div class="base__section base__section_space-normal">
+                  <h3>Миссия</h3>
+                  <p>Нельзя идти на компромиссы, когда речь идет о здоровье людей. Поэтому мы бережно храним выработанные годами традиции — выпуск высококачественных, экологически чистых продуктов для полноценного питания детей и взрослых, осознавая свою социальную ответственность за здоровье будущих поколений.</p>
+                  <h3>Видение</h3>
+                  <p>Быть безоговорочным лидером, выпускающим продукты для питания детей и взрослых, которые достойны высочайшего доверия со стороны потребителей и партнеров.</p>
+                  <h3>Ценности</h3>
+                  <p>Потребитель на первом месте Мы дорожим доверием наших потребителей и предлагаем качественные, полезные и доступные продукты.</p>
+                  <h3>Забота</h3>
+                  <p>Ваше здоровье — наша забота. Забота — это ценность, которая определяет назначение нашей продукции.</p>
+                  <h3>Качество</h3>
+                  <p>Качество — неотъемлемое условие нашего успеха. Мы делаем вопросы качества актуальными не только в рамках производственного цикла, но и в процессе разработок и маркетинга.</p>
+                  <h3>Честность</h3>
+                  <p>Мы открыты для общения, что демонстрирует нашу честность. Мы несем ответственность перед своими партнерами и клиентами, и честность во всех сферах является ключевым звеном в доверии наших потребителей и в успешной работе нашего предприятия.</p>
+                </div>
+              </div>
+            </div>
+            <!--Content end-->
+          </div>
+
+          <!--Products popup-->
+          <div class="base__prods anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
+              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
+            </div>
+          </div>
+          <!--Products popup end-->
+        </div>
+
+        <!--Share-->
+        <div class="base__share">
+          @@include("blocks/share-aside/share-aside.html")
+        </div>
+        <!--Share end-->
+
+        <!--Decoration elements-->
+        <div class="cloud cloud_right-top">
+          <img class="anim-cloud lazy-load" data-src="images/cloud.png" src="images/empty.png" alt="cloud" />
+        </div>
+        <div class="cloud cloud_left-bottom">
+          <img class="anim-cloud lazy-load" data-src="images/cloud.png" src="images/empty.png" alt="cloud" />
+        </div>
+        <!--Decoration elements end-->
+        
+        <div class="base__canvas anim-toggle-out js-ctrl__hide"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+@@include("blocks/btn-to-top/btn-to-top.html")
+@@include("blocks/footer/footer.html")
+@@include("blocks/foot/foot.html")

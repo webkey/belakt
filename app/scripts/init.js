@@ -1,5 +1,6 @@
 app.common.initLazyLoad();
 app.common.toggleMobMenu();
+app.navigation.init();
 app.ctrl.init();
 app.catSlider.init();
 app.menu.init();

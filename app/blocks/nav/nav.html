@@ -1,17 +1,61 @@
 <nav class="nav">
-  <ul class="nav__list">
-    @@if(context.currentItem == 'О компании'){
-    <li class="nav__li js-nav-li current">
+  <ul class="nav__list js-nav">
+     <li class="nav__li js-nav-li has-drop@@if(context.currentItem == 'О компании'){ current}">
+      @@if(context.currentItem == 'О компании'){
       <span class="nav__li-el">
         <span class="nav__li-el-in">О компании</span>
       </span>
-    </li>}
-    @@if(context.currentItem != 'О компании'){
-    <li class="nav__li js-nav-li">
-      <a class="nav__li-el" href="news-one.html">
+      }
+      @@if(context.currentItem != 'О компании'){
+      <a class="nav__li-el" href="about.html">
         <span class="nav__li-el-in">О компании</span>
       </a>
-    </li>}
+      }
+      <em class="nav__li-arrow js-nav-arrow">&#9660;</em>
+      <div class="nav__li-drop js-nav-drop">
+        <div class="sub-nav">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Миссия, видение, ценности</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li has-drop">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Система качества</span>
+              </a>
+              <em class="sub-nav__li-arrow js-nav-arrow">&#9660;</em>
+              <div class="sub-nav__li-drop js-nav-drop">
+                <div class="sub-sub-nav">
+                  <ul class="sub-sub-nav__list">
+                    <li class="sub-sub-nav__li js-nav-li">
+                      <a class="sub-sub-nav__li-el" href="about.html">
+                        <span class="sub-sub-nav__li-el-in">Подкаталог 1</span>
+                      </a>
+                    </li>
+                    <li class="sub-sub-nav__li js-nav-li">
+                      <a class="sub-sub-nav__li-el" href="about.html">
+                        <span class="sub-sub-nav__li-el-in">Подкаталог 2</span>
+                      </a>
+                    </li>
+                    <li class="sub-sub-nav__li js-nav-li">
+                      <a class="sub-sub-nav__li-el" href="about.html">
+                        <span class="sub-sub-nav__li-el-in">Подкаталог 3</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">История</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
 
     @@if(context.currentItem == 'Новости'){
     <li class="nav__li js-nav-li current">
@@ -52,18 +96,60 @@
       </a>
     </li>}
 
-    @@if(context.currentItem == 'Полезные советы'){
-    <li class="nav__li js-nav-li current">
+    <li class="nav__li js-nav-li has-drop@@if(context.currentItem == 'Полезные советы'){ current}">
+      @@if(context.currentItem == 'Полезные советы'){
       <span class="nav__li-el">
         <span class="nav__li-el-in">Полезные советы</span>
       </span>
-    </li>}
-    @@if(context.currentItem != 'Полезные советы'){
-    <li class="nav__li js-nav-li">
-      <a class="nav__li-el" href="news-one.html">
+      }
+      @@if(context.currentItem != 'Полезные советы'){
+      <a class="nav__li-el" href="about.html">
         <span class="nav__li-el-in">Полезные советы</span>
       </a>
-    </li>}
+      }
+      <em class="nav__li-arrow js-nav-arrow">&#9660;</em>
+      <div class="nav__li-drop js-nav-drop">
+        <div class="sub-nav">
+          <ul class="sub-nav__list">
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Ждем ребенка</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li has-drop">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Питание малыша</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Здоровье</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Развитие ребенка</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Мамам и папам на заметку</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Часто задаваемые вопросы</span>
+              </a>
+            </li>
+            <li class="sub-nav__li js-nav-li">
+              <a class="sub-nav__li-el" href="about.html">
+                <span class="sub-nav__li-el-in">Почему «Беллакт»</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </li>
 
     @@if(context.currentItem == 'Контакты'){
     <li class="nav__li js-nav-li current">

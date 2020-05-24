@@ -12,7 +12,7 @@ var gulp             = require('gulp'),
     babel            = require('gulp-babel'),
     postcss          = require('gulp-postcss'),
     autoprefixer     = require('autoprefixer'),
-    cssnano          = require('cssnano'),
+    csso             = require('gulp-csso'),
     gcmq             = require('gulp-group-css-media-queries'),
     concatCss        = require('gulp-concat-css'),
     sassLint         = require('gulp-sass-lint'),
@@ -37,6 +37,7 @@ var libsJsLink = [
   'node_modules/vanilla-lazyload/dist/lazyload.min.js',
   'app/libs/js/jquery.accordion-simple.js',
   'app/libs/js/jquery.switch-class.js',
+  'app/libs/js/jquery.nav.js',
   'node_modules/swiper/dist/js/swiper.min.js',
   'node_modules/jquery-match-height/dist/jquery.matchHeight-min.js'
 ];
@@ -109,12 +110,14 @@ gulp.task('styles:lint', function () {
 gulp.task('style:production', function () {
   var plugins = [
     autoprefixer(),
-    cssnano({
-      zindex: false,
-      autoprefixer: {
-        remove: false
-      }
-    })
+    // cssnano make error
+    // Error in parsing SVG: Unquoted attribute value
+    // cssnano({
+    //   zindex: false,
+    //   autoprefixer: {
+    //     remove: false
+    //   }
+    // })
   ];
 
   return gulp.src('app/styles/*.+(scss|sass)')
@@ -123,6 +126,7 @@ gulp.task('style:production', function () {
       .pipe(sass().on('error', sass.logError))
       .pipe(gcmq())
       .pipe(postcss(plugins))
+      .pipe(csso())
       .pipe(gulp.dest('./' + path.dist + '/css'));
 });
 
@@ -135,18 +139,10 @@ gulp.task('cssLibs:merge', function () {
 });
 
 gulp.task('cssLibs:production', function () {
-  var plugins = [
-    cssnano({
-      zindex: false,
-      autoprefixer: {
-        remove: false
-      }
-    })
-  ];
   if(libsCssLink.length) {
     return gulp.src(libsCssLink)
         .pipe(concatCss('libs.min.css'))
-        // .pipe(postcss(plugins))
+        .pipe(csso())
         .pipe(gulp.dest(path.dist + '/libs/css'));
   }
 });
