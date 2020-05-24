@@ -3,7 +3,7 @@
   background-color: #fff;
   border-radius: 3.9rem;
   box-shadow: 0 0 2px rgba(#000, 0.268193);
-  padding: 2.1rem 0 4.2rem;
+  padding: 2.4rem 0;
 
   @include below($lg) {
     display: flex;
@@ -26,6 +26,13 @@
     color: #afb5bb;
     text-decoration: none;
     transition: all $animation-speed;
+
+    @include below($sm) {
+      $size: 3.2rem;
+
+      height: $size;
+      width: $size;
+    }
 
     &:not(:last-child) {
       margin: 0 auto 0.7rem;
@@ -55,6 +62,15 @@
 
       @include below($lg) {
         $size: 2.4rem;
+        $int: round-float($size / 2, 1);
+
+        height: $size;
+        width: $size;
+        margin: -#{$int} 0 0 -#{$int};
+      }
+
+      @include below($sm) {
+        $size: 1.8rem;
         $int: round-float($size / 2, 1);
 
         height: $size;
