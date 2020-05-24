@@ -18,7 +18,8 @@
     padding: 1.1rem #{round-float($space-h / 2, 1)};
 
     @include below($lg) {
-      padding: 2rem 0 0;
+      //padding: 2rem 0 0;
+      padding: 0;
     }
 
     @at-root {
@@ -48,13 +49,17 @@
     max-width: $width;
     padding: 0 #{round-float($space-h / 2, 1)};
 
+    @include above($lg) {
+      display: block !important;
+    }
+
     @include below($lg) {
       width: auto;
       max-width: none;
-      padding: 0;
+      padding: 0 0 4rem;
       display: none;
     }
-    
+
     &::after {
       content: '';
       display: block;

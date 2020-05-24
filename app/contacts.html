@@ -19,7 +19,7 @@
             <!--Main heading-->
             <div class="base__section base__section_heading">
               @@include("blocks/heading/heading.html", {"title": "Контакты"})
-              <a href="#" class="menu-app-switcher js-menu-app-switcher" title="Контакты">
+              <a href="#" class="menu-app-switcher js-menu-app-switcher menu-app-is-open" title="Контакты">
                 <span>Контакты</span>
               </a>
             </div>
@@ -32,7 +32,7 @@
             <!--Content-->
             <div class="content">
               <!--Left menu-->
-              <aside class="content__sidebar js-menu-app js-prevent-hide">
+              <aside class="content__sidebar js-menu-app js-prevent-hide" style="display: block;">
                   @@include("blocks/widget-contacts/widget-contacts.html")
               </aside>
               <!--Left menu end-->
