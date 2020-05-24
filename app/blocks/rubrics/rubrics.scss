@@ -1,9 +1,8 @@
 .rubrics {
-  $space-h: 2rem;
-  $space-h_lg: 1.8rem;
+  $space-h: 2.4rem;
   $space-v: 3rem;
 
-  @include below($md) {
+  @include below($lg) {
     margin: 0 -#{$layout-page-space_md};
   }
 
@@ -11,42 +10,170 @@
     margin: 0 -#{$layout-page-space_sm};
   }
 
-  &__list {
+  // List
+  //&__list {
+  //  margin: 0 -#{round-float($space-h / 2, 1)} -#{$space-v};
+  //  display: flex;
+  //  align-items: flex-start;
+  //  flex-wrap: wrap;
+  //
+  //  @include below($md) {
+  //    overflow-y: auto;
+  //    flex-wrap: nowrap;
+  //    margin: 0;
+  //    padding: 4rem #{$layout-page-space_md} 2rem;
+  //  }
+  //
+  //  @include below($sm) {
+  //    padding: 4rem #{$layout-page-space_sm} 2rem;
+  //  }
+  //}
+  //
+  //&__item {
+  //  $width: 33.33%;
+  //
+  //  flex: 1 0 $width;
+  //  max-width: $width;
+  //  padding: 0 #{round-float($space-h / 2, 1)};
+  //  //margin-bottom: 4rem;
+  //
+  //  @include below($md) {
+  //    flex-basis: 26rem;
+  //    max-width: 26rem;
+  //    padding: 0 2rem 0 0;
+  //  }
+  //}
+
+  // Slider
+  &-slider {
+    $slider: &;
+
+    position: relative;
+    padding: 0;
     margin: 0 -#{round-float($space-h / 2, 1)} -#{$space-v};
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
 
-    @include below($md) {
-      overflow-y: auto;
-      flex-wrap: nowrap;
-      margin: 0;
-      padding: 4rem #{$layout-page-space_md} 2rem;
+    html:not(.no-js) &:not(.is-loaded) {
+      opacity: 0;
+      pointer-events: none;
+      overflow: hidden;
     }
 
-    @include below($sm) {
-      padding: 4rem #{$layout-page-space_sm} 2rem;
-    }
-  }
-
-  &__item {
-    $width: 33.33%;
-
-    flex: 1 0 $width;
-    max-width: $width;
-    padding: 0 #{round-float($space-h / 2, 1)};
-
-    @include below($md) {
-      flex-basis: 26rem;
-      max-width: 26rem;
-      padding: 0 2rem 0 0;
+    .swiper-container {
+      //overflow: visible;
     }
 
-    &:not(:last-child) {
-      margin-bottom: 4rem;
+    &__slide {
+      position: relative;
+      transition: opacity $animation-speed, visibility $animation-speed;
+      opacity: 0.5;
+      padding: 4rem #{round-float($space-h / 2, 1)} #{$space-v};
 
-      @include below($md) {
-        margin: 0;
+      @include below($lg) {
+        width: 32rem !important;
+      }
+
+      @include below($sm) {
+        width: 26rem !important;
+      }
+
+      &.swiper-slide-visible {
+        opacity: 1;
+      }
+    }
+
+    &__button {
+      $size: 5rem;
+
+      position: absolute;
+      top: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: $size;
+      width: $size;
+      border-radius: $size;
+      margin-top: -#{round-float($size / 2, 1)};
+      color: #b1bcb8;
+      background-color: #fff;
+      box-shadow: 0 0 4px rgba(#000, 0.35);
+      transition: color $animation-speed, transform 0.1s;
+      user-select: none;
+      cursor: pointer;
+      z-index: 5;
+
+      @include below($sm) {
+        $size: 4rem;
+
+        height: $size;
+        width: $size;
+        border-radius: $size;
+        margin-top: -#{round-float($size / 2, 1)};
+      }
+
+      //#{$slider}.no-sliding & {
+      //  display: none;
+      //}
+
+      svg {
+        $size: 2.4rem;
+
+        display: block;
+        height: $size;
+        width: $size;
+
+        @include below($sm) {
+          $size: 2rem;
+
+          height: $size;
+          width: $size;
+        }
+      }
+
+      path {
+        stroke: currentColor;
+      }
+
+      &_prev {
+        left: -6rem;
+
+        @include below($lg) {
+          left: 2.2rem;
+        }
+
+        svg {
+          margin-right: 0.3rem;
+        }
+      }
+
+      &_next {
+        right: -6rem;
+
+        @include below($lg) {
+          right: 2.2rem;
+        }
+
+        svg {
+          margin-left: 0.3rem;
+        }
+      }
+
+      // :hover
+      &:not(.swiper-button-disabled):hover {
+        color: $highlight-color;
+      }
+
+      // :focus
+      &:focus {
+        outline: none;
+      }
+
+      :active &:not(.swiper-button-disabled):active {
+        transform: translate(0, 2px);
+      }
+
+      // Disabled
+      &.swiper-button-disabled {
+        opacity: 0.3;
       }
     }
   }

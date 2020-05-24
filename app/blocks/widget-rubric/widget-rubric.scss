@@ -1,7 +1,7 @@
 .widget-rubric {
   $widget: &;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   padding: 0 2rem 4.9rem;
   background: #fff;
@@ -33,8 +33,17 @@
     font-size: 2.4rem;
     line-height: 2.8rem;
 
+    @include below($sm) {
+      font-size: 2rem;
+      line-height: 2.4rem;
+    }
+
     &:not(:last-child) {
       margin-bottom: 3.4rem;
+
+      @include below($sm) {
+        margin-bottom: 2.5rem;
+      }
     }
 
     a {

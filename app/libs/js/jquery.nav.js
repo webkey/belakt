@@ -521,8 +521,6 @@
 					}
 				});
 
-				console.log('self: ', self);
-
 				// Open current item
 				self.navAccordion.accordionSimple('open', $('.current', $element).closest(config.drop));
 

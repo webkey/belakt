@@ -2,6 +2,7 @@
 @import 'mixins';
 
 html {
+  overflow-x: hidden;
   font-size: 62.5%;
 
   @include below($xl) {
