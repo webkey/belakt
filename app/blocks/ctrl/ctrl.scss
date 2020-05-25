@@ -6,6 +6,7 @@
     display: block;
     padding: 5.8rem 2rem 2rem;
     @include font-medium;
+
     font-size: 1.6rem;
     line-height: 2rem;
     text-align: center;
@@ -15,6 +16,16 @@
     box-shadow: 0 1px 6px rgba(#000, 0.110386);
     border-radius: 1.1rem;
     transition: all $animation-speed;
+
+    @include below($xl) {
+      padding: 6.2rem 2rem 1.6rem;
+    }
+
+    @include below($lg) {
+      padding: 4rem 1rem 1rem;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
 
     &::before,
     &::after {
@@ -45,6 +56,11 @@
 
     &::after {
       background: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAzNCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCAzQzAgMS4zNDMxNSAxLjM0MzE1IDAgMyAwSDMxQzMyLjY1NjkgMCAzNCAxLjM0MzE1IDM0IDNDMzQgNC42NTY4NSAzMi42NTY5IDYgMzEgNkgzQzEuMzQzMTUgNiAwIDQuNjU2ODUgMCAzWiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMCAxNUMwIDEzLjM0MzEgMS4zNDMxNSAxMiAzIDEySDMxQzMyLjY1NjkgMTIgMzQgMTMuMzQzMSAzNCAxNUMzNCAxNi42NTY5IDMyLjY1NjkgMTggMzEgMThIM0MxLjM0MzE1IDE4IDAgMTYuNjU2OSAwIDE1WiIgZmlsbD0id2hpdGUiLz48cGF0aCBkPSJNMCAyN0MwIDI1LjM0MzEgMS4zNDMxNSAyNCAzIDI0SDMxQzMyLjY1NjkgMjQgMzQgMjUuMzQzMSAzNCAyN0MzNCAyOC42NTY5IDMyLjY1NjkgMzAgMzEgMzBIM0MxLjM0MzE1IDMwIDAgMjguNjU2OSAwIDI3WiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=) no-repeat 50% 1.8rem;
+
+      @include below($lg) {
+        background-size: 2rem;
+        background-position: 50% 1.6rem;
+      }
     }
 
     &:hover {
@@ -71,6 +87,16 @@
     padding: 6rem 12rem 6rem 6rem;
     margin: -3.1rem -12rem -4.4rem -6rem;
     overflow: hidden;
+
+    @include below($lg) {
+      padding: 4rem 6.5rem 4rem 4rem;
+      margin: -3.1rem -6.5rem -3.1rem -4rem;
+    }
+
+    @include below($md) {
+      padding: 4rem 2rem 4rem 4rem;
+      margin: -3.1rem -2rem -3.1rem -4rem;
+    }
   }
 
   &__categories {
@@ -82,6 +108,16 @@
     box-shadow: 0 1.7rem 4rem rgba(#000, 0.08);
     border-radius: 0.8rem;
     background-color: rgba(#e4eeeb, 0.8);
+    
+    @include below($lg) {
+      height: 26rem;
+      box-shadow: 0 0.5rem 2rem rgba(#000, 0.08);
+    }
+
+    @include below($md) {
+      height: 21rem;
+      box-shadow: 0 0.2rem 1rem rgba(#000, 0.08);
+    }
 
     html:not(.no-js) &:not(.is-loaded) {
       opacity: 0;
@@ -109,6 +145,11 @@
       opacity: 0;
       pointer-events: none;
 
+      @include below($lg) {
+        padding: 0.5rem 1rem;
+        height: 7rem;
+      }
+
       &::after {
         content: "";
         display: block;
@@ -130,12 +171,39 @@
       &.current {
         height: 17.2rem;
         background: #fafafa;
-        box-shadow: 0 17px 40px rgba(#000, 0.0968914);
+        box-shadow: 0 1.7rem 4rem rgba(#000, 0.1);
         border-radius: 0 2rem 2rem 0;
+
+        @include below($lg) {
+          height: 12rem;
+          border-radius: 0 1rem 1rem 0;
+          box-shadow: 0 0.5rem 2rem rgba(#000, 0.1);
+        }
+
+        @include below($md) {
+          height: 7rem;
+          box-shadow: 0 0.2rem 1rem rgba(#000, 0.1);
+        }
+
+        &:first-child {
+          border-top-left-radius: 0.8rem;
+        }
+
+        &:last-child {
+          border-bottom-left-radius: 0.8rem;
+        }
       }
 
       &.active {
         width: calc(100% + 6.4rem);
+
+        @include below($lg) {
+          width: calc(100% + 4rem);
+        }
+
+        @include below($md) {
+          width: calc(100% + 1rem);
+        }
 
         &::after {
           opacity: 1;
@@ -157,23 +225,50 @@
         word-break: normal;
         margin-bottom: -0.4rem;
 
+        @include below($lg) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
+
         #{$item}.active & {
           font-size: 3.2rem;
           line-height: 4rem;
           color: #303030;
+
+          @include below($lg) {
+            font-size: 2rem;
+            line-height: 2.4rem;
+          }
+
+          @include below($md) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+          }
         }
       }
 
       &-text {
         font-size: 1.6rem;
         line-height: 1.9rem;
+        margin-bottom: -0.4rem;
         color: #9e9e9e;
+
+        @include below($lg) {
+          font-size: 1.4rem;
+          line-height: 2rem;
+        }
 
         #{$item}.active & {
           font-size: 1.6rem;
           line-height: 2.5rem;
           letter-spacing: 0.12em;
           color: #929c9a;
+
+          @include below($lg) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            letter-spacing: normal;
+          }
         }
       }
     }
@@ -198,6 +293,14 @@
     cursor: pointer;
     user-select: none;
     box-shadow: 0 0 2px rgba(#000, 0.27);
+
+    @include below($lg) {
+      $size: 4rem;
+
+      height: $size;
+      width: $size;
+      border-radius: $size;
+    }
 
     &::before {
       content: "";
@@ -232,6 +335,10 @@
   &__prev {
     margin-bottom: 2.1rem;
 
+    @include below($lg) {
+      margin-bottom: 1.5rem;
+    }
+
     &::before {
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyMSAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMyAxMUwxMC41ODY5IDNMMTggMTEiIHN0cm9rZT0iI0IxQkNCOCIgc3Ryb2tlLXdpZHRoPSI1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=);
     }
@@ -239,6 +346,10 @@
 
   &__next {
     margin-top: 1.6rem;
+
+    @include below($lg) {
+      margin-top: 0.5rem;
+    }
 
     &::before {
       background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHZpZXdCb3g9IjAgMCAyMSAxNSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMyAzTDEwLjU4NjkgMTJMMTggMyIgc3Ryb2tlPSIjQjFCQ0I4IiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==);

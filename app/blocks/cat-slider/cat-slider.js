@@ -36,7 +36,7 @@ app.catSlider = {
           },
 
           breakpoints: {
-            767: {
+            991: {
               slidesPerView: 2,
               slidesPerGroup: 2,
               spaceBetween: 20

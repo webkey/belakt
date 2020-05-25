@@ -4,6 +4,14 @@
   position: relative;
   padding: 0 10rem;
 
+  @include below($lg) {
+    padding: 0 5rem;
+  }
+
+  @include below($md) {
+    padding: 0 3rem;
+  }
+
   html:not(.no-js) &:not(.is-loaded) {
     opacity: 0;
     pointer-events: none;
@@ -20,6 +28,10 @@
     opacity: 0;
     visibility: hidden;
     padding: 0 1.5rem;
+
+    @include below($sm) {
+      padding: 0;
+    }
 
     &.swiper-slide-visible {
       opacity: 1;
@@ -45,6 +57,15 @@
     user-select: none;
     cursor: pointer;
     z-index: 5;
+
+    @include below($lg) {
+      $size-h: 4rem;
+      $size-w: 2.1rem;
+
+      height: $size-h;
+      width: $size-w;
+      margin-top: -#{round-float($size-h / 2, 1)};
+    }
 
     svg {
       display: block;

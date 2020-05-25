@@ -9,15 +9,24 @@
     <div class="layout-page">
       <div class="base">
         <!--Controls panel-->
-        <div class="base__aside">
+        <div class="base__aside always-show">
           @@include("blocks/ctrl/ctrl.html")
         </div>
         <!--Controls panel end-->
 
         <div class="base__body">
+          <!--Products popup-->
+          <div class="base__prods always-show anim-toggle-in js-ctrl__targets">
+            <div class="base__prods-layout">
+              @@include("blocks/prods/prods.html")
+              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
+            </div>
+          </div>
+          <!--Products popup end-->
+
           <div class="base__content">
             <!--Promo-->
-            <div class="base__section base__section_promo anim-toggle-out js-ctrl__hide">
+            <div class="base__section base__section_promo always-show anim-toggle-out js-ctrl__hide">
               @@include("blocks/promo/promo.html")
             </div>
             <!--Promo end-->
@@ -28,15 +37,6 @@
               </div>
             </div>
           </div>
-
-          <!--Products popup-->
-          <div class="base__prods anim-toggle-in js-ctrl__targets">
-            <div class="base__prods-layout">
-              @@include("blocks/prods/prods.html")
-              <a href="#" class="base__prods-close js-ctrl__close">Назад</a>
-            </div>
-          </div>
-          <!--Products popup end-->
         </div>
 
         <!--Share-->

@@ -6,7 +6,7 @@
     margin: 0 -#{$layout-page-space_lg};
   }
 
-  @include below($sm) {
+  @include below($md) {
     margin: 0 -#{$layout-page-space_sm};
   }
 

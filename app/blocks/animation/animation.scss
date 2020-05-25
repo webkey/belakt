@@ -6,6 +6,14 @@
       animation: toggleOutHide 1.2s cubic-bezier(0, 1, 0.2, 1) both;
     }
   }
+
+  &.always-show {
+    animation: toggleOutShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+
+    &.active {
+      animation: toggleOutHide 1.2s cubic-bezier(0, 1, 0.2, 1) both;
+    }
+  }
 }
 
 @keyframes toggleOutShow {
@@ -46,6 +54,14 @@
 
 .anim-toggle-in {
   @include above($lg) {
+    animation: toggleInHide 1s cubic-bezier(0, 1, 0.2, 1) both;
+
+    &.active {
+      animation: toggleInShow 1.6s cubic-bezier(0, 1, 0.2, 1) both;
+    }
+  }
+
+  &.always-show {
     animation: toggleInHide 1s cubic-bezier(0, 1, 0.2, 1) both;
 
     &.active {
