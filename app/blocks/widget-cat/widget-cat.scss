@@ -2,19 +2,43 @@
   $widget: &;
 
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   align-items: center;
   text-decoration: none;
   color: inherit;
 
   &__figure {
-    display: block;
-    margin: 0 auto 2rem;
-    transition: transform $animation-speed;
-    transform-origin: top center;
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 15rem;
 
-    #{$widget}:hover & {
-      transform: scale3d(1.05, 1.05, 1);
+    &::before {
+      content: "";
+      display: block;
+
+      @include ratio(150, 206);
+    }
+
+    &-inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-img {
+      transition: transform $animation-speed;
+      transform-origin: top center;
+
+      #{$widget}:hover & {
+        transform: scale3d(1.05, 1.05, 1);
+      }
     }
   }
 

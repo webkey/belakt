@@ -15,7 +15,8 @@ app.catSlider = {
         const $curSlider = $(this);
         const $nextEl = $curSlider.find('.js-cat-slider__button_next');
         const $prevEl = $curSlider.find('.js-cat-slider__button_prev');
-        const slidesLength = $('.swiper-slide', $curSlider).length;
+        const $slide = $('.swiper-slide', $curSlider);
+        const slidesLength = $slide.length;
 
         $curSlider.toggleClass('no-sliding', !(slidesLength > self.slidesPerView)).toggleClass('has-one-slide', slidesLength === 1);
 
@@ -36,7 +37,7 @@ app.catSlider = {
           },
 
           breakpoints: {
-            991: {
+            767: {
               slidesPerView: 2,
               slidesPerGroup: 2,
               spaceBetween: 20
