@@ -34,7 +34,8 @@ app.rubricsSlider = {
           loop: false,
           slidesPerView: 3,
           slidesPerGroup: 1,
-          // spaceBetween: 20,base__prods-close js-ctrl__close
+          // spaceBetween: 20,
+          watchSlidesVisibility: true,
 
           // simulateTouch: slidesLength > self.slidesPerView,
           // allowTouchMove: slidesLength > self.slidesPerView,
