@@ -25,6 +25,7 @@
       padding: 4rem 1rem 1rem;
       font-size: 1.4rem;
       line-height: 1.8rem;
+      display: none;
     }
 
     &::before,
@@ -336,7 +337,7 @@
     margin-bottom: 2.1rem;
 
     @include below($lg) {
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     &::before {
@@ -348,7 +349,7 @@
     margin-top: 1.6rem;
 
     @include below($lg) {
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
 
     &::before {
