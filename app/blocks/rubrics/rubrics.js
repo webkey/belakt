@@ -26,8 +26,8 @@ app.rubricsSlider = {
         const slidesLength = $slide.length;
 
         $curSlider
-            .toggleClass('no-sliding', !(slidesLength > self.slidesPerView))
-            .toggleClass('has-one-slide', slidesLength === 1);
+          .toggleClass('no-sliding', !(slidesLength > self.slidesPerView))
+          .toggleClass('has-one-slide', slidesLength === 1);
 
         const sliderInstance = new Swiper($curSlider.find('.swiper-container'), {
           init: false,
