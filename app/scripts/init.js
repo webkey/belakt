@@ -5,6 +5,7 @@ app.ctrl.init();
 app.menu.init();
 app.catSlider.init();
 app.rubricsSlider.init();
+app.newsSlider.init();
 app.tableInfo.init();
 app.scrollToTop.init();
 app.formElement.state();

@@ -1,0 +1,139 @@
+.news-slider {
+  position: relative;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin: 0 -2rem;
+
+  @include below($md) {
+    padding: 0 #{$layout-page-space_sm - 0.5};
+    margin: 0 -#{$layout-page-space_sm - 0.5};
+  }
+
+  html:not(.no-js) &:not(.is-loaded) {
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .swiper-container {
+    overflow: visible;
+  }
+
+  &__slide {
+    position: relative;
+  }
+
+  &__controls {
+    position: absolute;
+    top: 14.6rem;
+    left: 0;
+    height: 0;
+    width: 100%;
+    z-index: 5;
+
+    &_vertical-middle {
+      @include below(1365px) {
+        top: 13.2rem;
+      }
+
+      @include below(1279px) {
+        top: 15.2rem;
+      }
+
+      @include below(1199px) {
+        top: 13.4rem;
+      }
+
+      @include below($lg) {
+        top: 15.4vw;
+      }
+
+      @include below($md) {
+        top: 22.8vw;
+      }
+
+      @include below($sm) {
+        top: 40vw;
+      }
+    }
+
+    &-holder {
+      position: relative;
+      height: 0;
+      padding: 0 4rem;
+
+      @include below($lg) {
+        padding: 0 0.3rem;
+      }
+    }
+  }
+
+  &__button {
+    $size: 5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $size;
+    width: $size;
+    border-radius: $size;
+    margin-top: -#{round-float($size / 2, 1)};
+    color: #b1bcb8;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(#000, 0.35);
+    transition: color $animation-speed, transform 0.1s;
+    user-select: none;
+    cursor: pointer;
+    z-index: 5;
+
+    @include below($sm) {
+      $size: 4rem;
+
+      height: $size;
+      width: $size;
+      border-radius: $size;
+      margin-top: -#{round-float($size / 2, 1)};
+    }
+
+    svg {
+      $size: 2.4rem;
+
+      display: block;
+      height: $size;
+      width: $size;
+
+      @include below($sm) {
+        $size: 2rem;
+
+        height: $size;
+        width: $size;
+      }
+    }
+
+    path {
+      stroke: currentColor;
+    }
+
+    &_prev {
+      float: left;
+    }
+
+    &_next {
+      float: right;
+    }
+
+    // :hover
+    &:not(.swiper-button-disabled):hover {
+      color: $highlight-color;
+    }
+
+    // :focus
+    &:focus {
+      outline: none;
+    }
+
+    &:not(.swiper-button-disabled):hover {
+      color: $highlight-color;
+    }
+  }
+}

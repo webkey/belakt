@@ -171,13 +171,8 @@
         outline: none;
       }
 
-      :active &:not(.swiper-button-disabled):active {
-        transform: translate(0, 2px);
-      }
-
-      // Disabled
-      &.swiper-button-disabled {
-        opacity: 0.3;
+      &:not(.swiper-button-disabled):hover {
+        color: $highlight-color;
       }
     }
   }
