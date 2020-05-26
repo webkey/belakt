@@ -25,18 +25,18 @@
   &__slide {
     position: relative;
     transition: opacity $animation-speed, visibility $animation-speed;
-    opacity: 0;
-    visibility: hidden;
+    //opacity: 0;
+    //visibility: hidden;
     padding: 0 1.5rem;
 
     @include below($sm) {
       padding: 0;
     }
 
-    &.swiper-slide-visible {
-      opacity: 1;
-      visibility: visible;
-    }
+    //&.swiper-slide-visible {
+    //  opacity: 1;
+    //  visibility: visible;
+    //}
   }
 
   &__button {

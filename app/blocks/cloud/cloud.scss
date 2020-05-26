@@ -2,7 +2,8 @@
   position: absolute;
   pointer-events: none;
   user-select: none;
-  z-index: -1;
+  //z-index: -1;
+  z-index: 1;
 
   @include below($xl) {
     display: none;
